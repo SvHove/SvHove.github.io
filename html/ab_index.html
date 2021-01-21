@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Antibiotika-Richtlinie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+
+<main class="menu">
+
+    <button class="navButton navParentJS">Allgemeines</button>
+    <div class="subMenu1">
+        <form class="navForm" action="Präambel.html">
+            <button class="navButton">Präambel</button>
+        </form>
+        <form class="navForm inactive" action="../index.html">
+            <button class="navButton">Algorithmus zum Antibiotikaeinsatz</button>
+        </form>
+        <form class="navForm" action="Allgemeines.html">
+            <button class="navButton">Allgemeines zur Antibiotikatherapie</button>
+        </form>
+    </div>
+
+        <button id="Pn1" class="navButton navParentJS">Pneumologie</button>
+    <div class="subMenu1">
+        <form class="navForm" action="Pn1.html">
+            <button class="navButton">Akute Bronchitis und AE-COPD</button>
+        </form>
+
+            <button class="navButton navParentJS navException">Pneumonie</button>
+
+        <div class="subMenu2">
+            <form class="navForm" action="Pn2.html">
+                <button class="navButton">CAP</button>
+            </form>
+            <form class="navForm" action="Pn3.html">
+                <button class="navButton">NAP</button>
+            </form>
+            <form class="navForm" action="Pn4.html">
+                <button class="navButton">Pneumonie bei Immunsuppression</button>
+            </form>
+            <form class="navForm inactive" action="../index.html">
+                <button class="navButton inactive">Pneumocystis-jirovecii-Pneumonie</button>
+            </form>
+            <form class="navForm inactive" action="../index.html">
+                <button class="navButton inactive">Viruspneumonien (CMV unc Herpes zoster)</button>
+            </form>
+        </div>
+
+        <form class="navForm inactive" action="../index.html">
+            <button class="navButton inactive">Fieber unklarer Herkunft und/pder Pneumonie bei Neutropenie nach Chemotherapie</button>
+        </form>
+        <form class="navForm inactive" action="../index.html">
+            <button class="navButton inactive">TBC und andere Mykobakterien</button>
+        </form>
+
+    </div>
+
+        <button class="navButton navParentJS">Neurologie</button>
+    <div class="subMenu1">
+        <form class="navForm" action="Neuro1.html">
+            <button class="navButton">Bakterielle Meningitis</button>
+        </form>
+        <form class="navForm" action="Neuro2.html">
+            <button class="navButton">Hirnabszess / spinaler Abszess / Osteomyelitis</button>
+        </form>
+        <form class="navForm" action="Neuro3.html">
+            <button class="navButton">Spondylodiscitis</button>
+        </form>
+        <form class="navForm" action="Neuro4.html">
+            <button class="navButton">Chemoprophylaxe der Meningokokkenmeningitis</button>
+        </form>
+    </div>
+
+
+    <form class="navForm" action="HNO.html">
+        <button class="navButton">HNO-Bereich</button>
+    </form>
+
+    <form class="navForm" action="Gastro.html">
+        <button class="navButton">Gastroenterologie</button>
+    </form>
+
+    <form class="navForm" action="Urologie.html">
+        <button class="navButton">Niere und Harnwege</button>
+    </form>
+
+        <button class="navButton navParentJS">Chirurgie</button>
+    <div class="subMenu1">
+        <form class="navForm" action="Chi1.html">
+            <button class="navButton">Haut- und Weichteilinfektionen</button>
+        </form>
+        <form class="navForm" action="Chi2.html">
+            <button class="navButton">Intraabdominelle Infektionen</button>
+        </form>
+        <form class="navForm" action="Chi3.html">
+            <button class="navButton">Knochen- und Gelenkinfektionen</button>
+        </form>
+
+        <form class="navForm" action="Chi4.html">
+            <button class="navButton">Protheseninfektionen</button>
+        </form>
+    </div>
+
+    <form class="navForm" action="Gynäkologie.html">
+        <button class="navButton">Gynäkologie</button>
+    </form>
+
+    <form class="navForm" action="Sepsis.html">
+        <button class="navButton">Sepsis</button>
+    </form>
+
+    <form class="navForm" action="PeriOP.html">
+        <button class="navButton">Perioperative Prophylaxe</button>
+    </form>
+
+    <form class="navForm inactive" action="../index.html">
+        <button class="navButton inactive">Endocarditis</button>
+    </form>
+
+    <form class="navForm inactive" action="../index.html">
+        <button class="navButton inactive">Endocarditis-Prophylaxe</button>
+    </form>
+
+    <form class="navForm inactive" action="../index.html">
+        <button class="navButton inactive">Pilzinfektionen</button>
+    </form>
+
+    <form class="navForm inactive" action="../index.html">
+        <button class="navButton inactive">Tagestherapiekosten</button>
+    </form>
+
+</main>
+
+
+
+
+<header>
+    <div class="headFootButton">
+        <img id="menu" src="../res/menuButton.svg" alt="Menü">
+    </div>
+    <div id="titleBox">
+        <p id="title">AB-Guideline</p>
+    </div>
+    <div class="headFootButton">
+        <img id="search" src="../res/searchButton.svg" alt="Search">
+    </div>
+</header>
+
+<footer>
+    <div class="headFootButton" onclick="history.back()">
+        <img id="back" src="../res/backButton.svg" alt="Zurück">
+    </div>
+    <div class="headFootButton" onclick="window.location='../index.html'">
+            <img id="home" src="../res/homeButton.svg" alt="Home">
+    </div>
+    <div class="headFootButton">
+    </div>
+</footer>
+
+<script src="../scripts/main.js" type="text/javascript"></script>
+<script src="../scripts/menu.js" type="text/javascript"></script>
+</body>
+</html>

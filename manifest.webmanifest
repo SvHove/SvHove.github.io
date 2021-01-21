@@ -1,0 +1,19 @@
+{
+    "name": "Klinikum Emden App",
+    "short_name": "Emden",
+    "scope": ".",
+    "display": "standalone",
+    "start_url": ".",
+    "serviceworker": {
+        "src": "./sw.js",
+        "scope": "."
+    },
+"icons": [{
+"src": "images/logo_kliniken_192.png",
+"sizes": "192x192",
+"type": "image/png"
+}, {
+"src": "images/logo_kliniken_512.png",
+"sizes": "512x512",
+"type": "image/png"}]
+}

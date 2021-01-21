@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Intraabdominelle Infektionen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body>
+<main>
+    <h3 class="title">Intraabdominelle Infektionen</h3>
+
+    <button class="byGroupButton navParentJS">Einteilung der Peritonitis:</button>
+    <table>
+        <tr>
+            <td colspan="2"><strong>Primäre Peritonitis</strong></td>
+        </tr>
+        <tr>
+            <td>Spontan bakterielle Peritonitis bei Leberzirrhose und Aszites</td>
+            <td>Meist Monoinfektion.<br>Enterobakterien,<br>Koagulase-negative Staphylokokken</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Sekundäre Peritonitis</strong></td>
+        </tr>
+        <tr>
+            <td>Chirurgische Intervention erforderlich</td>
+            <td>Mischinfektionen,<br>Enterobakterien,<br>Enterokokken,<br>Anaerobier</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Tertiäre Peritonitis</strong></td>
+        </tr>
+        <tr>
+            <td>Persistenz der Infektion ohne chirurgisch sanierbaren Focus</td>
+            <td>Koagulase-negative Staphylokokken,<br>Enterobacteriaceae (inkl. ESBL),<br>Enterokokken (inkl. VRE),<br>Anaerobier,
+                Candida spp.
+            </td>
+        </tr>
+    </table>
+
+
+    <button class="byGroupButton navParentJS">Primäre Peritonitis</button>
+    <section>
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+                <p class="fragmentParagraph">Therapie der Wahl:<br><strong>Ceftriaxon<br> + Metronidazol</strong><br>1 x 2g<br> + 3 x 500mg<br>Therapiedauer: 7 Tage, Kontrolle nach 48h</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="byGroupButton navParentJS">Ambulant erworben<br>Frische Perforation, lokal, kreislaufstabil</button>
+    <section>
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+                <p class="fragmentParagraph">Therapie der Wahl:<br><strong>Ceftriaxon<br> + Metronidazol</strong><br>1 x 2g<br> + 3 x 500mg<br>Therapiedauer: 3-5 Tage nach Klinik</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="byGroupButton navParentJS">Ambulant erworben<br>Ältere Perforation, diffus, kreislaufstabil, individuelles MRE Risiko</button>
+    <section>
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+                <p class="fragmentParagraph">Therapie der Wahl:<br><strong>Piperacillin/Tazobactam</strong><br>3 x 4,5g<br>Therapiedauer: 7 Tage</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="byGroupButton navParentJS">Nosokomial (postoperativ, tertiär)<br>Diffus, kreislaufinstabil, hohes MRE Risiko</button>
+    <section>
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+                <p class="fragmentParagraph">Therapie der Wahl:<br><strong>Tigecyclin</strong><br>Erste Dosis: 100mg, danach 2 x 50mg<br>Therapiedauer: 7-10 Tage, ggf. auch länger je nach Klinik</p>
+                <p class="fragmentParagraph">Alternative 2:<br><strong>Meropenem <br> (+ Linezolid)</strong><br>3 x 2g <br> (+ 2 x 0,6g)<br>Therapiedauer: 7-10 Tage, ggf. auch länger je nach Klinik</p>
+            </div>
+        </div>
+        <p class="byGroupP1"><strong>Achtung: Candida-Infektion bedenken!</strong></p>
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+                <p class="fragmentParagraph"><strong>Caspofungin</strong><br>über 80kg:<br>1 x 70mk am 1. Tag,<br> dann 1 x 50mg täglich<br>Therapiedauer: Mindestens 14 Tage, dann nach Klinik und Antibiogramm</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+<header>
+    <div class="headFootButton">
+        <img id="menu" src="../res/menuButton.svg" alt="Menü">
+    </div>
+    <div id="titleBox">
+        <p id="title">AB-Guideline</p>
+    </div>
+    <div class="headFootButton">
+        <img id="search" src="../res/searchButton.svg" alt="Search">
+    </div>
+</header>
+
+<footer>
+    <div class="headFootButton" onclick="history.back()">
+        <img id="back" src="../res/backButton.svg" alt="Zurück">
+    </div>
+    <div class="headFootButton" onclick="window.location='../index.html'">
+        <img id="home" src="../res/homeButton.svg" alt="Home">
+    </div>
+    <div class="headFootButton">
+    </div>
+</footer>
+
+<script src="../scripts/main.js" type="text/javascript"></script>
+<script src="../scripts/menu.js" type="text/javascript"></script>
+</body>
+</html>
