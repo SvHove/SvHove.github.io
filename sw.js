@@ -1,13 +1,13 @@
-console.log('Service worker 1.06 reached...');
+console.log('Service worker 1.07 reached...');
 
 console.log('Second message');
 
-let cacheName = 'pwa7';
+let cacheName = 'pwa8';
 
 console.log('Variable created: ' + cacheName);
 
 try {
-    caches.delete('pwa6');
+    caches.delete(cacheName);
 } catch(error) {
     console.log(error);
 }
@@ -16,7 +16,7 @@ console.log('caches deleted?');
 
 try {
     console.log('Creating Cache');
-    caches.open('pwa7').then(cache => {
+    caches.open(cacheName).then(cache => {
     });
 } catch(error) {
     console.log('Cache could not be opened');
@@ -29,7 +29,7 @@ try {
     self.addEventListener('install', event => {
         console.log('Installing');
         event.waitUntil(
-            caches.open('pwa7')
+            caches.open(cacheName)
                 .then(cache => {
                     console.log('Starting to add to cache.');
                     return cache.addAll(['./', './index.html', './manifest.webmanifest', './scripts/swInclude.js', './scripts/main.js', './styles/main.css',
@@ -54,10 +54,9 @@ try {
 
 try {
     self.addEventListener('fetch', function(event) {
+        console.log('Fetching...');
         event.respondWith(
-            caches.match(event.request).then(function(response) {
-                return response || fetch(event.request);
-            })
+            caches.match(event.request)
         );
     });
 
