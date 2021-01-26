@@ -1,4 +1,4 @@
-console.log('Service worker 1.04 reached...');
+console.log('Service worker 1.06 reached...');
 
 console.log('Second message');
 
@@ -31,7 +31,7 @@ try {
         event.waitUntil(
             caches.open('pwa7')
                 .then(cache => {
-                    console.log('Started');
+                    console.log('Starting to add to cache.');
                     return cache.addAll(['./', './index.html', './manifest.webmanifest', './scripts/swInclude.js', './scripts/main.js', './styles/main.css',
                         './res/backButton.svg', './res/homeButton.svg', './res/menuButton.svg', './res/searchButton.svg', './images/logo_kliniken_192.png',
                         './images/logo_kliniken_512.png', './html/ab_index.html', './html/Allgemeines.html', './html/Chi1.html', './html/Chi2.html', './html/Chi3.html',
