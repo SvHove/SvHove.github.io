@@ -1,13 +1,13 @@
-console.log('Service worker 1.07 reached...');
+console.log('Service worker 1.08 reached...');
 
 console.log('Second message');
 
-let cacheName = 'pwa8';
+let cacheName = 'pwa9';
 
 console.log('Variable created: ' + cacheName);
 
 try {
-    caches.delete(cacheName);
+    caches.delete('pwa7');
 } catch(error) {
     console.log(error);
 }
