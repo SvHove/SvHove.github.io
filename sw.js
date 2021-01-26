@@ -1,14 +1,13 @@
-console.log('Service worker 1.09 reached...');
+console.log('Service worker 1.10 reached...');
 
 console.log('Second message');
 
-let cacheName = 'pwa10';
+let cacheName = 'pwa1';
 
 console.log('Variable created: ' + cacheName);
 
 try {
-    caches.delete('pwa8');
-    caches.delete('pwa9');
+    caches.delete('pwa10');
 } catch(error) {
     console.log(error);
 }
@@ -57,7 +56,7 @@ try {
     self.addEventListener('fetch', function(event) {
         console.log('Fetching...');
         event.respondWith(
-            caches.match(event.request).then(function(res) {
+            caches.match(event.request, {ignoreSearch: true}).then(function(res) {
                 if(res) {
                     return res;
                 }
