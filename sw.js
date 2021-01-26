@@ -1,17 +1,13 @@
-console.log('Service worker 1.03 reached...');
+console.log('Service worker 1.04 reached...');
 
 console.log('Second message');
 
-let cacheName = 'pwa6';
+let cacheName = 'pwa7';
 
 console.log('Variable created: ' + cacheName);
 
 try {
-    caches.delete('pwa1');
-    caches.delete('pwa2');
-    caches.delete('pwa3');
-    caches.delete('pwa4');
-    caches.delete('pwa5');
+    caches.delete('pwa6');
 } catch(error) {
     console.log(error);
 }
@@ -20,7 +16,7 @@ console.log('caches deleted?');
 
 try {
     console.log('Creating Cache');
-    caches.open('pwa6').then(cache => {
+    caches.open('pwa7').then(cache => {
     });
 } catch(error) {
     console.log('Cache could not be opened');
@@ -33,7 +29,7 @@ try {
     self.addEventListener('install', event => {
         console.log('Installing');
         event.waitUntil(
-            caches.open('pwa6')
+            caches.open('pwa7')
                 .then(cache => {
                     console.log('Started');
                     return cache.addAll(['./', './index.html', './manifest.webmanifest', './scripts/swInclude.js', './scripts/main.js', './styles/main.css',
@@ -59,16 +55,12 @@ try {
 try {
     self.addEventListener('fetch', function(event) {
         event.respondWith(
-            caches.open('pwa6').then(function(cache) {
-                return cache.match(event.request).then(function (response) {
-                    return response || fetch(event.request).then(function(response) {
-                        cache.put(event.request, response.clone());
-                        return response;
-                    });
-                });
+            caches.match(event.request).then(function(response) {
+                return response || fetch(event.request);
             })
         );
     });
+
 
 } catch(error) {
     console.log('Fetching listener failed.');
