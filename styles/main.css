@@ -193,12 +193,12 @@ footer {
 
 .headFootButton {
     height: 100%;
-    background-color: blue;
     width: 15%;
     text-align: center;
 }
 
 #menu {
+    visibility: hidden;
     margin: 5% 0 10% 5%;
     padding: 5% 0 10% 0;
     height: 80%;
@@ -211,6 +211,7 @@ footer {
 }
 
 #search {
+    visibility: hidden;
     height: 90%;
     padding: 5% 5% 5% 5%;
 }
@@ -229,7 +230,6 @@ footer {
 .inactive {
     background-color: grey;
 }
-
 
 #cave {
     text-align: center;
