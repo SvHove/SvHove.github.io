@@ -1,18 +1,8 @@
-console.log('Service worker 1.10 reached...');
+console.log('Service worker 1.11 reached...');
 
 console.log('Second message');
 
 let cacheName = 'pwa1';
-
-console.log('Variable created: ' + cacheName);
-
-try {
-    caches.delete('pwa10');
-} catch(error) {
-    console.log(error);
-}
-
-console.log('caches deleted?');
 
 try {
     console.log('Creating Cache');
@@ -41,7 +31,7 @@ try {
                 }).then(() => {
                 console.log('Installed, skipping waiting');
                 self.skipWaiting().then(() => {
-                    console.log('Installation finished');
+                    console.log('Installation of SW 1.11 finished');
                 });
             })
         );
@@ -51,7 +41,16 @@ try {
     console.log(error);
 }
 
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request, {ignoreSearch: true}).then(function(response) {
+            return response || fetch(event.request);
+        })
+    );
+});
 
+
+/*
 try {
     self.addEventListener('fetch', function(event) {
         console.log('Fetching...');
@@ -70,21 +69,5 @@ try {
     console.log('Fetching listener failed.');
     console.log(error);
 }
-
-
-
-/*
-self.addEventListener('fetch', (e) => {
-    e.respondWith(
-        caches.match(e.request).then((r) => {
-            console.log('[Service Worker] Fetching resource: ' + e.request.url);
-            return r || fetch(e.request).then((response) => {
-                return caches.open(pwa2).then((cache) => {
-                    console.log('[Service Worker] Caching new resource: ' + e.request.url);
-                    cache.put(e.request, response.clone());
-                    return response;
-                });
-            });
-        }));
-});
 */
+
