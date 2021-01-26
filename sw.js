@@ -4,14 +4,6 @@ console.log('Second message');
 
 let cacheName = 'pwa1';
 
-try {
-    console.log('Creating Cache');
-    caches.open(cacheName).then(cache => {
-    });
-} catch(error) {
-    console.log('Cache could not be opened');
-}
-
 console.log('Cache opened: ' + cacheName);
 
 try {
@@ -55,35 +47,3 @@ self.addEventListener('fetch', function(event) {
         })
     );
 });
-
-/*
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request, {ignoreSearch: true}).then(function(response) {
-            return response || fetch(event.request);
-        })
-    );
-});
-*/
-
-/*
-try {
-    self.addEventListener('fetch', function(event) {
-        console.log('Fetching...');
-        event.respondWith(
-            caches.match(event.request, {ignoreSearch: true}).then(function(res) {
-                if(res) {
-                    return res;
-                }
-                console.log('Failed..');
-            })
-        );
-    });
-
-
-} catch(error) {
-    console.log('Fetching listener failed.');
-    console.log(error);
-}
-*/
-
