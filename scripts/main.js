@@ -11,7 +11,7 @@ for (let i = 0; i < navParentButtons.length; i++) {
     navParentButtons[i].addEventListener("click", (ev) => {
         ev.preventDefault();
         let currentButton = navParentButtons[i];
-        currentButton.nextElementSibling.classList.add('byGroupSection')
+        if(!(currentButton.classList.contains('navException'))) currentButton.nextElementSibling.classList.add('byGroupSection');
         for (let n = 0; n < navParentButtons.length; n++) {
             if (n !== i && !(currentButton.classList.contains('navException'))) {
                 let divEx = navParentButtons[n].nextElementSibling;

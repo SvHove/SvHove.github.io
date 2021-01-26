@@ -4,6 +4,8 @@ let cacheName = 'pwa5';
 
 caches.open(cacheName).then(cache => {});
 
+console.log('Cache opened' + cacheName);
+
 self.addEventListener('install', event => {
     console.log('Installing');
     event.waitUntil(
@@ -15,7 +17,7 @@ self.addEventListener('install', event => {
                     './images/logo_kliniken_512.png', './html/ab_index.html', './html/Allgemeines.html', './html/Chi1.html', './html/Chi2.html', './html/Chi3.html',
                     './html/Chi4.html', './html/Gastro.html', './html/Gyn.html', './html/HNO.html', './html/Neuro1.html', './html/Neuro2.html', './html/Neuro3.html',
                     './html/Neuro4.html', './html/PeriOP.html', './html/Pn1.html', './html/Pn2.html', './html/Pn3.html', './html/Pn4.html', './html/Präambel.html',
-                    './html/Sepsis.html', './html/Urologie.html']);
+                    './html/Sepsis.html', './html/Uro.html']);
             }).then(() => {
             console.log('Installed, skipping waiting');
             self.skipWaiting().then(() => {
