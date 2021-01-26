@@ -1,4 +1,4 @@
-console.log('Service worker reached...');
+console.log('Service worker 1.03 reached...');
 
 console.log('Second message');
 
@@ -57,17 +57,19 @@ try {
 
 
 try {
-    console.log('Adding fetch listener');
-    self.addEventListener('fetch', event => {
-        console.log('Fetching now..');
+    self.addEventListener('fetch', function(event) {
         event.respondWith(
-            caches.open('pwa6')
-                .then(cache => cache.match(event.request))
-                .then(response => response || fetch(event.request))
+            caches.open('pwa6').then(function(cache) {
+                return cache.match(event.request).then(function (response) {
+                    return response || fetch(event.request).then(function(response) {
+                        cache.put(event.request, response.clone());
+                        return response;
+                    });
+                });
+            })
         );
-        console.log('Fetch reached end');
     });
-    console.log('Fetch listener added.');
+
 } catch(error) {
     console.log('Fetching listener failed.');
     console.log(error);
