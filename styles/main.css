@@ -9,6 +9,13 @@ html {
     box-sizing: inherit;
 }
 
+:root {
+    --green1: #009A9D;
+    --green2: #17B1B4;
+    --green3: #87CCCD;
+    --green4: #D6EBEC;
+}
+
 body {
     height: 100%;
     width: 100%;
@@ -17,12 +24,14 @@ body {
     grid-template-columns: repeat(10, 10%);
     margin: 0;
     padding: 0;
+    background-color: var(--green1);
 }
 
 main {
     grid-area: 2/1/3/11;
     padding-top: 3%;
     overflow: auto;
+    background-color: var(--green4);
 }
 
 .hidden {
@@ -64,7 +73,7 @@ main {
     margin: 0 0 5% 0;
     padding: 1% 0 1% 0;
     width: 100%;
-    background-color: green;
+    background-color: var(--green2);
     font-size: 1.0rem;
 }
 
@@ -125,6 +134,23 @@ main {
 /*----------  Menus  -----------*/
 /*------------------------------*/
 
+.navButton {
+    padding: 3% 2% 3% 2%;
+    width: 100%;
+    background-color: var(--green2);  /*REMOVE, replace by nth type of child for menu.*/
+    display: block;
+    text-align: center;
+    font-size: inherit;
+}
+
+.subMenu1 .navButton {
+    background-color: var(--green3);
+}
+
+.subMenu2 .navButton {
+    background-color: var(--green2);
+}
+
 .text {
     font-size: 1.0rem;
     margin: 0 2% 0 2%;
@@ -151,14 +177,7 @@ main {
     width: 100%;
 }
 
-.navButton {
-    padding: 3% 2% 3% 2%;
-    width: 100%;
-    background-color: green;  /*REMOVE, replace by nth type of child for menu.*/
-    display: block;
-    text-align: center;
-    font-size: inherit;
-}
+
 
 
 
@@ -169,7 +188,7 @@ main {
 header {
     grid-area: 1/1/2/11;
     position: static;
-    background-color: #009B9C;
+    background-color: var(--green1);
     background-size: cover;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -182,7 +201,7 @@ header {
 footer {
     grid-area: 3/1/4/11;
     position: static;
-    background-color: #009B9C;
+    background-color: var(--green1);
     background-size: cover;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -208,6 +227,7 @@ footer {
 #title {
     margin: 0 0 0 0;
     font-size: 1.5rem;
+    color: white;
 }
 
 #search {
@@ -217,17 +237,21 @@ footer {
 }
 
 #back {
-    height: 80%;
-    margin: 7% 0 10% 0;
+    height: 100%;
+    margin: 0% 0 0% 0;
     padding-left: 1%;
 }
 
 #home {
-    height: 80%;
-    margin: 5% 0 10% 0;
+    height: 100%;
+    margin: 0% 0 0% 0;
 }
 
 .inactive {
+    background-color: grey;
+}
+
+.subMenu1 .inactive {
     background-color: grey;
 }
 
