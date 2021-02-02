@@ -31,16 +31,21 @@
             <button class="navButton inactive">Pneumocystis-jirovecii-Pneumonie</button>
             <button class="navButton inactive">Viruspneumonien (CMV unc Herpes zoster)</button>
         </div>
-        <button class="navButton inactive">Fieber unklarer Herkunft und/pder Pneumonie bei Neutropenie nach Chemotherapie</button>
+        <button class="navButton inactive">Fieber unklarer Herkunft und/pder Pneumonie bei Neutropenie nach
+            Chemotherapie
+        </button>
         <button class="navButton inactive">TBC und andere Mykobakterien</button>
     </div>
 
     <button class="navButton navParentJS">Neurologie</button>
     <div class="subMenu1">
         <button class="navButton" onclick="window.location='Neuro1.html'">Bakterielle Meningitis</button>
-        <button class="navButton" onclick="window.location='Neuro2.html'">Hirnabszess / spinaler Abszess / Osteomyelitis</button>
+        <button class="navButton" onclick="window.location='Neuro2.html'">Hirnabszess / spinaler Abszess /
+            Osteomyelitis
+        </button>
         <button class="navButton" onclick="window.location='Neuro3.html'">Spondylodiscitis</button>
-        <button class="navButton" onclick="window.location='Neuro4.html'">Chemoprophylaxe der Meningokokkenmeningitis</button>
+        <button class="navButton" onclick="window.location='Neuro4.html'">Chemoprophylaxe der Meningokokkenmeningitis
+        </button>
     </div>
 
     <button class="navButton" onclick="window.location='HNO.html'">HNO-Bereich</button>
@@ -72,7 +77,36 @@
     <button class="navButton inactive">Tagestherapiekosten</button>
 
 </main>
-<script src="static.js" type="text/javascript"></script>
+<header>
+    <div id="navMenu" class="headFootButton">
+        <img id="menu" src="../res/menuButton.svg" alt="Menü">
+    </div>
+    <div id="titleBox">
+        <p id="title">AB-Guideline</p>
+    </div>
+    <div class="headFootButton">
+        <img id="search" src="../res/searchButton.svg" alt="Search">
+    </div>
+</header>
+<footer>
+    <div class="headFootButton" onclick="history.back()">
+        <img id="back" src="../res/backButton.svg" alt="Zurück">
+    </div>
+    <div class="headFootButton" onclick="window.location='../index.html'">
+        <img id="home" src="../res/homeButton.svg" alt="Home">
+    </div>
+    <div class="headFootButton">
+    </div>
+</footer>
+<nav>
+    <button class="menuButton" onclick="window.location='../index.html'">Startseite</button>
+    <hr>
+    <button class="menuButton" onclick="window.location='ab_index.html'">AB-Guideline</button>
+    <button class="menuButton" onclick="window.location='../SOP/sop_index.html'">SOPs</button>
+    <hr>
+    <button class="menuButton" onclick="window.location='../changelog.html'">Versions Logbuch</button>
+</nav>
+<div id="cover"></div>
 <script src="../scripts/main.js" type="text/javascript"></script>
 </body>
 </html>

@@ -25,7 +25,6 @@
             <li>Android home-Icon angepasst.</li>
             <li>Apple-touch-icons eingefügt.</li>
             <li>Separate Changelog-Seite, Umbenennung auf Versions Logbuch.</li>
-            <li>Header und Footer per JS eingefügt (Einsparung von etwa 700 Code Zeilen). Später Umstellung auf Ajax.</li>
             <li>Erste Vorbereitungen für Tag/Nacht-Modus</li>
         </ul>
 
@@ -43,12 +42,42 @@
         <ul>
             <li>Einstellung eines Markers für "Ausklapp"-Buttons.</li>
             <li>Hinzufügen von Tag/Nacht-Modus.</li>
+            <li>Umstellung auf Ajax</li>
         </ul>
     </section>
 
 
 </main>
-<script src="static.js" type="text/javascript"></script>
+<header>
+    <div id="navMenu" class="headFootButton">
+        <img id="menu" src="res/menuButton.svg" alt="Menü">
+    </div>
+    <div id="titleBox">
+        <p id="title">Willkommen!</p>
+    </div>
+    <div class="headFootButton">
+        <img id="search" src="res/searchButton.svg" alt="Search">
+    </div>
+</header>
+<footer>
+    <div class="headFootButton" onclick="history.back()">
+        <img id="back" src="res/backButton.svg" alt="Zurück">
+    </div>
+    <div class="headFootButton" onclick="window.location='index.html'">
+        <img id="home" src="res/homeButton.svg" alt="Home">
+    </div>
+    <div id="dayNight" class="headFootButton">
+    </div>
+</footer>
+<nav>
+    <button class="menuButton" onclick="window.location='index.html'">Index</button>
+    <hr>
+    <button class="menuButton" onclick="window.location='AB_Guideline/ab_index.html'">AB-Guideline</button>
+    <button class="menuButton" onclick="window.location='SOP/sop_index.html'">SOPs</button>
+    <hr>
+    <button class="menuButton" onclick="window.location='changelog.html'">Versions Logbuch</button>
+</nav>
+<div id="cover"></div>
 <script src="scripts/main.js" type="text/javascript"></script>
 </body>
 </html>
