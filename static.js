@@ -15,7 +15,7 @@ document.write('<header>\n' +
     '    <div class="headFootButton" onclick="history.back()">\n' +
     '        <img id="back" src="res/backButton.svg" alt="Zurück">\n' +
     '    </div>\n' +
-    '    <div class="headFootButton">\n' +
+    '    <div class="headFootButton" onclick="window.location=\'index.html\'">\n' +
     '        <img id="home" src="res/homeButton.svg" alt="Home">\n' +
     '    </div>\n' +
     '    <div id="dayNight" class="headFootButton">\n' +
