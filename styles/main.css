@@ -34,6 +34,10 @@ main {
     background-color: var(--green4);
 }
 
+main h3 {
+    text-align: center;
+}
+
 .hidden {
     display: none;
 }
@@ -59,6 +63,9 @@ main {
 
 }
 
+#dayNight {
+}
+
 /*------------------------------*/
 /*---------  by Group  ---------*/
 /*------------------------------*/
@@ -77,18 +84,12 @@ main {
     font-size: 1.0rem;
 }
 
-.byGroupSection {
+.byGroupSection p {
     margin: 0 0 5% 0;
     padding: 0 0 3% 0;
     width: 100%;
     text-align: center;
 }
-
-.byGroupList {
-    font-size: 1.0rem;
-    text-align: left;
-}
-
 
 
 
@@ -173,13 +174,41 @@ main {
     font-size: 1.0rem;
 }
 
-.navForm {
+
+/*------------------------------*/
+/*------ Navigation menu -------*/
+/*------------------------------*/
+
+nav {
+    display: none;
+    grid-area: 2/1/3/6;
+    margin: 0 0 10% 0;
+    padding: 10% 0 0 0;
+    z-index: 3;
+    overflow: auto;
     width: 100%;
+    background-color: var(--green2);
 }
 
+.menuButton {
+    width: 96%;
+    border-radius: 20%;
+    border: 2px solid var(--green3);
+    outline: none;
+    background-color: var(--green4);
+    opacity: 1.0;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 2% 2% 2% 2%;
+}
 
-
-
+#cover {
+    display: none;
+    grid-area: 2/1/3/11;
+    z-index: 2;
+    background-color: var(--green3);
+    opacity: 0.7;
+}
 
 /*------------------------------*/
 /*-----Top and bottom lines-----*/
@@ -217,10 +246,9 @@ footer {
 }
 
 #menu {
-    visibility: hidden;
-    margin: 5% 0 10% 5%;
-    padding: 5% 0 10% 0;
-    height: 80%;
+    margin: 0;
+    padding: 0 0 0 1%;
+    height: 100%;
     width: auto;
 }
 
@@ -238,13 +266,13 @@ footer {
 
 #back {
     height: 100%;
-    margin: 0% 0 0% 0;
+    margin: 0 0 0 0;
     padding-left: 1%;
 }
 
 #home {
     height: 100%;
-    margin: 0% 0 0% 0;
+    margin: 0 0 0 0;
 }
 
 .inactive {

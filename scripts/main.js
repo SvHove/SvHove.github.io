@@ -50,7 +50,7 @@ for (let i = 0; i < fragments.length; i++) {
     leftButton.innerHTML = '<-';
     rightButton.innerText = '->';
     console.log('Text set');
-    currentFragment.insertBefore(leftButton, currentFragment.querySelector('fragmentDiv'));
+    currentFragment.insertBefore(leftButton, currentFragment.querySelector('.fragmentDiv'));
     console.log('Inserted left');
     currentFragment.appendChild(rightButton);
     console.log('Buttons right');
@@ -80,3 +80,51 @@ for (let i = 0; i < fragments.length; i++) {
         })
     }
 }
+
+/*------------------------------*/
+/*--------  Navigation  --------*/
+/*------------------------------*/
+
+let menu = document.querySelector('#navMenu');
+let cover = document.querySelector('#cover');
+let navigation = document.querySelector('nav');
+
+menu.addEventListener('click', () => {
+    if(window.getComputedStyle(navigation).display === 'none') {
+        navigation.style.display = 'block';
+        cover.style.display = 'block';
+    } else {
+        navigation.style.display = 'none';
+        cover.style.display = 'none';
+    }
+})
+
+cover.addEventListener('click', () => {
+    navigation.style.display = 'none';
+    cover.style.display = 'none';
+})
+
+/*------------------------------*/
+/*------  Day and Night  -------*/
+/*------------------------------*/
+/*
+let day = true;
+
+let timeSwitch = document.querySelector('#dayNight');
+
+timeSwitch.addEventListener('click', () => {
+    if(day) {
+        document.documentElement.style.setProperty('--green1', '#000000');
+        document.documentElement.style.setProperty('--green2', '#000000');
+        document.documentElement.style.setProperty('--green3', '#000000');
+        document.documentElement.style.setProperty('--green4', '#000000');
+        day = false;
+    } else {
+        document.documentElement.style.setProperty('--green1', '#009A9D');
+        document.documentElement.style.setProperty('--green2', '#17B1B4');
+        document.documentElement.style.setProperty('--green3', '#87CCCD');
+        document.documentElement.style.setProperty('--green4', '#D6EBEC');
+        day = true;
+    }
+})
+*/
