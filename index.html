@@ -4,60 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <title>Antibiotika-Richtlinie</title>
+    <title>Klinikum Emden App</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="manifest" href="./manifest.webmanifest">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
 </head>
 <body>
 
-<main class="menu">
+<main id="testMain" class="menu">
 
     <p id="cave"><strong>Achtung!</strong><br>Bei dieser Seite handelt es sich um ein in Entwicklung befindliches
         Projekt des Klinikums Emden, welches nicht zur externen Nutzung gedacht ist. Für sämtliche Inhalte wird keine
         Gewähr übernommen!</p>
 
-    <button class="navButton" onclick="window.location='AB_Guideline/ab_index.html'">Zur Guideline</button>
-    <button class="navButton" onclick="window.location='SOP/sop_index.html'">Zu den SOPs</button>
+    <a id="test" class="navButton" href="AB_Guideline/ab_index.html">Zur Guideline</a>
+    <a class="navButton" href="SOP/sop_index.html">Zu den SOPs</a>
 
 
-    <button class="navButton" onclick="window.location='changelog.html'">Versions Logbuch</button>
-
+    <a class="navButton" href="changelog.html">Versions Logbuch</a>
 
 </main>
 <header>
-    <div id="navMenu" class="headFootButton">
-        <img id="menu" src="res/menuButton.svg" alt="Menü">
+    <div id="navButton" class="headFootButton">
+        <svg id="menu" width="100%" height="100%" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 -270.54)"><ellipse class="buttonFill" cx="13.229" cy="283.83" rx="11.906" ry="11.848" stroke="#000" stroke-width=".755"/><g stroke-width="0"><rect x="5.2917" y="277.16" width="15.875" height="2.6458" ry="1.2757" opacity=".8"/><rect x="5.2917" y="282.45" width="15.875" height="2.6458" ry="1.2757" opacity=".8"/><rect x="5.2917" y="287.74" width="15.875" height="2.6458" ry="1.2757" opacity=".8"/></g></g></svg>
     </div>
     <div id="titleBox">
         <p id="title">Willkommen!</p>
     </div>
-    <div class="headFootButton">
+    <div id="colors" class="headFootButton"> <!--id="searchButton"-->
         <img id="search" src="res/searchButton.svg" alt="Search">
     </div>
 </header>
 <footer>
-    <div class="headFootButton" onclick="history.back()">
-        <img id="back" src="res/backButton.svg" alt="Zurück">
+    <div id="backButton" class="headFootButton">
+        <svg id="back" width="100%" height="100%" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 -270.54)"><ellipse class="buttonFill" cx="13.229" cy="283.83" rx="11.906" ry="11.848" stroke-width=".755"/><path class="buttonStrokeFill" transform="matrix(1 0 0 1.3856 0 -109.43)" d="m2.6458 283.77 9.9219-5.7284 7e-6 11.457z" stroke="#80cdce" stroke-width=".15461"/><rect x="11.906" y="281.12" width="9.2604" height="5.2917" stroke="#000" stroke-width=".155"/></g></svg>
     </div>
-    <div class="headFootButton" onclick="window.location='index.html'">
-        <img id="home" src="res/homeButton.svg" alt="Home">
+    <div id="homeButton" class="headFootButton">
+        <svg id="home" width="100%" height="100%" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 -270.54)"><ellipse class="buttonFill" cx="13.229" cy="283.83" rx="11.906" ry="11.848" stroke-width=".755"/><rect x="6.6146" y="282.45" width="13.229" height="9.2604" stroke-width="0"/><g><path transform="matrix(1.9245 0 0 1.1111 -12.23 -35.058)" d="m13.229 279.8 3.437 5.9531h-6.8741z" stroke="#000" stroke-width=".182"/><rect class="buttonFill" id="homeFill" x="11.906" y="289.06" width="2.6458" height="2.6459" ry="2.7702e-5" stroke="#80cdce" stroke-width=".25"/><rect class="buttonFill" x="11.906" y="286.42" width="2.6458" height="3.9688" ry="1.3229" stroke="#80cdce" stroke-width=".25"/><rect transform="matrix(.75686 .65358 -.67819 .73489 0 0)" x="196.08" y="199.08" width="13.909" height="2.1039" ry="1.0095" stroke="#000" stroke-width=".34076"/><rect transform="matrix(-.75686 .65358 .67819 .73489 0 0)" x="176.62" y="216.39" width="13.909" height="2.1039" ry="1.0095" stroke="#000" stroke-width=".34076"/></g></g></svg>
     </div>
-    <div id="dayNight" class="headFootButton">
+    <div class="headFootButton">
     </div>
 </footer>
 <nav>
-    <button class="menuButton" onclick="window.location='index.html'">Index</button>
+    <a class="menuButton" href="index.html">Index</a>
     <hr>
-    <button class="menuButton" onclick="window.location='AB_Guideline/ab_index.html'">AB-Guideline</button>
-    <button class="menuButton" onclick="window.location='SOP/sop_index.html'">SOPs</button>
+    <a class="menuButton" href="AB_Guideline/ab_index.html">AB-Guideline</a>
+    <a class="menuButton" href="SOP/sop_index.html">SOPs</a>
     <hr>
-    <button class="menuButton" onclick="window.location='changelog.html'">Versions Logbuch</button>
+    <a class="menuButton" href="changelog.html">Versions Logbuch</a>
 </nav>
 <div id="cover"></div>
+
 <script src="scripts/swInclude.js" type="text/javascript"></script>
+
 <script src="scripts/main.js" type="text/javascript"></script>
 </body>
 </html>

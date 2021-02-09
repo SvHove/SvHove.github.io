@@ -1,112 +1,73 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <title>Antibiotika-Richtlinie</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="../styles/main.css">
-
-</head>
-<body>
-
-<main class="menu">
+<main>
+    <p id="title" class="hidden">AB-Guideline</p>
 
     <button class="navButton navParentJS">Allgemeines</button>
     <div class="subMenu1">
-        <button class="navButton" onclick="window.location='prae.html'">Präambel</button>
-        <button class="navButton inactive">Algorithmus zum Antibiotikaeinsatz</button>
-        <button class="navButton" onclick="window.location='Allgemeines.html'">Allgemeines zur Antibiotikatherapie
-        </button>
+        <a class="navButton" href="AB_Guideline/prae.html">Präambel</a>
+        <a class="navButton inactive">Algorithmus zum Antibiotikaeinsatz</a>
+        <a class="navButton" href="AB_Guideline/Allgemeines.html">Allgemeines zur Antibiotikatherapie
+        </a>
     </div>
 
     <button class="navButton navParentJS">Pneumologie</button>
     <div class="subMenu1">
-        <button class="navButton" onclick="window.location='Pn1.html'">Akute Bronchitis und AE-COPD</button>
+        <a class="navButton" href="AB_Guideline/Pn1.html">Akute Bronchitis und AE-COPD</a>
         <button class="navButton navParentJS navException">Pneumonie</button>
         <div class="subMenu2">
-            <button class="navButton" onclick="window.location='Pn2.html'">CAP</button>
-            <button class="navButton" onclick="window.location='Pn3.html'">NAP</button>
-            <button class="navButton" onclick="window.location='Pn4.html'">Pneumonie bei Immunsuppression</button>
-            <button class="navButton inactive">Pneumocystis-jirovecii-Pneumonie</button>
-            <button class="navButton inactive">Viruspneumonien (CMV unc Herpes zoster)</button>
+            <a class="navButton" href="AB_Guideline/Pn2.html">CAP</a>
+            <a class="navButton" href="AB_Guideline/Pn3.html">NAP</a>
+            <a class="navButton" href="AB_Guideline/Pn4.html">Pneumonie bei Immunsuppression</a>
+            <a class="navButton inactive">Pneumocystis-jirovecii-Pneumonie</a>
+            <a class="navButton inactive">Viruspneumonien (CMV unc Herpes zoster)</a>
         </div>
-        <button class="navButton inactive">Fieber unklarer Herkunft und/pder Pneumonie bei Neutropenie nach
+        <a class="navButton inactive">Fieber unklarer Herkunft und/pder Pneumonie bei Neutropenie nach
             Chemotherapie
-        </button>
-        <button class="navButton inactive">TBC und andere Mykobakterien</button>
+        </a>
+        <a class="navButton inactive">TBC und andere Mykobakterien</a>
     </div>
 
     <button class="navButton navParentJS">Neurologie</button>
     <div class="subMenu1">
-        <button class="navButton" onclick="window.location='Neuro1.html'">Bakterielle Meningitis</button>
-        <button class="navButton" onclick="window.location='Neuro2.html'">Hirnabszess / spinaler Abszess /
+        <a class="navButton" href="AB_Guideline/Neuro1.html">Bakterielle Meningitis</a>
+        <a class="navButton" href="AB_Guideline/Neuro2.html">Hirnabszess / spinaler Abszess /
             Osteomyelitis
-        </button>
-        <button class="navButton" onclick="window.location='Neuro3.html'">Spondylodiscitis</button>
-        <button class="navButton" onclick="window.location='Neuro4.html'">Chemoprophylaxe der Meningokokkenmeningitis
-        </button>
+        </a>
+        <a class="navButton" href="AB_Guideline/Neuro3.html">Spondylodiscitis</a>
+        <a class="navButton" href="AB_Guideline/Neuro4.html">Chemoprophylaxe der Meningokokkenmeningitis
+        </a>
     </div>
 
-    <button class="navButton" onclick="window.location='HNO.html'">HNO-Bereich</button>
+    <a class="navButton" href="AB_Guideline/HNO.html">HNO-Bereich</a>
 
-    <button class="navButton" onclick="window.location='Gastro.html'">Gastroenterologie</button>
+    <a class="navButton" href="AB_Guideline/Gastro.html">Gastroenterologie</a>
 
-    <button class="navButton" onclick="window.location='Uro.html'">Niere und Harnwege</button>
+    <a class="navButton" href="AB_Guideline/Uro.html">Niere und Harnwege</a>
 
     <button class="navButton navParentJS">Chirurgie</button>
     <div class="subMenu1">
-        <button class="navButton" onclick="window.location='Chi1.html'">Haut- und Weichteilinfektionen</button>
-        <button class="navButton" onclick="window.location='Chi2.html'">Intraabdominelle Infektionen</button>
-        <button class="navButton" onclick="window.location='Chi3.html'">Knochen- und Gelenkinfektionen</button>
-        <button class="navButton" onclick="window.location='Chi4.html'">Protheseninfektionen</button>
+        <a class="navButton" href="AB_Guideline/Chi1.html">Haut- und Weichteilinfektionen</a>
+        <a class="navButton" href="AB_Guideline/Chi2.html">Intraabdominelle Infektionen</a>
+        <a class="navButton" href="AB_Guideline/Chi3.html">Knochen- und Gelenkinfektionen</a>
+        <a class="navButton" href="AB_Guideline/Chi4.html">Protheseninfektionen</a>
     </div>
 
-    <button class="navButton" onclick="window.location='Gyn.html'">Gynäkologie</button>
+    <a class="navButton" href="AB_Guideline/Gyn.html">Gynäkologie</a>
 
-    <button class="navButton" onclick="window.location='Sepsis.html'">Sepsis</button>
+    <a class="navButton" href="AB_Guideline/Sepsis.html">Sepsis/Septischer Schock</a>
 
-    <button class="navButton" onclick="window.location='PeriOP.html'">Perioperative Prophylaxe</button>
+    <a class="navButton inactive">Staph. aureus Bakteriämie</a>
 
-    <button class="navButton inactive">Endocarditis</button>
+    <a class="navButton" href="AB_Guideline/PeriOP.html">Perioperative Prophylaxe</a>
 
-    <button class="navButton inactive">Endocarditis-Prophylaxe</button>
+    <a class="navButton inactive">Endocarditis</a>
 
-    <button class="navButton inactive">Pilzinfektionen</button>
+    <a class="navButton inactive">Endocarditis-Prophylaxe</a>
 
-    <button class="navButton inactive">Tagestherapiekosten</button>
+    <button class="navButton navParentJS" >Pilzinfektionen</button>
+    <div class="subMenu1">
+    <a class="navButton" href="AB_Guideline/candida.html">Candida-Infektionen</a>
+    <a class="navButton" href="AB_Guideline/aspergillose.html">Invasive Aspergillose</a>
+    </div>
 
+    <a class="navButton inactive">Tagestherapiekosten</a>
 </main>
-<header>
-    <div id="navMenu" class="headFootButton">
-        <img id="menu" src="../res/menuButton.svg" alt="Menü">
-    </div>
-    <div id="titleBox">
-        <p id="title">AB-Guideline</p>
-    </div>
-    <div class="headFootButton">
-        <img id="search" src="../res/searchButton.svg" alt="Search">
-    </div>
-</header>
-<footer>
-    <div class="headFootButton" onclick="history.back()">
-        <img id="back" src="../res/backButton.svg" alt="Zurück">
-    </div>
-    <div class="headFootButton" onclick="window.location='../index.html'">
-        <img id="home" src="../res/homeButton.svg" alt="Home">
-    </div>
-    <div class="headFootButton">
-    </div>
-</footer>
-<nav>
-    <button class="menuButton" onclick="window.location='../index.html'">Startseite</button>
-    <hr>
-    <button class="menuButton" onclick="window.location='ab_index.html'">AB-Guideline</button>
-    <button class="menuButton" onclick="window.location='../SOP/sop_index.html'">SOPs</button>
-    <hr>
-    <button class="menuButton" onclick="window.location='../changelog.html'">Versions Logbuch</button>
-</nav>
-<div id="cover"></div>
-<script src="../scripts/main.js" type="text/javascript"></script>
-</body>
-</html>

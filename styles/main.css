@@ -10,10 +10,15 @@ html {
 }
 
 :root {
-    --green1: #009A9D;
-    --green2: #17B1B4;
-    --green3: #87CCCD;
-    --green4: #D6EBEC;
+    --theme1: #009A9D;
+    --theme2: #17B1B4;
+    --theme3: #87CCCD;
+    --theme4: #D6EBEC;
+    --textColor1: #000000;
+    --textColor2: #FFFFFF;
+    --borderColor1: #FFFFFF;
+    --borderColor2: lightgrey;
+    --buttonColor: #80cdce;
 }
 
 body {
@@ -24,16 +29,29 @@ body {
     grid-template-columns: repeat(10, 10%);
     margin: 0;
     padding: 0;
-    background-color: var(--green1);
+    background-color: var(--theme1);
+    color: var(--textColor1);
 }
 
 main {
     grid-area: 2/1/3/11;
     padding-top: 3%;
     overflow: auto;
-    background-color: var(--green4);
+    background-color: var(--theme4);
+    font-size: 1.0rem;
 }
 
+a {
+    color: var(--textColor1);
+    text-decoration: none;
+    display: block;
+}
+
+button {
+    color: var(--textColor1);
+    text-decoration: none;
+    display: block;
+}
 main h3 {
     text-align: center;
 }
@@ -42,9 +60,6 @@ main h3 {
     display: none;
 }
 
-.important {
-    text-decoration-color: red;
-}
 
 .title {
     text-align: center;
@@ -63,7 +78,11 @@ main h3 {
 
 }
 
-#dayNight {
+#colors {
+}
+
+ellipse {
+    fill: #FFFFFF;
 }
 
 /*------------------------------*/
@@ -80,8 +99,9 @@ main h3 {
     margin: 0 0 5% 0;
     padding: 1% 0 1% 0;
     width: 100%;
-    background-color: var(--green2);
+    background-color: var(--theme2);
     font-size: 1.0rem;
+    border: 5px var(--theme4) solid;
 }
 
 .byGroupSection p {
@@ -138,28 +158,27 @@ main h3 {
 .navButton {
     padding: 3% 2% 3% 2%;
     width: 100%;
-    background-color: var(--green2);  /*REMOVE, replace by nth type of child for menu.*/
+    border: 2px solid;
+    border-color: var(--borderColor1) var(--borderColor2) var(--borderColor2) var(--borderColor1);
+    box-shadow: 0 0;
+    background-color: var(--theme2);
     display: block;
     text-align: center;
     font-size: inherit;
 }
 
 .subMenu1 .navButton {
-    background-color: var(--green3);
+    background-color: var(--theme3);
 }
 
 .subMenu2 .navButton {
-    background-color: var(--green2);
+    background-color: var(--theme2);
 }
 
 .text {
     font-size: 1.0rem;
     margin: 0 2% 0 2%;
     padding-bottom: 3vh;
-}
-
-.menu {
-    font-size: 1.0rem;
 }
 
 .subMenu1 {
@@ -187,15 +206,15 @@ nav {
     z-index: 3;
     overflow: auto;
     width: 100%;
-    background-color: var(--green2);
+    background-color: var(--theme2);
 }
 
 .menuButton {
     width: 96%;
     border-radius: 20%;
-    border: 2px solid var(--green3);
+    border: 2px solid var(--theme3);
     outline: none;
-    background-color: var(--green4);
+    background-color: var(--theme4);
     opacity: 1.0;
     font-size: 1.1rem;
     text-align: center;
@@ -206,7 +225,7 @@ nav {
     display: none;
     grid-area: 2/1/3/11;
     z-index: 2;
-    background-color: var(--green3);
+    background-color: var(--theme3);
     opacity: 0.7;
 }
 
@@ -217,7 +236,7 @@ nav {
 header {
     grid-area: 1/1/2/11;
     position: static;
-    background-color: var(--green1);
+    background-color: var(--theme1);
     background-size: cover;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -230,7 +249,7 @@ header {
 footer {
     grid-area: 3/1/4/11;
     position: static;
-    background-color: var(--green1);
+    background-color: var(--theme1);
     background-size: cover;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -245,17 +264,11 @@ footer {
     text-align: center;
 }
 
-#menu {
-    margin: 0;
-    padding: 0 0 0 1%;
-    height: 100%;
-    width: auto;
-}
 
 #title {
     margin: 0 0 0 0;
     font-size: 1.5rem;
-    color: white;
+    color: var(--textColor2);
 }
 
 #search {
@@ -264,15 +277,13 @@ footer {
     padding: 5% 5% 5% 5%;
 }
 
-#back {
-    height: 100%;
-    margin: 0 0 0 0;
-    padding-left: 1%;
+.buttonFill {
+    fill: var(--buttonColor);
+    stroke: var(--buttonColor);
 }
 
-#home {
-    height: 100%;
-    margin: 0 0 0 0;
+.buttonStrokeFill {
+    stroke: var(--buttonColor);
 }
 
 .inactive {

@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <title>Protheseninfektionen</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="../styles/main.css">
-</head>
-<body>
 <main>
+    <p id="title" class="hidden">AB-Guideline</p>
     <h3 class="title">Protheseninfektionen</h3>
 
     <button class="byGroupButton navParentJS">Einteilung:</button>
@@ -28,7 +19,7 @@
         </ul>
     </section>
 
-    <button class="byGroupButton navParentJS">Grundsätzliches<br>und Vancomycin-Spiegelbestimmung:</button>
+    <button class="byGroupButton navParentJS">Allgemeines</button>
     <section>
         <ul>
             <li>Keine Antibiotikatherapie ohne mikrobiologischen Befund</li>
@@ -40,7 +31,9 @@
             <li>Rifampicin nicht bei sezernierenden Wunden (Gefahr der Einschleppung resistenter Staphylokokkenstämme)</li>
             <li>Keine Chinolon Monotherapie gegen Staphylokokken</li>
         </ul>
-        <button class="byGroupButton navParentJS navException">Vancomycin Spiegelbestimmung:</button>
+    </section>
+        <button class="byGroupButton navParentJS">Vancomycin Spiegelbestimmung:</button>
+    <section>
         <ul>
             <li>Erstbestimmung am <strong>3.Tag unmittelbar vor der Gabe von Vancomycin (Talspiegel)</strong></li>
             <li>In der Apotheke  werden „rote“ Röhrchen vorgehalten, die für Spiegelbestimmung im Serum vorgesehen sind und können dort im Bedarfsfall abgeholt werden.</li>
@@ -137,41 +130,13 @@
             <li>Bei einzeitigem Wechsel</li>
             <li>Bei zweizeitigem Wechsel mit kurzem Intervall</li>
         </ol>
-
-        <p>Keine Rifampicin-Gabe wenn Prothese entfernt wurde ohne Spacer-Implantation!</p>
+        <p>Beachten:</p>
+        <ol>
+            <li>Patienten > 70 Jahre: 2 x 300mg/Tag</li>
+            <li>Blutbildkontrolle, Transaminasen-Monitoring</li>
+            <li>Interaktionscheck (Apotheke)</li>
+        </ol>
+        <p><strong>Keine</strong> Rifampicin-Gabe wenn Prothese entfernt wurde <strong>ohne</strong> Spacer-Implantation!</p>
     </section>
 
 </main>
-<header>
-    <div id="navMenu" class="headFootButton">
-        <img id="menu" src="../res/menuButton.svg" alt="Menü">
-    </div>
-    <div id="titleBox">
-        <p id="title">AB-Guideline</p>
-    </div>
-    <div class="headFootButton">
-        <img id="search" src="../res/searchButton.svg" alt="Search">
-    </div>
-</header>
-<footer>
-    <div class="headFootButton" onclick="history.back()">
-        <img id="back" src="../res/backButton.svg" alt="Zurück">
-    </div>
-    <div class="headFootButton" onclick="window.location='../index.html'">
-        <img id="home" src="../res/homeButton.svg" alt="Home">
-    </div>
-    <div class="headFootButton">
-    </div>
-</footer>
-<nav>
-    <button class="menuButton" onclick="window.location='../index.html'">Startseite</button>
-    <hr>
-    <button class="menuButton" onclick="window.location='ab_index.html'">AB-Guideline</button>
-    <button class="menuButton" onclick="window.location='../SOP/sop_index.html'">SOPs</button>
-    <hr>
-    <button class="menuButton" onclick="window.location='../changelog.html'">Versions Logbuch</button>
-</nav>
-<div id="cover"></div>
-<script src="../scripts/main.js" type="text/javascript"></script>
-</body>
-</html>

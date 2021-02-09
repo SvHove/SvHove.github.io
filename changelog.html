@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>Antibiotika-Richtlinie</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="manifest" href="./manifest.webmanifest">
-</head>
-<body>
-
 <main class="menu">
+    <p id="title" class="hidden">Willkommen!</p>
 
     <h3>Versions Logbuch</h3>
 
     <section class="byGroupSection">
-        <p><strong>Aktuell: Version: 0.3 (02.02.21)</strong></p>
+        <p><strong>Aktuell: Version: 0.4 (XX.02.21)</strong></p>
+        <p>Inhaltliches:</p>
+        <ul>
+            <li>Pilzinfektionen eingefügt.</li>
+            <li>Anmerkungen zu Rifampicin bei Protheseninfektionen ergänzt.</li>
+            <li>LAE Reihenfolge korrigiert.</li>
+            <li>Titelkorrektur Unterkapitel Hirnabszess/spinaler Abszess/Osteomyelitis.</li>
+            <li>Fehler korrigiert, durch den bei einigen Seiten ein zusätzliches ">" unter der Navigation auftauchte.</li>
+            <li>Protheseninfektionen: Grundsätzliches von Vanco-Spiegelbestimmung getrennt</li>
+        </ul>
+        <p>Code:</p>
+        <ul>
+            <li>Umstellung auf Ajax (Dadurch Einsparung von aktuell etwa 1000 Zeilen Code, Performance-Verbesserung)</li>
+            <li>Buttons zum leichteren Design auf Inline-SVG umgestellt.</li>
+            <li>Vorbereitung erster Menüpunkte (noch keine Freischaltung, Menüdesign folgt)</li>
+            <li>Und an alle, die tatsächlich bis hier gelesen haben: Durch ein Tippen am oberen rechten Bildschirmrand lässt sich ab jetzt zwischen verschiedenen Themenfarben wählen.</li>
+        </ul>
+
+        <button class="byGroupButton navParentJS">Version: 0.3 (02.02.21)</button>
+        <div>
         <ul>
             <li>SOPs eingefügt.</li>
             <li>Menü-Button freigeschaltet.</li>
@@ -27,8 +35,10 @@
             <li>Separate Changelog-Seite, Umbenennung auf Versions Logbuch.</li>
             <li>Erste Vorbereitungen für Tag/Nacht-Modus</li>
         </ul>
+        </div>
 
         <button class="byGroupButton navParentJS">Version: 0.2 (28.01.21)</button>
+        <div>
         <ul>
             <li>Changelog eingeführt</li>
             <li>Änderung von Home- und Zurück-Button.</li>
@@ -37,47 +47,14 @@
             <li>noindex-Metatag gesetzt.</li>
             <li>Service-Worker Code bereinigt.</li>
         </ul>
+        </div>
 
         <button class="byGroupButton navParentJS"><strong>Geplante Änderungen:</strong></button>
         <ul>
             <li>Einstellung eines Markers für "Ausklapp"-Buttons.</li>
             <li>Hinzufügen von Tag/Nacht-Modus.</li>
-            <li>Umstellung auf Ajax</li>
         </ul>
     </section>
 
 
 </main>
-<header>
-    <div id="navMenu" class="headFootButton">
-        <img id="menu" src="res/menuButton.svg" alt="Menü">
-    </div>
-    <div id="titleBox">
-        <p id="title">Willkommen!</p>
-    </div>
-    <div class="headFootButton">
-        <img id="search" src="res/searchButton.svg" alt="Search">
-    </div>
-</header>
-<footer>
-    <div class="headFootButton" onclick="history.back()">
-        <img id="back" src="res/backButton.svg" alt="Zurück">
-    </div>
-    <div class="headFootButton" onclick="window.location='index.html'">
-        <img id="home" src="res/homeButton.svg" alt="Home">
-    </div>
-    <div id="dayNight" class="headFootButton">
-    </div>
-</footer>
-<nav>
-    <button class="menuButton" onclick="window.location='index.html'">Index</button>
-    <hr>
-    <button class="menuButton" onclick="window.location='AB_Guideline/ab_index.html'">AB-Guideline</button>
-    <button class="menuButton" onclick="window.location='SOP/sop_index.html'">SOPs</button>
-    <hr>
-    <button class="menuButton" onclick="window.location='changelog.html'">Versions Logbuch</button>
-</nav>
-<div id="cover"></div>
-<script src="scripts/main.js" type="text/javascript"></script>
-</body>
-</html>
