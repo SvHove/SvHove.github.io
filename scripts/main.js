@@ -67,6 +67,13 @@ function init(element) {
     setUpNavParents(element);
     setUpLinks(element);
     setUpFragments(element);
+    let discoButton =  document.getElementById('disco');
+    if (typeof(discoButton) != 'undefined' && element != null)
+    {
+        discoButton.addEventListener('click', () => {
+            disco();
+        })
+    }
 }
 
 /*------------------------------*/
@@ -76,7 +83,7 @@ function init(element) {
 
 function loadContent(dest, preventHistory = false) {
     let request = new XMLHttpRequest();
-    request.onload = (e) => {
+    request.onload = () => {
         let htmlSnippet = request.responseText;
         if (request.status === 200) {
             document.body.removeChild(document.body.firstElementChild);
