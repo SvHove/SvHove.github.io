@@ -1,5 +1,6 @@
 html {
     font-size: 100%;
+    font-family: sans-serif;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
@@ -79,9 +80,33 @@ main h3 {
 #colors {
 }
 
+.antibiotic {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 ellipse {
     fill: #FFFFFF;
 }
+
+.infoButton {
+    height: 6vh;
+    width: 100%;
+    text-align: center;
+}
+
+#infoBox {
+    background-color: var(--theme4);
+    padding: 2% 2% 2% 2%;
+    display: none;
+    grid-area: 2/3/3/9;
+    margin: 10% 0 10% 0;
+    z-index: 3;
+    overflow: auto;
+    width: 100%;
+    text-align: center;
+}
+
 
 /*------------------------------*/
 /*---------  by Group  ---------*/
@@ -325,3 +350,145 @@ footer {
     text-align: center;
     font-size: 1.5rem;
 }
+
+
+
+
+.levofloxacinPO {
+}
+
+.ampicillinSulbactam {
+}
+
+.piperacillinTazobactam {
+}
+
+.meropenem {
+}
+
+.amoxicillinClavulansäure {
+}
+
+.clarithromycinPO{
+}
+
+.levofloxacinIV{
+}
+
+.tobramycin{
+}
+
+.penicillinG{
+}
+
+.ceftazidim{
+}
+
+.linezolid{
+}
+
+.trimethoprimSulfamethoxazol{
+}
+
+.ganciclovir {
+}
+
+.aciclovir {
+}
+
+.fluconazol {
+}
+
+.voriconazol {
+}
+
+.amphotericinB {
+}
+
+.caspofungin {
+}
+
+.ethambutol {
+}
+
+.rifabutin {
+}
+
+.azithromycin {
+}
+
+.penicillinV {
+}
+
+.clindamycinIV {
+}
+
+.clindamycinPO {
+}
+
+.metronidazolIV {
+}
+
+.metronidazolPO {
+}
+
+.cefazolin {
+}
+
+.cefaclor {
+}
+
+.cefuroxim {
+}
+
+.ceftriaxon {
+}
+
+.tigecyclin {
+}
+
+.vancomycin {
+}
+
+.flucloxacillin {
+}
+
+.rifampicin {
+}
+
+.ciprofloxacin {
+}
+
+.cotrimoxazol {
+}
+
+.gernebcin {
+}
+
+.ampicillin {
+}
+
+.gentamicin {
+}
+
+.amoxicillin {
+}
+
+.doxycyclin {
+}
+
+.fosfomycin {
+}
+
+.voriconazol {
+}
+
+.pivmecillinam {
+}
+
+.nitrofurantoin {
+}
+
+.erythromycin {
+}
+
