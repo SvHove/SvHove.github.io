@@ -338,7 +338,7 @@ function setUpInfoButtons(element) {
             antibioticSpan.innerHTML = "<strong>" + currentAntibiotic.abName + "</strong><br>" + infoButtonXML;
             antibioticSpan.addEventListener('click', () => {
                 if (currentAntibiotic.oralisation != null) {
-                    infoBox.innerHTML = "<p><strong>Oralisierung:</strong><br>" + currentAntibiotic.oralisation + "<br><br><strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
+                    infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br></strong><strong>Oralisierung:</strong><br>" + currentAntibiotic.oralisation + "<br><br><strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
                 } else {
                     infoBox.innerHTML = "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
                 }
