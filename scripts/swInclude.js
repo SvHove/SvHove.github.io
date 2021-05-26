@@ -1,5 +1,7 @@
 "use strict"
 
+console.log("Searching for Service Worker...");
+
 if('serviceWorker' in navigator) {
     console.log('Installation started - main')
     navigator.serviceWorker.register('./sw.js')
