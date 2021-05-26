@@ -68,6 +68,7 @@ function init(element) {
     setUpLinks(element);
     setUpFragments(element);
     setUpInfoButtons(element);
+    /*+
     let discoButton =  document.getElementById('disco');
     if (typeof(discoButton) != 'undefined' && element != null)
     {
@@ -75,6 +76,7 @@ function init(element) {
             disco();
         })
     }
+    */
 }
 
 /*------------------------------*/
@@ -399,7 +401,7 @@ document.getElementById('homeButton').addEventListener('click', (e) => {
     }
     loadContent('indexSnippet.html');
 })
-
+/*
 let wannaDisco = true;
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const disco = async() => {
@@ -410,8 +412,7 @@ const disco = async() => {
         console.log('Current Theme: ' + currentTheme);
     }
 }
-
-
+*/
 
 
 init(document.body);
