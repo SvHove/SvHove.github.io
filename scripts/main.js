@@ -1,6 +1,16 @@
 "use strict"
 
 
+let versionNumber = '0.54';
+let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
+    '- Kapitel Staph. aureus Bakteriämie ergänzt\n' +
+    '- Otitis externa maligna eingefügt\n' +
+    '- Kapitel Sepsis überarbeitet\n' +
+    '- Neu: Update-Benachrichtigungen';
+
+
+
+
 let navParents;
 let cover = document.getElementById('cover');
 let navigation = document.querySelector('nav');
@@ -36,6 +46,14 @@ if (isNaN(currentTheme)) {
     window.localStorage.setItem('theme', '0');
 }
 
+function checkVersion() {
+    console.log('Checking version...');
+    if (window.localStorage.getItem('version') !== versionNumber) {
+        alert(versionNotes);
+        window.localStorage.setItem('version', versionNumber);
+    }
+}
+
 switchColor(themeList[currentTheme]);
 
 colorSwitch.addEventListener('click', () => {
@@ -64,6 +82,7 @@ function switchColor(colors) {
 
 function init(element) {
     console.log('Init ' + element);
+    checkVersion();
     setUpNavParents(element);
     setUpLinks(element);
     setUpFragments(element);
@@ -304,8 +323,10 @@ let vancomycin = new Antibiotic("Vancomycin", fs, fs, fs);
 antibioticMap.set("antibiotic vancomycin", vancomycin);
 let flucloxacillin = new Antibiotic("Flucloxacillin", fs, fs, fs);
 antibioticMap.set("antibiotic flucloxacillin", flucloxacillin);
-let rifampicin = new Antibiotic("Rifampicin", null, fs, fs);
-antibioticMap.set("antibiotic rifampicin", rifampicin);
+let rifampicinPO = new Antibiotic("Rifampicin", null, fs, fs);
+antibioticMap.set("antibiotic rifampicinPO", rifampicinPO);
+let rifampicinIV = new Antibiotic("Rifampicin", fs, fs, fs);
+antibioticMap.set("antibiotic rifampicinIV", rifampicinIV);
 let ciprofloxacin = new Antibiotic("Ciprofloxacin", null, fs, fs);
 antibioticMap.set("antibiotic ciprofloxacin", ciprofloxacin);
 let cotrimoxazol = new Antibiotic("Cotrimoxazol", null, fs, fs);
