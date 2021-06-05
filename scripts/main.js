@@ -8,7 +8,8 @@ let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigs
     '- Kapitel Sepsis überarbeitet\n' +
     '- Neu: Update-Benachrichtigungen';
 
-
+let developerVersion = false;
+if (window.localStorage.getItem('developer') === '1') developerVersion = true;
 
 
 let navParents;
@@ -100,6 +101,7 @@ function init(element) {
 
 /*------------------------------*/
 /*-------  Snippets Area  ------*/
+
 /*------------------------------*/
 
 function loadContent(dest, preventHistory = false) {
@@ -153,6 +155,7 @@ window.addEventListener('popstate', (e) => {
 
 /*------------------------------*/
 /*------  NavParent Area  ------*/
+
 /*------------------------------*/
 
 function setUpNavParents(element) {
@@ -185,6 +188,7 @@ function setUpNavParents(element) {
 
 /*------------------------------*/
 /*------  Fragment Area  -------*/
+
 /*------------------------------*/
 
 function setUpFragments(element) {
@@ -249,107 +253,113 @@ function setUpFragments(element) {
 let infoBox = document.getElementById('infoBox');
 let antibioticMap = new Map();
 let fs = "Folgt in Kürze";
+let noOral = "<strong>Keine Oralisation möglich!</strong>"
 
-function Antibiotic(abName, oralisation, kidney, liver) {
+function Antibiotic(abName, oralisation, oralisationReq, kidney, liver) {
     this.abName = abName;
     this.oralisation = oralisation;
+    this.oralisationReq = oralisationReq;
     this.kidney = kidney;
     this.liver = liver;
 }
 
-let ampicillinSulbactam = new Antibiotic("Ampicillin/Sulbactam", fs, fs, fs);
+let ampicillinSulbactam = new Antibiotic("Ampicillin/Sulbactam", "Eingeschränkt möglich:<br><br>Amoxicillin/Clavulansäure 2-3x 875mg/125mg (BV 70-90%)<br>p.o./i.v. Serumspiegel 35-45%<br>Gleiche Wirkstoffgruppe und identisches Wirkspektrum", 1, fs, fs);
 antibioticMap.set("antibiotic ampicillinSulbactam", ampicillinSulbactam);
-let levofloxacinIV = new Antibiotic("Levofloxacin", fs, fs, fs);
+let levofloxacinIV = new Antibiotic("Levofloxacin", "Uneingeschränkt möglich:<br><br>Levofloxacin p.o., 1-2x 500mg (BV 100%)<br>p.o./i.v. Serumspiegel 90-100%<br>1-2h vor oder 4h nach Ca, Mg, Fe bei gleichzeitiger p.o.-Therapie",1 , fs, fs);
 antibioticMap.set("antibiotic levofloxacinIV", levofloxacinIV);
-let levofloxacinPO = new Antibiotic("Levofloxacin", null, fs, fs);
+let levofloxacinPO = new Antibiotic("Levofloxacin", null, 0, fs, fs);
 antibioticMap.set("antibiotic levofloxacinPO", levofloxacinPO);
-let piperacillinTazobactam = new Antibiotic("Piperacillin/Tazobactam", fs, fs, fs);
+let piperacillinTazobactam = new Antibiotic("Piperacillin/Tazobactam", noOral, 0, fs, fs);
 antibioticMap.set("antibiotic piperacillinTazobactam", piperacillinTazobactam);
-let meropenem = new Antibiotic("Meropenem", fs, fs, fs);
+let meropenem = new Antibiotic("Meropenem", noOral, 0, fs, fs);
 antibioticMap.set("antibiotic meropenem", meropenem);
-let amoxicillinClavulansaeure = new Antibiotic("Amoxicillin/Clavulansäure", null, fs, fs);
+let amoxicillinClavulansaeure = new Antibiotic("Amoxicillin/Clavulansäure", null, 0, fs, fs);
 antibioticMap.set("antibiotic amoxicillinClavulansäure", amoxicillinClavulansaeure);
-let clarithromycinPO = new Antibiotic("Clarithromycin", null, fs, fs);
+let clarithromycinPO = new Antibiotic("Clarithromycin", null, 0, fs, fs);
 antibioticMap.set("antibiotic clarithromycinPO", clarithromycinPO);
-let tobramycin = new Antibiotic("Tobramycin", fs, fs, fs);
+let tobramycin = new Antibiotic("Tobramycin", noOral, 0, fs, fs);
 antibioticMap.set("antibiotic tobramycin", tobramycin);
-let penicillinG = new Antibiotic("Penicillin G", fs, fs, fs);
+let penicillinG = new Antibiotic("Penicillin G", "<strong>Keine adäquate Oralisierung möglich!</strong><br><br>Penicillin V, 3-4x 1,5 Mega (BV 10%)<br>p.o./i.v. Serumspiegel <10%<br>Gleiche Wirkstoffgruppe und identisches Wirkspektrum", 2, fs, fs);
 antibioticMap.set("antibiotic penicillinG", penicillinG);
-let penicillinV = new Antibiotic("Penicillin V", null, fs, fs);
+let penicillinV = new Antibiotic("Penicillin V", null, 0, fs, fs);
 antibioticMap.set("antibiotic penicillinV", penicillinV);
-let ceftazidim = new Antibiotic("Ceftazidim", fs, fs, fs);
+let ceftazidim = new Antibiotic("Ceftazidim", fs, 0, fs, fs);
 antibioticMap.set("antibiotic ceftazidim", ceftazidim);
-let linezolid = new Antibiotic("Linezolid", fs, fs, fs);
+let linezolid = new Antibiotic("Linezolid", "Uneingeschränkt möglich:<br><br>Linezolid p.o., 2x 600mg (BV 100%)<br>p.o./i.v. Serumspiegel 100%", 1, fs, fs);
 antibioticMap.set("antibiotic linezolid", linezolid);
-let trimethoprimSulfamethoxazol = new Antibiotic("Trimethoprim/Sulfamethoxazol", fs, fs, fs);
+let trimethoprimSulfamethoxazol = new Antibiotic("Trimethoprim/Sulfamethoxazol", "Uneingeschränkt möglich:<br><br>Trimethoprim/Sulfamethoxazol p.o., 2x 960mg (BV 80-100%)<br>p.o./i.v. Serumspiegel 80-100%", 1, fs, fs);
 antibioticMap.set("antibiotic trimethoprimSulfamethoxazol", trimethoprimSulfamethoxazol);
-let ganciclovir = new Antibiotic("Ganciclovir", fs, fs, fs);
+let ganciclovir = new Antibiotic("Ganciclovir", fs, 0, fs, fs);
 antibioticMap.set("antibiotic ganciclovir", ganciclovir);
-let aciclovir = new Antibiotic("Aciclovir", fs, fs, fs);
+let aciclovir = new Antibiotic("Aciclovir", fs, 0, fs, fs);
 antibioticMap.set("antibiotic aciclovir", aciclovir);
-let fluconazol = new Antibiotic("Fluconazol (Diflucan)", fs, fs, fs);
+let fluconazol = new Antibiotic("Fluconazol (Diflucan)", fs, 0, fs, fs);
 antibioticMap.set("antibiotic fluconazol", fluconazol);
-let voriconazol = new Antibiotic("Voriconazol", fs, fs, fs);
+let voriconazol = new Antibiotic("Voriconazol", "Uneingeschränkt möglich:<br><br>Voriconazol p.o., 2x 400mg(d1)-200mg (BV 96%)<br>p.o./i.v. Serumspiegel (70-)90%, berechnet auf 70kgKG", 1, fs, fs);
 antibioticMap.set("antibiotic voriconazol", voriconazol);
-let amphotericinB = new Antibiotic("Amphotericin B (Liposomal)", fs, fs, fs);
+let amphotericinB = new Antibiotic("Amphotericin B (Liposomal)", fs, 0, fs, fs);
 antibioticMap.set("antibiotic amphotericinB", amphotericinB);
-let caspofungin = new Antibiotic("Caspofungin", fs, fs, fs);
+let caspofungin = new Antibiotic("Caspofungin", fs, 0, fs, fs);
 antibioticMap.set("antibiotic caspofungin", caspofungin);
-let ethambutol = new Antibiotic("Ethambutol", null, fs, fs);
+let ethambutol = new Antibiotic("Ethambutol", null, 0, fs, fs);
 antibioticMap.set("antibiotic ethambutol", ethambutol);
-let rifabutin = new Antibiotic("Rifabutin", null, fs, fs);
+let rifabutin = new Antibiotic("Rifabutin", null, 0, fs, fs);
 antibioticMap.set("antibiotic rifabutin", rifabutin);
-let azithromycin = new Antibiotic("Azithromycin", null, fs, fs);
+let azithromycin = new Antibiotic("Azithromycin", null, 0, fs, fs);
 antibioticMap.set("antibiotic azithromycin", azithromycin);
-let clindamycinIV = new Antibiotic("Clindamycin", fs, fs, fs);
+let clindamycinIV = new Antibiotic("Clindamycin", "Uneingeschränkt möglich:<br><br>Clindamycin p.o., 4-6x 300mg (BV 90%)<br><br>p.o./i.v. Serumspiegel (70-)80%)", 1, fs, fs);
 antibioticMap.set("antibiotic clindamycinIV", clindamycinIV);
-let clindamycinPO = new Antibiotic("Clindamycin", null, fs, fs);
+let clindamycinPO = new Antibiotic("Clindamycin", null, 0, fs, fs);
 antibioticMap.set("antibiotic clindamycinPO", clindamycinPO);
-let metronidazolIV = new Antibiotic("Metronidazol", fs, fs, fs);
+let metronidazolIV = new Antibiotic("Metronidazol", "Uneingeschränkt möglich:<br><br>Metronidazol p.o., 3x (400mg-)500mg (BV 100%)<br>p.o./i.v. Serumspiegel (80-)100%", 1, fs, fs);
 antibioticMap.set("antibiotic metronidazolIV", metronidazolIV);
-let metronidazolPO = new Antibiotic("Metronidazol", null, fs, fs);
+let metronidazolPO = new Antibiotic("Metronidazol", null, 0, fs, fs);
 antibioticMap.set("antibiotic metronidazolPO", metronidazolPO);
-let cefazolin = new Antibiotic("Cefazolin", fs, fs, fs);
+let cefazolin = new Antibiotic("Cefazolin", fs, 0, fs, fs);
 antibioticMap.set("antibiotic cefazolin", cefazolin);
-let cefaclor = new Antibiotic("Cefaclor", null, fs, fs);
+let cefaclor = new Antibiotic("Cefaclor", null, 0, fs, fs);
 antibioticMap.set("antibiotic cefaclor", cefaclor);
-let cefuroxim = new Antibiotic("Cefuroxim", fs, fs, fs);
+let cefuroxim = new Antibiotic("Cefuroxim", "<strong>Keine adäquate Oralisierung möglich!</strong><br><br>Cefuroxim-axetil p.o., 2x 250-500mg (BV 30-40%)<br>p.o./i.v. Serumspiegel 10-25%", 2, fs, fs);
 antibioticMap.set("antibiotic cefuroxim", cefuroxim);
-let ceftriaxon = new Antibiotic("Ceftriaxon", fs, fs, fs);
+let ceftriaxon = new Antibiotic("Ceftriaxon", fs, 0, fs, fs);
 antibioticMap.set("antibiotic ceftriaxon", ceftriaxon);
-let tigecyclin = new Antibiotic("Tigecyclin", fs, fs, fs);
+let tigecyclin = new Antibiotic("Tigecyclin", fs, 0, fs, fs);
 antibioticMap.set("antibiotic tigecyclin", tigecyclin);
-let vancomycin = new Antibiotic("Vancomycin", fs, fs, fs);
+let vancomycin = new Antibiotic("Vancomycin", "<strong>Keine adäquate Oralisierung möglich!<br><br>Vancomycin p.o., 4x 125mg<br>Keine ausreichende p.o. Resorption!<br>Oral nur bei C. difficile Infektion.", 3, fs, fs);
 antibioticMap.set("antibiotic vancomycin", vancomycin);
-let flucloxacillin = new Antibiotic("Flucloxacillin", fs, fs, fs);
+let flucloxacillin = new Antibiotic("Flucloxacillin", "<strong>Keine adäquate Oralisierung möglich!</strong><br><br>Flucloxacillin p.o., 3x 1g (BV 50-70%)<br>p.o./i.v. Serumspiegel <10%", 2, fs, fs);
 antibioticMap.set("antibiotic flucloxacillin", flucloxacillin);
-let rifampicinPO = new Antibiotic("Rifampicin", null, fs, fs);
+let rifampicinPO = new Antibiotic("Rifampicin", null, 0, fs, fs);
 antibioticMap.set("antibiotic rifampicinPO", rifampicinPO);
-let rifampicinIV = new Antibiotic("Rifampicin", fs, fs, fs);
+let rifampicinIV = new Antibiotic("Rifampicin", "Uneingeschränkt möglich:<br><br>Rifampicin p.o., 450-600mg (initial BV >90%)<br>p.o./i.v. Serumspiegel <90%<br>Absenkung auf 68% nach drei Wochen p.o. Therapie.", 1, fs, fs);
 antibioticMap.set("antibiotic rifampicinIV", rifampicinIV);
-let ciprofloxacin = new Antibiotic("Ciprofloxacin", null, fs, fs);
+let ciprofloxacin = new Antibiotic("Ciprofloxacin", null, 0, fs, fs);
 antibioticMap.set("antibiotic ciprofloxacin", ciprofloxacin);
-let cotrimoxazol = new Antibiotic("Cotrimoxazol", null, fs, fs);
+let cotrimoxazol = new Antibiotic("Cotrimoxazol", null, 0, fs, fs);
 antibioticMap.set("antibiotic cotrimoxazol", cotrimoxazol);
-let gernebcin = new Antibiotic("Gernebcin", fs, fs, fs);
+let gernebcin = new Antibiotic("Gernebcin", fs, 0, fs, fs);
 antibioticMap.set("antibiotic gernebcin", gernebcin);
-let ampicillin = new Antibiotic("Ampicillin", fs, fs, fs);
+let ampicillin = new Antibiotic("Ampicillin", "Eingeschränkt möglich:<br><br>Amoxicillin p.o., 3x 1g (BV 70-90%)<br>p.o./i.v. Serumspiegel 20-25%<br>Gleiche Wirkstoffgruppe und identisches Wirkspektrum.", 1, fs, fs);
 antibioticMap.set("antibiotic ampicillin", ampicillin);
-let gentamicin = new Antibiotic("Gentamicin", fs, fs, fs);
+let gentamicin = new Antibiotic("Gentamicin", fs, 0, fs, fs);
 antibioticMap.set("antibiotic gentamicin", gentamicin);
-let amoxicillin = new Antibiotic("Amoxicillin", null, fs, fs);
+let amoxicillin = new Antibiotic("Amoxicillin", null, 0, fs, fs);
 antibioticMap.set("antibiotic amoxicillin", amoxicillin);
-let doxycyclin = new Antibiotic("Doxycyclin", null, fs, fs);
+let doxycyclin = new Antibiotic("Doxycyclin", null, 0, fs, fs);
 antibioticMap.set("antibiotic doxycyclin", doxycyclin);
-let fosfomycin = new Antibiotic("Fosfomycin", fs, fs, fs);
+let fosfomycin = new Antibiotic("Fosfomycin", "<strong>Keine adäquate Oralisierung möglich!</strong><br><br>Fosfomycin p.o., 1x 3g Einmaldosis<br>Keine ausreichende p.o. Resorption!<br>Oral nur bei ambulant erworbenem, unkompliziertem Harnwegsinfekt der Frau.", 3, fs, fs);
 antibioticMap.set("antibiotic fosfomycin", fosfomycin);
-let pivmecillinam = new Antibiotic("Pivmecillinam", null, fs, fs);
+let pivmecillinam = new Antibiotic("Pivmecillinam", null, 0, fs, fs);
 antibioticMap.set("antibiotic pivmecillinam", pivmecillinam);
-let nitrofurantoin = new Antibiotic("Nitrofurantoin", null, fs, fs);
+let nitrofurantoin = new Antibiotic("Nitrofurantoin", null, 0, fs, fs);
 antibioticMap.set("antibiotic nitrofurantoin", nitrofurantoin);
-let erythromycin = new Antibiotic("Erythromycin", fs, fs, fs);
+let erythromycin = new Antibiotic("Erythromycin", fs, 0, fs, fs);
 antibioticMap.set("antibiotic erythromycin", erythromycin);
 
+let oralisationMap = new Map();
+oralisationMap.set(1, "<ul><li><strong>Klinische Besserung, hämodynamische Stabilität</strong></li><li><strong>Keine Kontraindikation wie z.B. gastrointestinale Resorptionsstörung</strong> (Diarrhoe, Erbrechen, Kurzdarmsyndrom), <strong>Schluckbeschwerden</strong></li><li><strong>Keine schwere Infektion</strong> wie z.B. Endokarditis, Meningitis, S. aureus Bakteriämie</li><li><strong>Adäquate initiale i.v. Therapie bei bestimmten Infektionen</strong> wie z.B. Fremdkörper- und Implantatassoziierte Infektionen, Osteomyelitis</li></ul>");
+oralisationMap.set(2, "<ul><li><strong>Umstellung auf andere Substanzgruppe mit höherem p.o./i.v. Serumspiegel</strong> (ggf. Rücksprache Stabsstelle ABS/Apotheke/Mikrobiologie</li><li><strong>Nur in Ausnahmefällen nach sorgfältiger Nutzen-Risiko-Abwägung!</strong></li>");
+oralisationMap.set(3, "<ul><li><strong>Angabe nicht sinnvoll!</strong></li><li>Keine systemische Wirksamkeit wegen nicht ausreichender Resorption nach p.o.-Gabe</li><li>Abweichende Indikation i.v. und p.o.</li>");
 
 let infoButtonXML = "<div class=\"infoButton\"><svg height=\"100%\" viewBox=\"0 0 26.458 26.458\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(0 -270.54)\"><ellipse class=\"buttonFill\" cx=\"13.229\" cy=\"283.83\" rx=\"11.906\" ry=\"11.848\" fill=\"#80cdce\" stroke=\"#000\" stroke-width=\".755\"/><rect x=\"11.255\" y=\"280.33\" width=\"4.0908\" height=\"11.642\" rx=\".40908\" ry=\".5174\" stroke-width=\"0\"/><rect x=\"11.377\" y=\"275.57\" width=\"3.7041\" height=\"3.7041\" rx=\"1.8521\" ry=\"1.8521\" stroke-width=\"0\"/></g></svg></div>";
 
@@ -360,13 +370,18 @@ function setUpInfoButtons(element) {
             let currentAntibiotic = antibioticMap.get(antibioticSpan.className);
             antibioticSpan.innerHTML = "<strong>" + currentAntibiotic.abName + "</strong><br>" + infoButtonXML;
             antibioticSpan.addEventListener('click', () => {
-                if (currentAntibiotic.oralisation != null) {
-                    infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br></strong><strong>Oralisierung:</strong><br>" + currentAntibiotic.oralisation + "<br><br><strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
+                if (developerVersion === true) {
+                    if (currentAntibiotic.oralisation != null) {
+                        infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br>" + "<strong>Dosierung bei Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Dosierung bei Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver + "<br><br><strong>Oralisierung:</strong><br>" + currentAntibiotic.oralisation + "<br><br><strong>Bedingungen Oralisierung:</strong>" + oralisationMap.get(currentAntibiotic.oralisationReq);
+                    } else {
+                        infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br><strong>Dosierung bei Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Dosierung bei Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
+                    }
                 } else {
-                    infoBox.innerHTML = "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
+                    infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br>  Hier folgen in Kürze weitere Informationen zu Dosisanpassung bei Leber- und Niereninsuffizienz, Besonderheiten etc.";
                 }
-                    infoBox.style.display = 'block';
-                    cover.style.display = 'block';
+                infoBox.style.display = 'block';
+                cover.style.display = 'block';
+                init(infoBox);
             })
         })
     }
@@ -421,6 +436,22 @@ document.getElementById('homeButton').addEventListener('click', (e) => {
         cover.style.display = 'none';
     }
     loadContent('indexSnippet.html');
+})
+
+let developerVersionCheck = 0;
+document.getElementById('developerVersion').addEventListener('click', () => {
+    developerVersionCheck += 1;
+    if (developerVersionCheck === 3) {
+        alert('Entwicklungsversion aktiviert, zum Deaktivieren erneut drei Mal antippen');
+        window.localStorage.setItem('developer', '1');
+        developerVersion = true;
+    }
+    if (developerVersionCheck === 6) {
+        developerVersionCheck = 0;
+        alert('Entwicklungsversion wird deaktiviert, zum Aktivieren erneut drei Mal antippen');
+        window.localStorage.setItem('developer', '0');
+        developerVersion = false;
+    }
 })
 /*
 let wannaDisco = true;
