@@ -1,7 +1,7 @@
 "use strict"
 
 
-let versionNumber = '0.54';
+let versionNumber = '0.541';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
     '- Kapitel Staph. aureus Bakteriämie ergänzt\n' +
     '- Otitis externa maligna eingefügt\n' +
