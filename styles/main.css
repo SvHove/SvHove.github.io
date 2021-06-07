@@ -103,12 +103,13 @@ ellipse {
     grid-area: 2/2/3/10;
     margin: 3% 0 3% 0;
     z-index: 3;
+    overflow: auto;;
 }
 
 #infoBoxContent {
-    height: 80%;
+    height: 90%;
     width: 100%;
-    margin: 0 0 20% 0;
+    margin: 0 0 10% 0;
     overflow: auto;
     text-align: center;
 }
@@ -117,7 +118,7 @@ ellipse {
     background-color: var(--theme2);
     border-radius: 5%;
     width: 30%;
-    margin: 0 35% 0 35%;
+    margin: 0 35% 2% 35%;
     text-align: center;
 }
 
