@@ -251,6 +251,8 @@ function setUpFragments(element) {
 /*------------------------------*/
 
 let infoBox = document.getElementById('infoBox');
+let infoBoxContent = document.getElementById('infoBoxContent');
+let infoBoxButton = document.getElementById('infoBoxButton');
 let antibioticMap = new Map();
 let fs = "Folgt in Kürze";
 let noOral = "<strong>Keine Oralisation möglich!</strong>"
@@ -372,16 +374,15 @@ function setUpInfoButtons(element) {
             antibioticSpan.addEventListener('click', () => {
                 if (developerVersion === true) {
                     if (currentAntibiotic.oralisation != null) {
-                        infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br>" + "<strong>Dosierung bei Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Dosierung bei Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver + "<br><br><strong>Oralisierung:</strong><br>" + currentAntibiotic.oralisation + "<br><br><strong>Bedingungen Oralisierung:</strong>" + oralisationMap.get(currentAntibiotic.oralisationReq);
+                        infoBoxContent.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br>" + "<strong>Dosierung bei Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Dosierung bei Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver + "<br><br><strong>Oralisierung:</strong><br>" + currentAntibiotic.oralisation + "<br><br><strong>Bedingungen Oralisierung:</strong>" + oralisationMap.get(currentAntibiotic.oralisationReq);
                     } else {
-                        infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br><strong>Dosierung bei Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Dosierung bei Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
+                        infoBoxContent.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br><strong>Dosierung bei Niereninsuffizienz:</strong><br>" + currentAntibiotic.kidney + "<br><br><strong>Dosierung bei Leberinsuffizienz:</strong><br>" + currentAntibiotic.liver;
                     }
                 } else {
-                    infoBox.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br>  Hier folgen in Kürze weitere Informationen zu Dosisanpassung bei Leber- und Niereninsuffizienz, Besonderheiten etc.";
+                    infoBoxContent.innerHTML = "<p><strong>" + currentAntibiotic.abName + "</strong><br><br>  Hier folgen in Kürze weitere Informationen zu Dosisanpassung bei Leber- und Niereninsuffizienz, Besonderheiten etc.";
                 }
                 infoBox.style.display = 'block';
                 cover.style.display = 'block';
-                init(infoBox);
             })
         })
     }
@@ -392,37 +393,39 @@ function setUpInfoButtons(element) {
 /*--------  Navigation  --------*/
 /*------------------------------*/
 
+function resetDisplay() {
+    navigation.style.display = 'none';
+    cover.style.display = 'none';
+    infoBox.style.display = 'none';
+}
+
 document.getElementById('navButton').addEventListener('click', () => {
     if (window.getComputedStyle(navigation).display === 'none') {
         navigation.style.display = 'block';
         cover.style.display = 'block';
     } else {
-        navigation.style.display = 'none';
-        cover.style.display = 'none';
+        resetDisplay();
     }
 })
 
 cover.addEventListener('click', () => {
-    navigation.style.display = 'none';
-    infoBox.style.display = 'none';
-    cover.style.display = 'none';
+    resetDisplay();
+})
+
+infoBoxButton.addEventListener('click', () => {
+    resetDisplay();
 })
 
 navigation.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-        navigation.style.display = 'none';
-        cover.style.display = 'none';
+        resetDisplay();
     })
 })
 
 document.getElementById('backButton').addEventListener('click', (e) => {
     e.preventDefault();
-    if (window.getComputedStyle(navigation).display !== 'none') {
-        navigation.style.display = 'none';
-        cover.style.display = 'none';
-    } else if (window.getComputedStyle(infoBox).display !== 'none') {
-        infoBox.style.display = 'none';
-        cover.style.display = 'none';
+    if (window.getComputedStyle(navigation).display !== 'none' || window.getComputedStyle(infoBox).display !== 'none') {
+        resetDisplay();
     } else if (!(localHistory.length === 1)) {
         loadContent(localHistory[(localHistory.length - 2)], true);
         localHistory.pop();
@@ -431,10 +434,7 @@ document.getElementById('backButton').addEventListener('click', (e) => {
 
 document.getElementById('homeButton').addEventListener('click', (e) => {
     e.preventDefault();
-    if (window.getComputedStyle(navigation).display !== 'none') {
-        navigation.style.display = 'none';
-        cover.style.display = 'none';
-    }
+    resetDisplay();
     loadContent('indexSnippet.html');
 })
 
