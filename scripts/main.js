@@ -443,15 +443,16 @@ let developerVersionCheck = 0;
 document.getElementById('developerVersion').addEventListener('click', () => {
     developerVersionCheck += 1;
     if (developerVersionCheck === 3) {
-        alert('Entwicklungsversion aktiviert, zum Deaktivieren erneut drei Mal antippen');
-        window.localStorage.setItem('developer', '1');
-        developerVersion = true;
-    }
-    if (developerVersionCheck === 6) {
+        if (window.localStorage.getItem('developer') === '1') {
+            alert('Entwicklungsversion wird deaktiviert, zum Aktivieren erneut drei Mal antippen');
+            window.localStorage.setItem('developer', '0');
+            developerVersion = false;
+        } else {
+            alert('Entwicklungsversion aktiviert, zum Deaktivieren erneut drei Mal antippen');
+            window.localStorage.setItem('developer', '1');
+            developerVersion = true;
+        }
         developerVersionCheck = 0;
-        alert('Entwicklungsversion wird deaktiviert, zum Aktivieren erneut drei Mal antippen');
-        window.localStorage.setItem('developer', '0');
-        developerVersion = false;
     }
 })
 /*
