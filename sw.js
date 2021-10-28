@@ -1,4 +1,4 @@
-let versionNumber = '0.55';
+let versionNumber = '0.6';
 
 let cacheName = 'pwa3';
 
@@ -16,7 +16,8 @@ try {
                         './AB_Guideline/Neuro1.html', './AB_Guideline/Neuro2.html', './AB_Guideline/Neuro3.html', './AB_Guideline/aspergillose.html', './AB_Guideline/candida.html',
                         './AB_Guideline/Neuro4.html', './AB_Guideline/PeriOP.html', './AB_Guideline/Pn1.html', './AB_Guideline/Pn2.html', './AB_Guideline/Pn3.html',
                         './AB_Guideline/Pn4.html', './AB_Guideline/Pn5.html', './AB_Guideline/Pn6.html', './AB_Guideline/prae.html', 'AB_Guideline/endo1.html', 'AB_Guideline/endo2.html',
-                        './AB_Guideline/Sepsis.html', './AB_Guideline/Uro.html', './SOP/sop_index.html', './SOP/AE_Pneumonie.html', './SOP/COPD.html', './SOP/LAE.html']);
+                        './AB_Guideline/Sepsis.html', './AB_Guideline/Uro.html', './SOP/sop_index.html', './SOP/AE_Pneumonie.html', './SOP/COPD.html', './SOP/LAE.html',
+                        './res/antibiotics.json', './res/Vancomycin_Dosierung.pdf']);
                 }).then(self.skipWaiting())
         );
     });

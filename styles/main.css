@@ -122,7 +122,10 @@ ellipse {
     text-align: center;
 }
 
-
+.directlink {
+    background-color: var(--theme2);
+    display: inline;
+}
 /*------------------------------*/
 /*---------  by Group  ---------*/
 /*------------------------------*/
@@ -372,19 +375,19 @@ footer {
 .levofloxacinPO {
 }
 
-.ampicillinSulbactam {
+.ampicillinSulbactam_IV {
 }
 
-.piperacillinTazobactam {
+.piperacillinTazobactam_IV {
 }
 
-.meropenem {
+.meropenem_IV {
 }
 
-.amoxicillinClavulansäure {
+.amoxicillinClavulansaeure_PO {
 }
 
-.clarithromycinPO{
+.clarithromycin_PO{
 }
 
 .levofloxacinIV{
@@ -393,13 +396,13 @@ footer {
 .tobramycin{
 }
 
-.penicillinG{
+.penicillinG_IV{
 }
 
-.ceftazidim{
+.ceftazidim_IV{
 }
 
-.linezolidIV{
+.linezolid_IV{
 }
 
 .linezolidPO{
@@ -423,13 +426,13 @@ footer {
 .amphotericinB {
 }
 
-.caspofungin {
+.caspofungin_IV {
 }
 
-.ethambutol {
+.ethambutol_PO {
 }
 
-.rifabutin {
+.rifabutin_PO {
 }
 
 .azithromycin {
@@ -438,61 +441,61 @@ footer {
 .penicillinV {
 }
 
-.clindamycinIV {
+.clindamycin_IV {
 }
 
-.clindamycinPO {
+.clindamycin_PO {
 }
 
-.metronidazolIV {
+.metronidazol_IV {
 }
 
-.metronidazolPO {
+.metronidazol_PO {
 }
 
-.cefazolin {
+.cefazolin_IV {
 }
 
-.cefaclor {
+.cefaclor_PO {
 }
 
-.cefuroxim {
+.cefuroxim_IV {
 }
 
-.ceftriaxon {
+.ceftriaxon_IV {
 }
 
-.tigecyclin {
+.tigecyclin_IV {
 }
 
-.vancomycin {
+.vancomycin_IV {
 }
 
-.flucloxacillin {
+.flucloxacillin_IV {
 }
 
-.rifampicinPO {
+.rifampicin_PO {
 }
 
-.rifampicinIV {
+.rifampicin_IV {
 }
 
 .ciprofloxacin {
 }
 
-.cotrimoxazol {
+.cotrimoxazol_PO {
 }
 
-.gernebcin {
+.gernebcin_IV {
 }
 
-.ampicillin {
+.ampicillin_IV {
 }
 
-.gentamicin {
+.gentamicin_IV {
 }
 
-.amoxicillin {
+.amoxicillin_PO {
 }
 
 .doxycyclin {
@@ -504,10 +507,10 @@ footer {
 .voriconazol {
 }
 
-.pivmecillinam {
+.pivmecillinam_PO {
 }
 
-.nitrofurantoin {
+.nitrofurantoin_PO {
 }
 
 .erythromycin {
