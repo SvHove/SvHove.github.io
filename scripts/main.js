@@ -1,10 +1,11 @@
 "use strict"
 
 
-let versionNumber = '0.6';
+let versionNumber = '0.602';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
     '- Vollständige Ausarbeitung der Antibiotika-Infoboxen.\n' +
-    '- Kleinere Fehlerkorrekturen.';
+    '- Kleinere Fehlerkorrekturen.\n' +
+    '- Behebung eines Fehlers, durch den mehrere Antibiotika nicht richtig angezeigt wurden.';
 
 let developerVersion = false;
 if (window.localStorage.getItem('developer') === '1') developerVersion = true;
