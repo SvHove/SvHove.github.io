@@ -92,6 +92,19 @@
       "Monitoring": null
     },
     {
+      "ID": "azithromycin_IV",
+      "Exclude": true,
+      "Name": "Azithromycin",
+      "Standarddosis": null,
+      "Sequenztherapie": null,
+      "Sequenztherapie_Voraussetzungen": null,
+      "Dosisanpassung_Niereninsuffizienz": null,
+      "Dosisanpassung_Haemodialyse": null,
+      "Dosisanpassung_Leberinsuffizienz": null,
+      "Besonderheiten": null,
+      "Monitoring": null
+    },
+    {
       "ID": "caspofungin_IV",
       "Exclude": true,
       "Name": "Caspofungin",
