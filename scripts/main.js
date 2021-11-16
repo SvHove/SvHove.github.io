@@ -47,7 +47,6 @@ let title = document.getElementById('title');
 let localHistory = ['indexSnippet.html'];  // Initializing history with snippet, since a return to index would malfunction.
 let currentMain;
 let overlayActive = false;
-let colorSwitch = document.querySelector('#colors');
 let colors = [
     {
         name: "Anevita",
@@ -366,7 +365,7 @@ function setUpInfoButtons(element) {
                 text = "<p><strong>" + currentAntibiotic.Name + "</strong><br><br><strong>Dosierung:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
                 if (currentAntibiotic.Sequenztherapie) text += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) text += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
-                if (currentAntibiotic.Dosisanpassung_Haemodialyse) text += "<strong>Hämodialyse:</strong><br>Startdosis in der Regel<br>nicht reduzieren.<br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
+                if (currentAntibiotic.Dosisanpassung_Haemodialyse) text += "<strong>Hämodialyse:</strong><br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) text += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
                 if (currentAntibiotic.Monitoring) text += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
                 if (currentAntibiotic.Besonderheiten) text += "<strong>Besonderheiten:</strong><br>" + currentAntibiotic.Besonderheiten + "<br><br>";
