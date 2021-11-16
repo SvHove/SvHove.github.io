@@ -113,7 +113,7 @@ let colors = [
         list: ['#5C2018', '#BC4639', '#D4A59A', '#F3E0DC', '#000000', '#FFFFFF', '#F3E0DC', '#daa59a', '#4285F4', '#6794db']
     },
     {
-        name: "Sonstige",
+        name: "Sputnik",
         list: ['#59253A', '#78244C', '#895061', '#2D4159', '#000000', '#FFFFFF', '#2D4159', '#234773', '#0677A1', '#206c87']
     },
     {
@@ -400,9 +400,9 @@ searchButton.addEventListener('click', () => {
 })
 
 searchField.addEventListener('input', () => {
+    currentMain.innerText = "";
     if(searchField.value.length > 2) {
     let searchText = searchField.value;
-    currentMain.innerText = "";
     let alreadyFound = [];
     function appendElement(i) {
         if (!alreadyFound.includes(i)) {
