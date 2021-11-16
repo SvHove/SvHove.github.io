@@ -20,10 +20,8 @@
         Projekt des Klinikums Emden, welches nicht zur externen Nutzung gedacht ist. Für sämtliche Inhalte wird keine
         Gewähr übernommen!</p>
 
-    <a id="test" class="navButton" href="AB_Guideline/ab_index.html">Zur Guideline</a>
+    <a id="test" class="navButton" href="guideline">Zur Guideline</a>
     <a class="navButton" href="SOP/sop_index.html">Zu den SOPs</a>
-
-
     <a class="navButton" href="changelog.html">Versions Logbuch</a>
 
 </main>
@@ -38,11 +36,13 @@
     </div>
     <div id="titleBox">
         <p id="title">Willkommen!</p>
+        <input id="searchBox" type="text" name="searchBox" >
     </div>
-    <div id="colors" class="headFootButton"> <!--id="searchButton"-->
-        <img id="search" src="res/searchButton.svg" alt="Search">
+    <div id="searchButton" class="headFootButton">
+        <svg id="search" width="100%" height="100%" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 -270.54)"><g stroke="#000"><ellipse class="buttonFill" cx="13.194" cy="283.75" rx="12.072" ry="11.989" stroke-width="0"/><ellipse class="buttonFill" cx="13.207" cy="283.73" rx="11.906" ry="11.848" fill="#80cdce" stroke-width="0"/><ellipse class="buttonFill" cx="9.1365" cy="279.88" rx="5.1997" ry="4.9584" fill="#80cdce" stroke-width=".32282"/></g><path d="m9.2019 284.74a5.0184 4.8038 0 0 1-5.0948-4.7287 5.0184 4.8038 0 0 1 4.9392-4.8777 5.0184 4.8038 0 0 1 5.0965 4.7271 5.0184 4.8038 0 0 1-4.9374 4.8793l-0.08037-4.8032z" fill="#fff" opacity=".46238" stroke-width="0"/><rect transform="matrix(.70972 .70449 -.69283 .7211 0 0)" x="206.02" y="191.72" width="9.748" height=".51942" stroke="#000" stroke-width=".81029"/></g></svg>
     </div>
 </header>
+
 <footer>
     <div id="backButton" class="headFootButton">
         <svg id="back" width="100%" height="100%" viewBox="0 0 26.458 26.458" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 -270.54)"><ellipse class="buttonFill" cx="13.229" cy="283.83" rx="11.906" ry="11.848" stroke-width=".755"/><path class="buttonStrokeFill" transform="matrix(1 0 0 1.3856 0 -109.43)" d="m2.6458 283.77 9.9219-5.7284 7e-6 11.457z" stroke="#80cdce" stroke-width=".15461"/><rect x="11.906" y="281.12" width="9.2604" height="5.2917" stroke="#000" stroke-width=".155"/></g></svg>
@@ -53,15 +53,20 @@
     <div id="developerVersion" class="headFootButton">
     </div>
 </footer>
+
 <nav>
-    <a class="menuButton" href="indexSnippet.html">Index</a>
+    <a class="menuButton" href="settings.html">Einstellungen</a>
     <hr>
-    <a class="menuButton" href="AB_Guideline/ab_index.html">AB-Guideline</a>
+    <a class="menuButton" href="indexSnippet.html">Startseite</a>
+    <hr>
+    <a class="menuButton" href="guideline">AB-Guideline</a>
     <a class="menuButton" href="SOP/sop_index.html">SOPs</a>
     <hr>
     <a class="menuButton" href="changelog.html">Versions Logbuch</a>
 </nav>
+
 <div id="cover"></div>
+
 <script src="scripts/swInclude.js" type="text/javascript"></script>
 <script src="scripts/main.js" type="text/javascript"></script>
 </body>

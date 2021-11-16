@@ -81,7 +81,7 @@
     {
       "ID": "azithromycin_PO",
       "Exclude": true,
-      "Name": "Azithromycin",
+      "Name": "Azithromycin oral",
       "Standarddosis": null,
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -94,7 +94,7 @@
     {
       "ID": "azithromycin_IV",
       "Exclude": true,
-      "Name": "Azithromycin",
+      "Name": "Azithromycin i.v.",
       "Standarddosis": null,
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -198,7 +198,7 @@
     {
       "ID": "ciprofloxacin_IV",
       "Exclude": false,
-      "Name": "Ciprofloxacin",
+      "Name": "Ciprofloxacin i.v.",
       "Standarddosis": "2 x 400mg i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br>Ciprofloxacin p.o.<br>2 x 500-750mg (BV 70-80%) p.o./i.v. Serumspiegel 90-100%",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -211,7 +211,7 @@
     {
       "ID": "ciprofloxacin_PO",
       "Exclude": false,
-      "Name": "Ciprofloxacin",
+      "Name": "Ciprofloxacin oral",
       "Standarddosis": "2 x 500(-750)mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -224,7 +224,7 @@
     {
       "ID": "clarithromycin_IV",
       "Exclude": false,
-      "Name": "Clarithromycin",
+      "Name": "Clarithromycin i.v.",
       "Standarddosis": "2 x 500mg i.v.",
       "Sequenztherapie": "Eingeschränkt möglich:<br>Clarithromycin p.o.<br>2 x (250-)500mg (BV 50%),<br> p.o./i.v. Serumspiegel: (25-)50%.",
       "Sequenztherapie_Voraussetzungen": "2",
@@ -237,7 +237,7 @@
     {
       "ID": "clarithromycin_PO",
       "Exclude": false,
-      "Name": "Clarithromycin",
+      "Name": "Clarithromycin oral",
       "Standarddosis": "2 x 500mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -250,7 +250,7 @@
     {
       "ID": "clindamycin_IV",
       "Exclude": false,
-      "Name": "Clindamycin",
+      "Name": "Clindamycin i.v.",
       "Standarddosis": "3 x 600mg i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br><br>Clindamycin p.o., 4x 450mg oder 3 x 600mg (BV 90%)<br><br>p.o./i.v. Serumspiegel (70-)80%)",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -263,7 +263,7 @@
     {
       "ID": "clindamycin_PO",
       "Exclude": false,
-      "Name": "Clindamycin",
+      "Name": "Clindamycin oral",
       "Standarddosis": "4 x 450mg tgl. p.o.<br>oder: 3 x 600mg p.o. tgl.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -276,7 +276,7 @@
     {
       "ID": "cotrimoxazol_IV",
       "Exclude": false,
-      "Name": "Cotrimoxazol<br>(Sulfamethoxazol/Trimethoprim)",
+      "Name": "Cotrimoxazol<br>(Sulfamethoxazol/Trimethoprim) i.v.",
       "Standarddosis": "2 x 800/160mg i.v.<br>TEP-Infektionen:<br>3 x 800/160mg (off label)<br><br>Spezielle Indikationen (z.B. Pneumocystis jirovecii): Siehe Fachinfo.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br>Cotrimoxazol p.o.<br>2(-3) x 800/160mg (BV 80-100%)<br>p.o./i.v. Serumspiegel: 80-100%.",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -289,7 +289,7 @@
     {
       "ID": "cotrimoxazol_PO",
       "Exclude": false,
-      "Name": "Cotrimoxazol<br>(Sulfamethoxazol/Trimethoprim)",
+      "Name": "Cotrimoxazol<br>(Sulfamethoxazol/Trimethoprim) oral",
       "Standarddosis": "2(-3) x 800/160mg p.o.<br>TEP-Infektionen:<br>3 x 800/160mg (off label)<br><br>Spezielle Indikationen (z.B. Pneumocystis jirovecii): Siehe Fachinfo.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -302,7 +302,7 @@
     {
       "ID": "doxycyclin_IV",
       "Exclude": false,
-      "Name": "Doxycyclin",
+      "Name": "Doxycyclin i.v.",
       "Standarddosis": "Einmalig 200mg,<br>dann 1 x 100mg tgl. i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br>Doxycyclin p.o.<br>1 x 100-200mg (BV >90%)<br>p.o./i.v. Serumspiegel >90%",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -315,7 +315,7 @@
     {
       "ID": "doxycyclin_PO",
       "Exclude": false,
-      "Name": "Doxycyclin",
+      "Name": "Doxycyclin oral",
       "Standarddosis": "Einmalig 200mg,<br>dann 1 x 100mg tgl. p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -367,7 +367,7 @@
     {
       "ID": "fluconazol_IV",
       "Exclude": false,
-      "Name": "Fluconazol (Diflucan)",
+      "Name": "Fluconazol (Diflucan) i.v.",
       "Standarddosis": "Tag 1:<br>1 x 800mg i.v.<br>Ab Tag 2:<br>1 x 400(-800)mg i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br>Fluconazol p.o.<br>1 x 100-800mg (BV 90-100%)<br>p.o./i.v. Serumspiegel: 90-100%.",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -380,7 +380,7 @@
     {
       "ID": "fluconazol_PO",
       "Exclude": false,
-      "Name": "Fluconazol (Diflucan)",
+      "Name": "Fluconazol (Diflucan) oral",
       "Standarddosis": "Tag 1:<br>1 x 800mg p.o.<br>Ab Tag 2:<br>1 x 400(-800)mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -393,7 +393,7 @@
     {
       "ID": "fosfomycin_IV",
       "Exclude": false,
-      "Name": "Fosfomycin",
+      "Name": "Fosfomycin i.v.",
       "Standarddosis": "6-20g i.v. in 2-3 Einzeldosen<br>Ausnahme Meningitis:<br>16-24g tgl. i.v.",
       "Sequenztherapie": "<strong>Keine adäquate Sequenztherapie möglich!</strong><br>Keine ausreichende p.o. Resorption, abweichende Indikation:<br>Oral nur bei ambulant erworbenem, unkompliziertem Harnwegsinfekt der Frau.",
       "Sequenztherapie_Voraussetzungen": null,
@@ -406,7 +406,7 @@
     {
       "ID": "fosfomycin_PO",
       "Exclude": false,
-      "Name": "Fosfomycin",
+      "Name": "Fosfomycin oral",
       "Standarddosis": "1 x 3g",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -458,7 +458,7 @@
     {
       "ID": "levofloxacin_IV",
       "Exclude": false,
-      "Name": "Levofloxacin",
+      "Name": "Levofloxacin i.v.",
       "Standarddosis": "1-2 x 500mg i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br><br>Levofloxacin p.o., 1-2x 500mg (BV 100%)<br>p.o./i.v. Serumspiegel 100%<br>1-2h vor oder 4h nach Ca, Mg, Fe bei gleichzeitiger p.o.-Therapie.",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -471,7 +471,7 @@
     {
       "ID": "levofloxacin_PO",
       "Exclude": false,
-      "Name": "Levofloxacin",
+      "Name": "Levofloxacin oral",
       "Standarddosis": "1-2 x 500mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -484,7 +484,7 @@
     {
       "ID": "linezolid_IV",
       "Exclude": false,
-      "Name": "Linezolid",
+      "Name": "Linezolid i.v.",
       "Standarddosis": "2 x 600mg i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br><br>Linezolid p.o., 2x 600mg (BV 100%)<br>p.o./i.v. Serumspiegel 100%",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -497,7 +497,7 @@
     {
       "ID": "linezolid_PO",
       "Exclude": false,
-      "Name": "Linezolid",
+      "Name": "Linezolid oral",
       "Standarddosis": "2 x 600mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -523,7 +523,7 @@
     {
       "ID": "metronidazol_IV",
       "Exclude": false,
-      "Name": "Metronidazol",
+      "Name": "Metronidazol i.v.",
       "Standarddosis": "3 x 500mg i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br><br>Metronidazol p.o., 3x 500mg (BV 100%)<br>p.o./i.v. Serumspiegel (80-)100%",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -536,7 +536,7 @@
     {
       "ID": "metronidazol_PO",
       "Exclude": false,
-      "Name": "Metronidazol",
+      "Name": "Metronidazol oral",
       "Standarddosis": "3 x 500mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -627,7 +627,7 @@
     {
       "ID": "rifampicin_IV",
       "Exclude": false,
-      "Name": "Rifampicin",
+      "Name": "Rifampicin i.v.",
       "Standarddosis": "1-2 x 450-600mg tgl. i.v.<br>Je nach Indikation.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br><br>Rifampicin p.o., 450-600mg (initial BV >90%, nach drei Wochen Therapie 68%)<br>p.o./i.v. Serumspiegel >90%.",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -640,7 +640,7 @@
     {
       "ID": "rifampicin_PO",
       "Exclude": false,
-      "Name": "Rifampicin",
+      "Name": "Rifampicin oral",
       "Standarddosis": "1-2 x 450-600mg tgl. i.v.<br>Je nach Indikation.<br>Protheseninfektion: >70 Jahre 2 x 300mg.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -679,7 +679,7 @@
     {
       "ID": "vancomycin_IV",
       "Exclude": false,
-      "Name": "Vancomycin",
+      "Name": "Vancomycin i.v.",
       "Standarddosis": "Initialdosis gewichtsadaptiert:<br><60kg: 1g i.v.<br>60-90kg: 1,5g i.v.<br>>90kg: 2g i.v..<br><br> Erhaltungsdosis variiert nach GFR, s. Tabelle Vancomycin-Dosierung Apotheke.<br>Endokarditis, MRSA-SAB:<br>2-3 x 1ß-15mg/kg KG tgl.",
       "Sequenztherapie": "<strong>Keine adäquate Sequenztherapie möglich!<br><br>Vancomycin p.o., 4x 125mg<br>Keine ausreichende p.o. Resorption!<br>Oral nur bei C. difficile Infektion.",
       "Sequenztherapie_Voraussetzungen": null,
@@ -692,7 +692,7 @@
     {
       "ID": "vancomycin_PO",
       "Exclude": false,
-      "Name": "Vancomycin",
+      "Name": "Vancomycin oral",
       "Standarddosis": "4 x 125mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,
@@ -705,7 +705,7 @@
     {
       "ID": "voriconazol_IV",
       "Exclude": false,
-      "Name": "Voriconazol",
+      "Name": "Voriconazol i.v.",
       "Standarddosis": "Tag 1:<br>2 x 6mg/kg KG i.v.<br>Ab Tag 2:<br>2 x 4mg/kg KG i.v.",
       "Sequenztherapie": "Uneingeschränkt möglich:<br><br>Voriconazol p.o., 2x 400mg(d1)-200mg (BV 96%)<br>p.o./i.v. Serumspiegel (70-)90%, berechnet auf 70kgKG",
       "Sequenztherapie_Voraussetzungen": "1",
@@ -718,7 +718,7 @@
     {
       "ID": "voriconazol_PO",
       "Exclude": false,
-      "Name": "Voriconazol",
+      "Name": "Voriconazol oral",
       "Standarddosis": ">40kg KG:<br>Tag 1: 2 x 400mg p.o.<br>Ab Tag 2: 2 x 200mg p.o.",
       "Sequenztherapie": null,
       "Sequenztherapie_Voraussetzungen": null,

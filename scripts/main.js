@@ -1,32 +1,44 @@
 "use strict"
 
 
-let versionNumber = '0.602';
+let versionNumber = '0.7';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Vollständige Ausarbeitung der Antibiotika-Infoboxen.\n' +
-    '- Kleinere Fehlerkorrekturen.\n' +
-    '- Behebung eines Fehlers, durch den mehrere Antibiotika nicht richtig angezeigt wurden.';
+    '- Antibiotika-Liste mit Infos hinzugefügt\n' +
+    '- Suchfunktion eingerichtet\n' +
+    '- Farbauswahl im Menü oben link - Einstellungen - Farbauswahl';
 
 let developerVersion = false;
 if (window.localStorage.getItem('developer') === '1') developerVersion = true;
 
-let antibioticList;
-
-let antibioticRequest = new XMLHttpRequest();
-antibioticRequest.onload = () => {
-    let antibioticListString = antibioticRequest.responseText;
-    if (antibioticRequest.status === 200) {
-        antibioticList = JSON.parse(antibioticListString);
-        console.log("Antibioticlist loaded.")
-    } else {
-        console.log("Requesting antibioticlist failed.")
-    }
+// Setting up
+let antibioticList = {
+    antibiotics: [
+        {
+            ID: null,
+            Exclude: null,
+            Name: null,
+            Standarddosis: null,
+            Sequenztherapie: null,
+            Sequenztherapie_Voraussetzungen: null,
+            Dosisanpassung_Niereninsuffizienz: null,
+            Dosisanpassung_Haemodialyse: null,
+            Dosisanpassung_Leberinsuffizienz: null,
+            Besonderheiten: null,
+            Monitoring: null
+        }
+    ]
 }
-antibioticRequest.open('GET', "res/antibiotics.json");
-antibioticRequest.responseType = '';
-antibioticRequest.setRequestHeader('Accept', 'text/html');
-antibioticRequest.send();
-
+let searchIndex = {
+    index: [
+        {
+            Suche: null,
+            Name: null,
+            Ort: null,
+            Link: null,
+            Methode: null
+        }
+    ]
+}
 
 let navParents;
 let cover = document.getElementById('cover');
@@ -34,32 +46,85 @@ let navigation = document.querySelector('nav');
 let title = document.getElementById('title');
 let localHistory = ['indexSnippet.html'];  // Initializing history with snippet, since a return to index would malfunction.
 let currentMain;
+let overlayActive = false;
 let colorSwitch = document.querySelector('#colors');
-let colorListGreen = ['#009A9D', '#17B1B4', '#87CCCD', '#D6EBEC', '#000000', '#FFFFFF', '#FFFFFF', 'lightgrey', '#80cdce', '#4cb3b5'];
-let colorListBrown = ['#659DBD', '#DAAD86', '#FBEEC1', '#fbe0c1', '#000000', '#FFFFFF', '#fbeec1', '#fbe0c1', '#BC986A', '#a2753b'];
-let colorListRed = ['#5D001E', '#9A1750', '#EE4C7C', '#E3E2DF', '#000000', '#FFFFFF', '#E3E2DF', '#E3AFBC', '#E3AFBC', '#ca7489'];
-let colorListBright = ['#AC3B61', '#BAB2B5', '#EDC7B7', '#EEE2DC', '#000000', '#FFFFFF', '#BAB2B5', '#a17a88', '#123C69', '#315983'];
-let colorListNature = ['#116466', '#D9B08C', '#FFCB9A', '#D1E8E2', '#000000', '#FFFFFF', '#d1e8e2', '#d4e8d1', '#123C69', '#315983'];
-let colorListBlue = ['#5680E9', '#84CEEB', '#5AB9EA', '#C1C8E4', '#000000', '#FFFFFF', '#C1C8E4', '#8392CB', '#8860D0', '#8f79b7'];
-let colorListBlue2 = ['#25274D', '#464866', '#AAABB8', '#2E9CCA', '#000000', '#FFFFFF', '#2E9CCA', '#4c93b1', '#29648A', '#385a71'];
-let colorListBrown2 = ['#46344E', '#5A5560', '#9D8D8F', '#9B786F', '#000000', '#FFFFFF', '#9B786F', '#825043', '#FAED26', '#e0d64f'];
-let colorListNature2 = ['#687864', '#31708E', '#5085A5', '#8FC1E3', '#000000', '#FFFFFF', '#8FC1E3', '#579cca', '#F7F9FB', '#b1cae2'];
-let colorListSputnik = ['#59253A', '#78244C', '#895061', '#2D4159', '#000000', '#FFFFFF', '#2D4159', '#234773', '#0677A1', '#206c87'];
-let colorListRadioactive = ['#1F2605', '#1F6521', '#53900F', '#A4A71E', '#000000', '#FFFFFF', '#A4A71E', '#8c8d36', '#D6CE15', '#bdb938'];
-let colorListVividBlue = ['#10E7DC', '#0074E1', '#1B9CE5', '#6CDAEE', '#000000', '#FFFFFF', '#6CDAEE', '#8bcad5', '#F79E02', '#de9e2e'];
-let colorListRoseRed = ['#5C2018', '#BC4639', '#D4A59A', '#F3E0DC', '#000000', '#FFFFFF', '#F3E0DC', '#daa59a', '#4285F4', '#6794db'];
-let colorListDeepBlue = ['#080F5B', '#0D19A3', '#15DB95', '#F4E4C1', '#000000', '#FFFFFF', '#F4E4C1', '#dbbf82', '#E4C580', '#cba249'];
-let colorListClear = ['#00887A', '#FFCCBC', '#FFFFFF', '#D3E3FC', '#000000', '#FFFFFF', '#D3E3FC', '#91b0e3', '#77A6F7', '#97b1de'];
-let colorListPeace = ['#844D36', '#474853', '#86B3D1', '#AAA0A0', '#000000', '#FFFFFF', '#AAA0A0', '#916b6b', '#8E8268', '#75643e'];
-let colorListDark = ['#2D283E', '#564F6F', '#4C495D', '#D1D7E0', '#000000', '#FFFFFF', '#D1D7E0', '#92a7c7', '#802BB1', '#784397'];
-let colorListSerious = ['#022140', '#265077', '#1E4258', '#494B68', '#000000', '#FFFFFF', '#494B68', '#414682', '#2D5F5D', '#527978'];
-let themeList = [colorListGreen, colorListBrown, colorListRed, colorListBright, colorListNature, colorListBlue, colorListBlue2, colorListBrown, colorListBrown2, colorListNature, colorListNature2,
-    colorListSputnik, colorListRadioactive, colorListVividBlue, colorListRoseRed, colorListDeepBlue, colorListClear, colorListPeace, colorListDark, colorListSerious];
-
+let colors = [
+    {
+        name: "Anevita",
+        list: ['#009A9D', '#17B1B4', '#87CCCD', '#D6EBEC', '#000000', '#FFFFFF', '#FFFFFF', 'lightgrey', '#80cdce', '#4cb3b5']
+    },
+    {
+        name: "Hell",
+        list: ['#659DBD', '#DAAD86', '#FBEEC1', '#fbe0c1', '#000000', '#FFFFFF', '#fbeec1', '#fbe0c1', '#BC986A', '#a2753b']
+    },
+    {
+        name: "Dunkel",
+        list: ['#2D283E', '#564F6F', '#4C495D', '#D1D7E0', '#000000', '#FFFFFF', '#D1D7E0', '#92a7c7', '#802BB1', '#784397']
+    },
+    {
+        name: "Natur",
+        list: ['#116466', '#D9B08C', '#FFCB9A', '#D1E8E2', '#000000', '#FFFFFF', '#d1e8e2', '#d4e8d1', '#123C69', '#315983']
+    },
+    {
+        name: "Klar",
+        list: ['#00887A', '#FFCCBC', '#FFFFFF', '#D3E3FC', '#000000', '#FFFFFF', '#D3E3FC', '#91b0e3', '#77A6F7', '#97b1de']
+    },
+    {
+        name: "Humus",
+        list: ['#46344E', '#5A5560', '#9D8D8F', '#9B786F', '#000000', '#FFFFFF', '#9B786F', '#825043', '#FAED26', '#e0d64f']
+    },
+    {
+        name: "Gallengänge",
+        list: ['#1F2605', '#1F6521', '#53900F', '#A4A71E', '#000000', '#FFFFFF', '#A4A71E', '#8c8d36', '#D6CE15', '#bdb938']
+    },
+    {
+        name: "Namensvorschläge?",
+        list: ['#687864', '#31708E', '#5085A5', '#8FC1E3', '#000000', '#FFFFFF', '#8FC1E3', '#579cca', '#F7F9FB', '#b1cae2']
+    },
+    {
+        name: "Vivid blue",
+        list: ['#10E7DC', '#0074E1', '#1B9CE5', '#6CDAEE', '#000000', '#FFFFFF', '#6CDAEE', '#8bcad5', '#F79E02', '#de9e2e']
+    },
+    {
+        name: "Deep blue",
+        list: ['#080F5B', '#0D19A3', '#15DB95', '#F4E4C1', '#000000', '#FFFFFF', '#F4E4C1', '#dbbf82', '#E4C580', '#cba249']
+    },
+    {
+        name: "Epipelagial",
+        list: ['#5680E9', '#84CEEB', '#5AB9EA', '#C1C8E4', '#000000', '#FFFFFF', '#C1C8E4', '#8392CB', '#8860D0', '#8f79b7']
+    },
+    {
+        name: "Bathypelagial",
+        list: ['#25274D', '#464866', '#AAABB8', '#2E9CCA', '#000000', '#FFFFFF', '#2E9CCA', '#4c93b1', '#29648A', '#385a71']
+    },
+    {
+        name: "Hadopelagial",
+        list: ['#022140', '#265077', '#1E4258', '#494B68', '#000000', '#FFFFFF', '#494B68', '#414682', '#2D5F5D', '#527978']
+    },
+    {
+        name: "Zentrifuge",
+        list: ['#AC3B61', '#BAB2B5', '#EDC7B7', '#EEE2DC', '#000000', '#FFFFFF', '#BAB2B5', '#a17a88', '#123C69', '#315983']
+    },
+    {
+        name: "Geronnen",
+        list: ['#5D001E', '#9A1750', '#EE4C7C', '#E3E2DF', '#000000', '#FFFFFF', '#E3E2DF', '#E3AFBC', '#E3AFBC', '#ca7489']
+    },
+    {
+        name: "Gut durch",
+        list: ['#5C2018', '#BC4639', '#D4A59A', '#F3E0DC', '#000000', '#FFFFFF', '#F3E0DC', '#daa59a', '#4285F4', '#6794db']
+    },
+    {
+        name: "Sonstige",
+        list: ['#59253A', '#78244C', '#895061', '#2D4159', '#000000', '#FFFFFF', '#2D4159', '#234773', '#0677A1', '#206c87']
+    },
+    {
+        name: "Peace",
+        list: ['#844D36', '#474853', '#86B3D1', '#AAA0A0', '#000000', '#FFFFFF', '#AAA0A0', '#916b6b', '#8E8268', '#75643e']
+    },
+]
 
 let currentTheme = parseInt(window.localStorage.getItem('theme'));
 if (isNaN(currentTheme)) {
-    currentTheme = 0;
     window.localStorage.setItem('theme', '0');
 }
 
@@ -71,18 +136,18 @@ function checkVersion() {
     }
 }
 
-switchColor(themeList[currentTheme]);
-
+switchColor(colors[Number(currentTheme)].list);
+/*
 colorSwitch.addEventListener('click', () => {
-    if (currentTheme < (themeList.length - 1)) {
-        switchColor(themeList[++currentTheme]);
+    if (currentTheme < (colors.length - 1)) {
+        switchColor(colors[++currentTheme].list);
     } else {
         currentTheme = 0;
-        switchColor(themeList[currentTheme]);
+        switchColor(colors[currentTheme].list);
     }
     window.localStorage.setItem('theme', currentTheme.toString());
 })
-
+*/
 
 function switchColor(colors) {
     document.documentElement.style.setProperty('--theme1', colors[0]);
@@ -98,8 +163,6 @@ function switchColor(colors) {
 }
 
 function init(element) {
-    console.log('Init ' + element);
-    checkVersion();
     setUpNavParents(element);
     setUpLinks(element);
     setUpFragments(element);
@@ -121,29 +184,41 @@ function init(element) {
 /*------------------------------*/
 
 function loadContent(dest, preventHistory = false) {
-    let request = new XMLHttpRequest();
-    request.onload = () => {
-        let htmlSnippet = request.responseText;
-        if (request.status === 200) {
-            document.body.removeChild(document.body.firstElementChild);
-            document.body.insertAdjacentHTML("afterbegin", htmlSnippet);
-            currentMain = document.body.firstElementChild;
-            console.log(currentMain.firstElementChild);
-            console.log(currentMain.querySelector('#title'));
-            if (currentMain.querySelector('#title') !== null) {
-                title.innerText = currentMain.querySelector('#title').innerHTML;
-            }
-            if (!preventHistory && dest !== localHistory[localHistory.length - 1]) {
-                localHistory.push(dest);
-                history.pushState(htmlSnippet, 'title', '');
-            }
+    console.log("Loading: " + dest);
+    if (functionsMap.has(dest)) {
+        navigationFunctions.list[functionsMap.get(dest)].func();
+    } else {
+        let request = new XMLHttpRequest();
+        request.onload = () => {
+            let htmlSnippet = request.responseText;
+            if (request.status === 200) {
+                document.body.removeChild(document.body.firstElementChild);
+                document.body.insertAdjacentHTML("afterbegin", htmlSnippet);
+                currentMain = document.body.firstElementChild;
+                if (currentMain.querySelector('#title') !== null) {
+                    title.innerText = currentMain.querySelector('#title').innerHTML;
+                }
+            } else return null;
+            init(currentMain);
+
         }
-        init(currentMain);
+        request.open('GET', dest);
+        request.responseType = '';
+        request.setRequestHeader('Accept', 'text/html');
+        request.send();
     }
-    request.open('GET', dest);
-    request.responseType = '';
-    request.setRequestHeader('Accept', 'text/html');
-    request.send();
+    if(!preventHistory) {
+        addToHistory(dest, preventHistory);
+    }
+    init(document.firstElementChild);
+}
+
+function addToHistory(dest) {
+    if (dest !== localHistory[localHistory.length - 1]) {
+        console.log("Adding to history: " + dest);
+        localHistory.push(dest);
+        history.pushState(dest, 'title', '');
+    }
 }
 
 function setUpLinks(element) {
@@ -151,7 +226,6 @@ function setUpLinks(element) {
     if (links.length !== 0) {
         links.forEach((link) => {
             if (!link.className.includes("directlink")) {
-
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     loadContent(link.getAttribute('href'));
@@ -160,17 +234,6 @@ function setUpLinks(element) {
         })
     }
 }
-
-window.addEventListener('popstate', (e) => {
-    e.preventDefault();
-    if (window.getComputedStyle(navigation).display !== 'none') {
-        navigation.style.display = 'none';
-        cover.style.display = 'none';
-    } else if (!(localHistory.length === 1)) {
-        loadContent(localHistory[(localHistory.length - 2)], true);
-        localHistory.pop();
-    }
-})
 
 /*------------------------------*/
 /*------  NavParent Area  ------*/
@@ -269,6 +332,7 @@ function setUpFragments(element) {
 /*--------  Info Button  -------*/
 /*------------------------------*/
 
+
 let infoBox = document.getElementById('infoBox');
 let infoBoxContent = document.getElementById('infoBoxContent');
 let infoBoxButton = document.getElementById('infoBoxButton');
@@ -286,12 +350,9 @@ function setUpInfoButtons(element) {
     if (antibioticSpans.length !== 0) {
 
         function getAntibiotic(name) {
-            console.log("Trying to find antibiotic " + name);
             for (let o = 0; o < antibioticList.antibiotics.length; o++) {
                 let testString = antibioticList.antibiotics[o].ID;
-                console.log(testString);
                 if (name.includes(testString)) {
-                    console.log("Found antibiotic!");
                     return antibioticList.antibiotics[o];
                 }
             }
@@ -313,10 +374,63 @@ function setUpInfoButtons(element) {
                 infoBoxContent.innerHTML = text;
                 infoBox.style.display = 'block';
                 cover.style.display = 'block';
+                overlayActive = true;
             })
         })
     }
 }
+
+/*------------------------------*/
+/*-------  Suchfunktion  -------*/
+
+/*------------------------------*/
+
+let searchButton = document.getElementById('searchButton');
+let searchField = document.getElementById('searchBox');
+searchButton.addEventListener('click', () => {
+    if (window.getComputedStyle(searchField).display === 'none') {
+        resetDisplay();
+        title.style.display = 'none';
+        searchField.style.display = 'block';
+        loadContent("showSearch");
+        searchField.focus();
+    } else {
+        resetDisplay();
+        goBack();
+    }
+})
+
+searchField.addEventListener('input', () => {
+    if(searchField.value.length > 2) {
+    let searchText = searchField.value;
+    currentMain.innerText = "";
+    let alreadyFound = [];
+    function appendElement(i) {
+        if (!alreadyFound.includes(i)) {
+            let searchResult = document.createElement('button');
+            searchResult.className = "byGroupButton"
+            searchResult.innerHTML = "<p><strong>" + searchIndex.index[i].Name + "</strong></p><p>Ort: " + searchIndex.index[i].Ort;
+            searchResult.addEventListener('click', () => {
+                searchField.value = "";
+                resetDisplay();
+                navigationFunctions.list[functionsMap.get(searchIndex.index[i].Methode)].func(searchIndex.index[i].Link);
+            });
+            currentMain.appendChild(searchResult);
+            alreadyFound.push(i);
+        }
+    }
+    for(let i=0; i<searchIndex.index.length; i++) {
+        if(searchIndex.index[i].Suche.startsWith(searchText.toUpperCase())) {
+            appendElement(i);
+        }
+        }
+        for(let i=0; i<searchIndex.index.length; i++) {
+            if(searchIndex.index[i].Suche.includes(searchText.toUpperCase())) {
+                appendElement(i);
+            }
+        }
+    }
+})
 
 
 /*------------------------------*/
@@ -324,16 +438,31 @@ function setUpInfoButtons(element) {
 
 /*------------------------------*/
 
+function goBack() {
+    if (overlayActive) {
+        resetDisplay();
+    } else if (!(localHistory.length === 1)) {
+        localHistory.pop();
+        loadContent(localHistory[(localHistory.length - 1)], true);
+    }
+}
+
 function resetDisplay() {
     navigation.style.display = 'none';
     cover.style.display = 'none';
     infoBox.style.display = 'none';
+    searchField.style.display = 'none';
+    title.style.display = 'block';
+    overlayActive = false;
 }
+
+
 
 document.getElementById('navButton').addEventListener('click', () => {
     if (window.getComputedStyle(navigation).display === 'none') {
         navigation.style.display = 'block';
         cover.style.display = 'block';
+        overlayActive = true;
     } else {
         resetDisplay();
     }
@@ -355,13 +484,14 @@ navigation.querySelectorAll('a').forEach((link) => {
 
 document.getElementById('backButton').addEventListener('click', (e) => {
     e.preventDefault();
-    if (window.getComputedStyle(navigation).display !== 'none' || window.getComputedStyle(infoBox).display !== 'none') {
-        resetDisplay();
-    } else if (!(localHistory.length === 1)) {
-        loadContent(localHistory[(localHistory.length - 2)], true);
-        localHistory.pop();
-    }
+    goBack();
 });
+
+window.addEventListener('popstate', (e) => {
+    e.preventDefault();
+    resetDisplay();
+    goBack();
+})
 
 document.getElementById('homeButton').addEventListener('click', (e) => {
     e.preventDefault();
@@ -385,6 +515,216 @@ document.getElementById('developerVersion').addEventListener('click', () => {
         developerVersionCheck = 0;
     }
 })
+
+
+
+let navigationFunctions = {
+    list: [
+        {
+          id: "guideline",
+          func: async function () {
+              if (antibioticList.antibiotics.length < 2) {
+                  console.log("Fetching antibioticList.");
+                  antibioticList = await (fetch(new Request('res/antibiotics.json')).then(response => {
+                      if (!response.ok) {
+                          console.log("Problem fetching AntibioticList: ${response.status)");
+                      }
+                      return response.json();
+                  }));
+              }
+              console.log("AntibioticList successfully fetched. Length: " + antibioticList.antibiotics.length)
+              loadContent("AB_Guideline/ab_index.html", true);
+          }
+        },
+        {
+            id: "seq",
+            func: async function () {
+                if (antibioticList.antibiotics.length < 2) {
+                    console.log("Undefined antibioticList.antibiotics, fetching again.");
+                    antibioticList = await (fetch(new Request('res/antibiotics.json')).then(response => {
+                        if (!response.ok) {
+                            console.log("Problem fetching AntibioticList: ${response.status)");
+                        }
+                        return response.json();
+                    }));
+                }
+                let newMain = document.createElement('main');
+                let oralisationButton = document.createElement('button');
+                oralisationButton.className = "byGroupButton navParentJS";
+                oralisationButton.innerText = "Anmerkungen orale Sequenztherapie";
+                let oralisationSection = document.createElement('section');
+                oralisationSection.className = "AB_ListSection";
+                oralisationSection.innerHTML = "    <p class=\"byGroupP1\">Die Umstellung von i.v. auf p.o. Therapie ist Teil einer rationalen Antiinfektivatherapie. Die Möglichkeit einer Umsetzung auf p.o. Therapie soll <strong>spätestens an Tag 3</strong> der i.v. Therapie überprüft werden.<br>Oralisierungsmaßnahmen können nicht nur infusionsbedingte Substanz-, Material- und Personalkosten sowie Infektionsrisiken senken, sondern gleichzeitig die Mobilität/frühere Entlassung des Patienten fördern.</p>" +
+                    "    <p class=\"byGroupP1\"><strong>Voraussetzung für eine therapeutische Wirksamkeit bei einer Oralisierung/Sequenztherapie</strong></p>" +
+                    "    <ol>" +
+                    "        <li>Reevaluation anhand des klinischen Bildes des Patienten, Seruminfektparameter und mikrobiologischer Befunde.</li>" +
+                    "        <li>Angemessen hoher p.o. Serumspiegel [%] im Vergleich zum i.v. Serumspiegel</li>" +
+                    "        <li>Erfüllung bestimmter Bedingungen, u.a. gesicherte gastrointestinale Resorption.</li>" +
+                    "    </ol>";
+                newMain.appendChild(oralisationButton);
+                newMain.appendChild(oralisationSection);
+
+                for (let i = 0; i < antibioticList.antibiotics.length; i++) {
+                    let currentAntibiotic = antibioticList.antibiotics[i];
+                    let newButton = document.createElement('button');
+                    newButton.className = "byGroupButton navParentJS";
+                    newButton.innerText = currentAntibiotic.Name;
+                    let newSection = document.createElement('section');
+                    newSection.className = "AB_ListSection";
+                    let sectionInnerHtml = "";
+                    if (currentAntibiotic.Standarddosis) sectionInnerHtml += "<strong>Standarddosis:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
+                    if (currentAntibiotic.Sequenztherapie) sectionInnerHtml += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
+                    if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) sectionInnerHtml += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
+                    if (currentAntibiotic.Dosisanpassung_Haemodialyse) sectionInnerHtml += "<strong>Hämodialyse:</strong><br>Startdosis in der Regel<br>nicht reduzieren.<br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
+                    if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) sectionInnerHtml += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
+                    if (currentAntibiotic.Monitoring) sectionInnerHtml += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
+                    if (currentAntibiotic.Besonderheiten) sectionInnerHtml += "<strong>Besonderheiten:</strong><br>" + currentAntibiotic.Besonderheiten + "<br><br>";
+                    if (currentAntibiotic.Sequenztherapie_Voraussetzungen) sectionInnerHtml += "<strong>Bedingungen Sequenztherapie:</strong><br>" + oralisationMap.get(currentAntibiotic.Sequenztherapie_Voraussetzungen) + "<br><br>";
+                    newSection.innerHTML = sectionInnerHtml;
+                    newMain.appendChild(newButton);
+                    newMain.appendChild(newSection);
+                }
+                document.body.replaceChild(newMain, document.body.firstElementChild);
+                currentMain = newMain;
+            }
+        },
+        {
+            id: "showSearch",
+            func: async function () {
+                if (searchIndex.index.length <2) {
+                    console.log("Fetching search index.");
+                    searchIndex = await (fetch(new Request('res/searchIndex.json')).then(response => {
+                        if (!response.ok) {
+                            console.log("Problem fetching searchIndex: ${response.status)");
+                        }
+                        return response.json();
+                    }));
+                }
+                console.log("SearchList successfully fetched. Length: " + searchIndex.index.length);
+                if (antibioticList.antibiotics.length < 2) {
+                    console.log("Fetching antibioticList.");
+                    antibioticList = await (fetch(new Request('res/antibiotics.json')).then(response => {
+                        if (!response.ok) {
+                            console.log("Problem fetching AntibioticList: ${response.status)");
+                        }
+                        return response.json();
+                    }));
+                }
+                let searchMain = document.createElement('main');
+                searchMain.id = "searchMain";
+                searchMain.innerHTML = "<p>Suche:</p>";
+                document.body.replaceChild(searchMain, document.body.firstElementChild);
+                currentMain = document.body.firstElementChild;
+            }
+        },
+        {
+            id: "getAntibiotic",
+            func: async function (antibioticID) {
+                console.log("Method getAntibiotic called, ID: " + antibioticID);
+                if (antibioticList.antibiotics.length < 2) {
+                    console.log("Fetching antibioticList.");
+                    antibioticList = await (fetch(new Request('res/antibiotics.json')).then(response => {
+                        if (!response.ok) {
+                            console.log("Problem fetching AntibioticList: ${response.status)");
+                        }
+                        return response.json();
+                    }));
+                }
+                let currentAntibiotic;
+                for(let i=0; i<antibioticList.antibiotics.length; i++) {
+                    if(antibioticList.antibiotics[i].ID === antibioticID) {
+                        currentAntibiotic = antibioticList.antibiotics[i]
+                    }
+                }
+                let newMain = document.createElement('main');
+                let text = "<h3 class='search'><strong>" + currentAntibiotic.Name + "</strong><br></h3><p class='search'><strong>Dosierung:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
+                if (currentAntibiotic.Sequenztherapie) text += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
+                if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) text += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
+                if (currentAntibiotic.Dosisanpassung_Haemodialyse) text += "<strong>Hämodialyse:</strong><br>Startdosis in der Regel<br>nicht reduzieren.<br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
+                if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) text += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
+                if (currentAntibiotic.Monitoring) text += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
+                if (currentAntibiotic.Besonderheiten) text += "<strong>Besonderheiten:</strong><br>" + currentAntibiotic.Besonderheiten + "<br><br>";
+                if (currentAntibiotic.Sequenztherapie_Voraussetzungen) text += "<strong>Bedingungen Sequenztherapie:</strong><br>" + oralisationMap.get(currentAntibiotic.Sequenztherapie_Voraussetzungen) + "<br><br></p>";
+                newMain.innerHTML = text;
+                document.body.replaceChild(newMain, document.body.firstElementChild);
+            }
+        },
+        {
+            id: "loadSite",
+            func: async function(siteID) {
+                loadContent(siteID);
+            }
+        },
+        {
+            id: "colorSelection",
+            func: async function() {
+                let newMain = document.createElement("main");
+                let colorForm = document.createElement("form");
+                colorForm.className = "colorSettings";
+                newMain.appendChild(colorForm);
+
+                for (let i=0;i<colors.length;i++) {
+                    let newSection = document.createElement("section");
+                    newSection.className = "colorSelectionSection";
+
+                    let newRadio = document.createElement("input");
+                    newRadio.name = "colorSelectionRadio";
+                    newRadio.type = "radio";
+                    if(window.localStorage.getItem("theme") == i) newRadio.checked = true;
+
+                    newSection.appendChild(newRadio);
+                    newSection.addEventListener("click", () => {
+                        switchColor(colors[i].list);
+                        window.localStorage.setItem("theme", ("" + i));
+                        console.log("Set theme: " + window.localStorage.getItem("theme"));
+                        newRadio.checked = true;
+                    })
+
+                    let newParagraph = document.createElement("p");
+                    newParagraph.className = "colorSelectionParagraph";
+                    newParagraph.innerText = colors[i].name;
+                    newSection.appendChild(newParagraph);
+
+                    let newDiv = document.createElement("div");
+                    newDiv.className = "colorSelectionDiv";
+                    for(let n=0;n<4;n++) {
+                        let newDivSub = document.createElement("div");
+                        newDivSub.className = "colorSelectionSub";
+                        newDivSub.style.background = colors[i].list[n];
+                        newDiv.appendChild(newDivSub);
+                    }
+
+                    newSection.appendChild(newDiv);
+                    colorForm.appendChild(newSection);
+                    document.body.replaceChild(newMain, document.body.firstElementChild);
+                    currentMain = newMain;
+                }
+                // Use classes: colors && colorSub. First radio, then section with div subs.
+            }
+        }
+    ]
+}
+let functionsMap = new Map();
+functionsMap.set("guideline", 0)
+functionsMap.set("seq", 1);
+functionsMap.set("showSearch", 2);
+functionsMap.set("getAntibiotic", 3);
+functionsMap.set("loadSite", 4);
+functionsMap.set("colorSelection", 5);
+
+checkVersion();
+init(document.body);
+
+
+
+
+
+
+
+
+
+
+
 /*
 let wannaDisco = true;
 const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -397,6 +737,3 @@ const disco = async() => {
     }
 }
 */
-
-
-init(document.body);

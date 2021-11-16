@@ -76,13 +76,31 @@ main h3 {
 
 }
 
-
 #colors {
+    display: none;
+}
+
+#searchBox {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.searchMain {
+    text-align: center;
+}
+
+.search {
+    text-align: center;
 }
 
 .antibiotic {
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+.AB_ListSection {
+    text-align: center;
 }
 
 ellipse {
@@ -126,6 +144,47 @@ ellipse {
     background-color: var(--theme2);
     display: inline;
 }
+
+/*------------------------------*/
+/*-----  Color Selection  ------*/
+/*------------------------------*/
+
+.colorSettings {
+    height: 100%;
+    width: 100%;
+}
+
+.colorSelectionSection {
+    width: 100%;
+    height: 5%;
+    padding: 0.5vh 1vw 0.5vh 1vw;
+}
+
+.colorSelectionRadio {
+    margin: 40% 2% 40% 5%;
+}
+
+.colorSelectionParagraph {
+    display: inline;
+}
+
+.colorSelectionDiv {
+    float: right;
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px black solid;
+}
+
+.colorSelectionSub {
+    width: 25%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
 /*------------------------------*/
 /*---------  by Group  ---------*/
 /*------------------------------*/
@@ -283,6 +342,7 @@ nav {
     margin: 2% 2% 2% 2%;
 }
 
+
 #cover {
     display: none;
     grid-area: 2/1/3/11;
@@ -334,9 +394,6 @@ footer {
 }
 
 #search {
-    visibility: hidden;
-    height: 90%;
-    padding: 5% 5% 5% 5%;
 }
 
 .buttonFill {
