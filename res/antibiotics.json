@@ -683,7 +683,7 @@
       "Standarddosis": "Initialdosis gewichtsadaptiert:<br><60kg: 1g i.v.<br>60-90kg: 1,5g i.v.<br>>90kg: 2g i.v..<br><br> Erhaltungsdosis variiert nach GFR, s. Tabelle Vancomycin-Dosierung Apotheke.<br>Endokarditis, MRSA-SAB:<br>2-3 x 10-15mg/kg KG tgl.",
       "Sequenztherapie": "<strong>Keine adäquate Sequenztherapie möglich!</strong><br><br>Vancomycin p.o., 4x 125mg<br>Keine ausreichende p.o. Resorption!<br>Oral nur bei C. difficile Infektion.",
       "Sequenztherapie_Voraussetzungen": null,
-      "Dosisanpassung_Niereninsuffizienz": "Dosierung nach GFR und Talspiegel. Monitoring s. <a class='pdfLoader' href='./res/Vancomycin_Dosierung.pdf'>Tabelle Vancomycin-Dosierung Apotheke (hier tippen)</a>.",
+      "Dosisanpassung_Niereninsuffizienz": "Dosierung nach GFR und Talspiegel. Monitoring s. <a class='pdfLoader' href='res/Vancomycin_Dosierung.pdf'>Tabelle Vancomycin-Dosierung Apotheke (hier tippen)</a>.",
       "Dosisanpassung_Haemodialyse": "Initialdosis wie bei normaler Nierenfunktion.<br>Nur an Dialysetagen 1g nach Dialyse (falls Talspiegel im Zielbereich).",
       "Dosisanpassung_Leberinsuffizienz": "Keine Dosisanpassung erforderlich.",
       "Besonderheiten": "<strong>Max. Infusionsrate: 10mg/min.</strong> (= z.B. 1g ber 1h40m infundieren).<br>Nephrotoxizität<br>Bei Überdosierung Ototoxizität.",
