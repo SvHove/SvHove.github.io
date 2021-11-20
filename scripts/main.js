@@ -54,7 +54,7 @@ let navParents;
 let cover = document.getElementById('cover');
 let navigation = document.querySelector('nav');
 let title = document.getElementById('title');
-let localHistory = ['indexSnippet.html'];  // Initializing history with snippet, since a return to index would malfunction.
+let localHistory = ["startPage"];  // Initializing history with snippet, since a return to index would malfunction.
 let currentMain;
 let overlayActive = false;
 let colors = [
@@ -506,7 +506,7 @@ window.addEventListener('popstate', (e) => {
 document.getElementById('homeButton').addEventListener('click', (e) => {
     e.preventDefault();
     resetDisplay();
-    loadContent('indexSnippet.html');
+    loadContent('startPage');
 })
 /*
 let developerVersionCheck = 0;
