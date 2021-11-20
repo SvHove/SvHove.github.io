@@ -674,7 +674,7 @@ let navigationFunctions = {
                 //newObject.type = "application/pdf";
                 //newObject.data = pdfID;
                 newObject.className = "inAppPDF";
-                newObject.src = "http://docs.google.com/viewer?url=https://svhove.github.io/" +pdfID + "&embedded=true";
+                newObject.src = "https://docs.google.com/viewer?url=https://svhove.github.io/" +pdfID + "&embedded=true";
                 newMain.appendChild(newObject);
                 document.body.replaceChild(newMain, document.body.firstElementChild);
                 currentMain = newMain;
