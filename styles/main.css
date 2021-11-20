@@ -58,10 +58,18 @@ main h3 {
     text-align: center;
 }
 
-.hidden {
+.noDisplay {
     display: none;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.inAppPDF {
+    height: 100%;
+    width: 100%;
+}
 
 .title {
     text-align: center;
@@ -144,6 +152,54 @@ ellipse {
     background-color: var(--theme2);
     display: inline;
 }
+
+.pdfLoader {
+    background-color: var(--theme2);
+    display: inline;
+}
+
+/*------------------------------*/
+/*--------  Startpages  --------*/
+/*------------------------------*/
+
+.startHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10%;
+    width: 100%;
+}
+
+.startTitle {
+    padding: 0;
+    height: 100%;
+    margin: 0 15% 0 15%;
+    font-size: 2em;
+    width: 70%;
+    text-align: center;
+}
+
+.switchStartButtonLeft {
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    height: 100%;
+    background-color: var(--buttonColor);
+}
+
+.switchStartButtonRight {
+    transform: scale(-1,1);
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    height: 100%;
+    background-color: var(--buttonColor);
+}
+
+.firstButton {
+    margin: 5% 0 0 0;
+}
+
 
 /*------------------------------*/
 /*-----  Color Selection  ------*/
@@ -408,8 +464,7 @@ footer {
 .inactive {
     padding: 3% 2% 3% 2%;
     width: 100%;
-    border: 2px solid;
-    border-color: grey;
+    border: 2px solid grey;
     box-shadow: 0 0;
     background-color: grey;
     display: block;
@@ -421,12 +476,10 @@ footer {
     background-color: grey;
 }
 
-#cave {
+.cave {
     text-align: center;
     font-size: 1.5rem;
 }
-
-
 
 
 .levofloxacin_PO {

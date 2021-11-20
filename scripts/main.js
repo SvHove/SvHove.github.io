@@ -7,10 +7,8 @@ let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigs
     '- Suchfunktion eingerichtet\n' +
     '- Farbauswahl im Menü oben link - Einstellungen - Farbauswahl';
 
-let developerVersion = false;
-if (window.localStorage.getItem('developer') === '1') developerVersion = true;
 
-// Setting up
+// Setting up Placeholders
 let antibioticList = {
     antibiotics: [
         {
@@ -39,6 +37,18 @@ let searchIndex = {
         }
     ]
 }
+
+// Checking local history for Settings.
+let developerVersion = false;
+if (window.localStorage.getItem('developer') === '1') developerVersion = true;
+
+let currentTheme = parseInt(window.localStorage.getItem('theme'));
+if (isNaN(currentTheme)) {
+    window.localStorage.setItem('theme', '0');
+    currentTheme = 0;
+}
+
+if (window.localStorage.getItem("startPage") == null || window.localStorage.getItem("startPage") < 0 || window.localStorage.getItem("startPage") > 1) window.localStorage.setItem("startPage", "0");
 
 let navParents;
 let cover = document.getElementById('cover');
@@ -122,10 +132,6 @@ let colors = [
     },
 ]
 
-let currentTheme = parseInt(window.localStorage.getItem('theme'));
-if (isNaN(currentTheme)) {
-    window.localStorage.setItem('theme', '0');
-}
 
 function checkVersion() {
     console.log('Checking version...');
@@ -135,7 +141,8 @@ function checkVersion() {
     }
 }
 
-switchColor(colors[Number(currentTheme)].list);
+switchColor(colors[currentTheme].list);
+
 /*
 colorSwitch.addEventListener('click', () => {
     if (currentTheme < (colors.length - 1)) {
@@ -185,7 +192,9 @@ function init(element) {
 function loadContent(dest, preventHistory = false) {
     console.log("Loading: " + dest);
     if (functionsMap.has(dest)) {
-        navigationFunctions.list[functionsMap.get(dest)].func();
+        navigationFunctions.list[functionsMap.get(dest)].func(dest);
+    } else if (dest.includes(".pdf")) {
+        navigationFunctions.list[5].func(dest);
     } else {
         let request = new XMLHttpRequest();
         request.onload = () => {
@@ -194,6 +203,7 @@ function loadContent(dest, preventHistory = false) {
                 document.body.removeChild(document.body.firstElementChild);
                 document.body.insertAdjacentHTML("afterbegin", htmlSnippet);
                 currentMain = document.body.firstElementChild;
+                console.log("Page loaded.");
                 if (currentMain.querySelector('#title') !== null) {
                     title.innerText = currentMain.querySelector('#title').innerHTML;
                 }
@@ -206,7 +216,7 @@ function loadContent(dest, preventHistory = false) {
         request.setRequestHeader('Accept', 'text/html');
         request.send();
     }
-    if(!preventHistory) {
+    if (!preventHistory) {
         addToHistory(dest, preventHistory);
     }
     init(document.firstElementChild);
@@ -401,30 +411,32 @@ searchButton.addEventListener('click', () => {
 
 searchField.addEventListener('input', () => {
     currentMain.innerText = "";
-    if(searchField.value.length > 2) {
-    let searchText = searchField.value;
-    let alreadyFound = [];
-    function appendElement(i) {
-        if (!alreadyFound.includes(i)) {
-            let searchResult = document.createElement('button');
-            searchResult.className = "byGroupButton"
-            searchResult.innerHTML = "<p><strong>" + searchIndex.index[i].Name + "</strong></p><p>Ort: " + searchIndex.index[i].Ort;
-            searchResult.addEventListener('click', () => {
-                searchField.value = "";
-                resetDisplay();
-                navigationFunctions.list[functionsMap.get(searchIndex.index[i].Methode)].func(searchIndex.index[i].Link);
-            });
-            currentMain.appendChild(searchResult);
-            alreadyFound.push(i);
+    if (searchField.value.length > 2) {
+        let searchText = searchField.value;
+        let alreadyFound = [];
+
+        function appendElement(i) {
+            if (!alreadyFound.includes(i)) {
+                let searchResult = document.createElement('button');
+                searchResult.className = "byGroupButton"
+                searchResult.innerHTML = "<p><strong>" + searchIndex.index[i].Name + "</strong></p><p>Ort: " + searchIndex.index[i].Ort;
+                searchResult.addEventListener('click', () => {
+                    searchField.value = "";
+                    resetDisplay();
+                    navigationFunctions.list[functionsMap.get(searchIndex.index[i].Methode)].func(searchIndex.index[i].Link);
+                });
+                currentMain.appendChild(searchResult);
+                alreadyFound.push(i);
+            }
         }
-    }
-    for(let i=0; i<searchIndex.index.length; i++) {
-        if(searchIndex.index[i].Suche.startsWith(searchText.toUpperCase())) {
-            appendElement(i);
+
+        for (let i = 0; i < searchIndex.index.length; i++) {
+            if (searchIndex.index[i].Suche.startsWith(searchText.toUpperCase())) {
+                appendElement(i);
+            }
         }
-        }
-        for(let i=0; i<searchIndex.index.length; i++) {
-            if(searchIndex.index[i].Suche.includes(searchText.toUpperCase())) {
+        for (let i = 0; i < searchIndex.index.length; i++) {
+            if (searchIndex.index[i].Suche.includes(searchText.toUpperCase())) {
                 appendElement(i);
             }
         }
@@ -454,7 +466,6 @@ function resetDisplay() {
     title.style.display = 'block';
     overlayActive = false;
 }
-
 
 
 document.getElementById('navButton').addEventListener('click', () => {
@@ -497,7 +508,7 @@ document.getElementById('homeButton').addEventListener('click', (e) => {
     resetDisplay();
     loadContent('indexSnippet.html');
 })
-
+/*
 let developerVersionCheck = 0;
 document.getElementById('developerVersion').addEventListener('click', () => {
     developerVersionCheck += 1;
@@ -514,26 +525,25 @@ document.getElementById('developerVersion').addEventListener('click', () => {
         developerVersionCheck = 0;
     }
 })
-
-
+*/
 
 let navigationFunctions = {
     list: [
         {
-          id: "guideline",
-          func: async function () {
-              if (antibioticList.antibiotics.length < 2) {
-                  console.log("Fetching antibioticList.");
-                  antibioticList = await (fetch(new Request('res/antibiotics.json')).then(response => {
-                      if (!response.ok) {
-                          console.log("Problem fetching AntibioticList: ${response.status)");
-                      }
-                      return response.json();
-                  }));
-              }
-              console.log("AntibioticList successfully fetched. Length: " + antibioticList.antibiotics.length)
-              loadContent("AB_Guideline/ab_index.html", true);
-          }
+            id: "guideline",
+            func: async function () {
+                if (antibioticList.antibiotics.length < 2) {
+                    console.log("Fetching antibioticList.");
+                    antibioticList = await (fetch(new Request('res/antibiotics.json')).then(response => {
+                        if (!response.ok) {
+                            console.log("Problem fetching AntibioticList: ${response.status)");
+                        }
+                        return response.json();
+                    }));
+                }
+                console.log("AntibioticList successfully fetched. Length: " + antibioticList.antibiotics.length)
+                loadContent("AB_Guideline/ab_index.html", true);
+            }
         },
         {
             id: "seq",
@@ -574,7 +584,7 @@ let navigationFunctions = {
                     if (currentAntibiotic.Standarddosis) sectionInnerHtml += "<strong>Standarddosis:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
                     if (currentAntibiotic.Sequenztherapie) sectionInnerHtml += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
                     if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) sectionInnerHtml += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
-                    if (currentAntibiotic.Dosisanpassung_Haemodialyse) sectionInnerHtml += "<strong>Hämodialyse:</strong><br>Startdosis in der Regel<br>nicht reduzieren.<br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
+                    if (currentAntibiotic.Dosisanpassung_Haemodialyse) sectionInnerHtml += "<strong>Hämodialyse:</strong><br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
                     if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) sectionInnerHtml += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
                     if (currentAntibiotic.Monitoring) sectionInnerHtml += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
                     if (currentAntibiotic.Besonderheiten) sectionInnerHtml += "<strong>Besonderheiten:</strong><br>" + currentAntibiotic.Besonderheiten + "<br><br>";
@@ -590,7 +600,7 @@ let navigationFunctions = {
         {
             id: "showSearch",
             func: async function () {
-                if (searchIndex.index.length <2) {
+                if (searchIndex.index.length < 2) {
                     console.log("Fetching search index.");
                     searchIndex = await (fetch(new Request('res/searchIndex.json')).then(response => {
                         if (!response.ok) {
@@ -630,8 +640,8 @@ let navigationFunctions = {
                     }));
                 }
                 let currentAntibiotic;
-                for(let i=0; i<antibioticList.antibiotics.length; i++) {
-                    if(antibioticList.antibiotics[i].ID === antibioticID) {
+                for (let i = 0; i < antibioticList.antibiotics.length; i++) {
+                    if (antibioticList.antibiotics[i].ID === antibioticID) {
                         currentAntibiotic = antibioticList.antibiotics[i]
                     }
                 }
@@ -639,37 +649,53 @@ let navigationFunctions = {
                 let text = "<h3 class='search'><strong>" + currentAntibiotic.Name + "</strong><br></h3><p class='search'><strong>Dosierung:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
                 if (currentAntibiotic.Sequenztherapie) text += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) text += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
-                if (currentAntibiotic.Dosisanpassung_Haemodialyse) text += "<strong>Hämodialyse:</strong><br>Startdosis in der Regel<br>nicht reduzieren.<br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
+                if (currentAntibiotic.Dosisanpassung_Haemodialyse) text += "<strong>Hämodialyse:</strong><br>Startdosis in der Regel<br>nicht reduzieren.<br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link, hier tippen)</a>.<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) text += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
                 if (currentAntibiotic.Monitoring) text += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
                 if (currentAntibiotic.Besonderheiten) text += "<strong>Besonderheiten:</strong><br>" + currentAntibiotic.Besonderheiten + "<br><br>";
                 if (currentAntibiotic.Sequenztherapie_Voraussetzungen) text += "<strong>Bedingungen Sequenztherapie:</strong><br>" + oralisationMap.get(currentAntibiotic.Sequenztherapie_Voraussetzungen) + "<br><br></p>";
                 newMain.innerHTML = text;
+                init(newMain);
                 document.body.replaceChild(newMain, document.body.firstElementChild);
             }
         },
         {
             id: "loadSite",
-            func: async function(siteID) {
+            func: async function (siteID) {
                 loadContent(siteID);
             }
         },
         {
+            id: "loadPdf",
+            func: async function (pdfID) {
+                console.log("loadPDF called");
+                let newMain = document.createElement("main");
+                let newObject = document.createElement("iframe");
+                //newObject.type = "application/pdf";
+                //newObject.data = pdfID;
+                newObject.className = "inAppPDF";
+                newObject.src = pdfID;
+                newMain.appendChild(newObject);
+                document.body.replaceChild(newMain, document.body.firstElementChild);
+                currentMain = newMain;
+            }
+        },
+        {
             id: "colorSelection",
-            func: async function() {
+            func: async function () {
                 let newMain = document.createElement("main");
                 let colorForm = document.createElement("form");
                 colorForm.className = "colorSettings";
                 newMain.appendChild(colorForm);
 
-                for (let i=0;i<colors.length;i++) {
+                for (let i = 0; i < colors.length; i++) {
                     let newSection = document.createElement("section");
                     newSection.className = "colorSelectionSection";
 
                     let newRadio = document.createElement("input");
                     newRadio.name = "colorSelectionRadio";
                     newRadio.type = "radio";
-                    if(window.localStorage.getItem("theme") == i) newRadio.checked = true;
+                    if (Number(window.localStorage.getItem("theme")) === i) newRadio.checked = true;
 
                     newSection.appendChild(newRadio);
                     newSection.addEventListener("click", () => {
@@ -686,7 +712,7 @@ let navigationFunctions = {
 
                     let newDiv = document.createElement("div");
                     newDiv.className = "colorSelectionDiv";
-                    for(let n=0;n<4;n++) {
+                    for (let n = 0; n < 4; n++) {
                         let newDivSub = document.createElement("div");
                         newDivSub.className = "colorSelectionSub";
                         newDivSub.style.background = colors[i].list[n];
@@ -700,6 +726,52 @@ let navigationFunctions = {
                 }
                 // Use classes: colors && colorSub. First radio, then section with div subs.
             }
+        },
+        {
+            id: "startPage",
+            func: async function () {
+                let startPagesMap = new Map();
+                startPagesMap.set("0", "Apotheke.html");
+                startPagesMap.set("1", "Placeholder.html");
+                let startPage = window.localStorage.getItem("startPage");
+
+                let request = new XMLHttpRequest();
+                request.onload = () => {
+                    let htmlSnippet = request.responseText;
+                    if (request.status === 200) {
+                        document.body.removeChild(document.body.firstElementChild);
+                        document.body.insertAdjacentHTML("afterbegin", htmlSnippet);
+                        currentMain = document.body.firstElementChild;
+                        title.innerText = "Willkommen!";
+                        let buttonLeft = currentMain.querySelector(".switchStartButtonLeft");
+                        let buttonRight = currentMain.querySelector(".switchStartButtonRight");
+                        if (Number(startPage) !== 0) {
+                            buttonLeft.style.visibility = "visible";
+                            buttonLeft.addEventListener("click", () => {
+                                startPage = Number(startPage) - 1;
+                                window.localStorage.setItem("startPage", startPage);
+                                loadContent("startPage");
+                            });
+                        } else buttonLeft.style.visibility = "hidden";
+                        console.log("Startpage Map size: " + startPagesMap.size);
+                        if (Number(startPage) !== (startPagesMap.size - 1)) {
+                            buttonRight.style.visibility = "visible";
+                            buttonRight.addEventListener("click", () => {
+                                startPage = Number(startPage) + 1;
+                                window.localStorage.setItem("startPage", startPage);
+                                loadContent("startPage");
+                            })
+                        } else buttonRight.style.visibility = "hidden";
+                    } else return null;
+                    init(currentMain);
+
+                }
+                console.log("Testing: " + startPagesMap.get(startPage));
+                request.open('GET', startPagesMap.get(startPage));
+                request.responseType = '';
+                request.setRequestHeader('Accept', 'text/html');
+                request.send();
+            }
         }
     ]
 }
@@ -709,19 +781,33 @@ functionsMap.set("seq", 1);
 functionsMap.set("showSearch", 2);
 functionsMap.set("getAntibiotic", 3);
 functionsMap.set("loadSite", 4);
-functionsMap.set("colorSelection", 5);
+functionsMap.set("loadPdf", 5)
+functionsMap.set("colorSelection", 6);
+functionsMap.set("startPage", 7);
+
+console.log(window.localStorage.getItem('cave'));
+if (window.localStorage.getItem('cave') == null) {
+    let warningMain = document.createElement("main");
+    let warningParagraph = document.createElement("p");
+    warningParagraph.className = "cave";
+    warningParagraph.innerHTML = "<strong>Achtung!</strong><br>Bei dieser Seite handelt es sich um ein in Entwicklung befindliches Projekt des Klinikums Emden, welches nicht zur externen Nutzung gedacht ist. Für sämtliche Inhalte wird keine Gewähr übernommen!";
+    let warningButton = document.createElement("button");
+    warningButton.className = "byGroupButton";
+    warningButton.innerHTML = "Gelesen<br>(Nicht mehr anzeigen)";
+    warningButton.addEventListener("click", () => {
+        loadContent("startPage", false);
+    })
+    warningMain.appendChild(warningParagraph);
+    warningMain.appendChild(warningButton);
+    document.body.replaceChild(warningMain, document.body.firstElementChild);
+    currentMain = warningMain;
+    init(currentMain);
+    window.localStorage.setItem('cave', 'done');
+} else loadContent("startPage", false);
+
 
 checkVersion();
 init(document.body);
-
-
-
-
-
-
-
-
-
 
 
 /*
