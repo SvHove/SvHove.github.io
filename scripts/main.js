@@ -1,11 +1,9 @@
 "use strict"
 
 
-let versionNumber = '0.7';
+let versionNumber = '0.72';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Antibiotika-Liste mit Infos hinzugefügt\n' +
-    '- Suchfunktion eingerichtet\n' +
-    '- Farbauswahl im Menü oben link - Einstellungen - Farbauswahl';
+    '- Inhaltlich wieder aktueller Stand zum Leitfaden.';
 
 
 // Setting up Placeholders
@@ -374,7 +372,7 @@ function setUpInfoButtons(element) {
                 let text;
                 text = "<p><strong>" + currentAntibiotic.Name + "</strong><br><br><strong>Dosierung:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
                 if (currentAntibiotic.Sequenztherapie) text += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
-                if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) text += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
+                if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) text += "<strong>Niereninsuffizienz:</strong><br>Startdosis immer gleich Standarddosis!<br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Haemodialyse) text += "<strong>Hämodialyse:</strong><br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) text += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
                 if (currentAntibiotic.Monitoring) text += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
@@ -583,7 +581,7 @@ let navigationFunctions = {
                     let sectionInnerHtml = "";
                     if (currentAntibiotic.Standarddosis) sectionInnerHtml += "<strong>Standarddosis:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
                     if (currentAntibiotic.Sequenztherapie) sectionInnerHtml += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
-                    if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) sectionInnerHtml += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
+                    if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) sectionInnerHtml += "<strong>Niereninsuffizienz:</strong><br>Startdosis immer gleich Standarddosis!<br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
                     if (currentAntibiotic.Dosisanpassung_Haemodialyse) sectionInnerHtml += "<strong>Hämodialyse:</strong><br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link)</a>.<br><br>";
                     if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) sectionInnerHtml += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
                     if (currentAntibiotic.Monitoring) sectionInnerHtml += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
@@ -648,7 +646,7 @@ let navigationFunctions = {
                 let newMain = document.createElement('main');
                 let text = "<h3 class='search'><strong>" + currentAntibiotic.Name + "</strong><br></h3><p class='search'><strong>Dosierung:</strong><br>" + currentAntibiotic.Standarddosis + "<br><br>";
                 if (currentAntibiotic.Sequenztherapie) text += "<strong>Sequenztherapie:</strong><br>(Bedingungen s.u.)<br>" + currentAntibiotic.Sequenztherapie + "<br><br>";
-                if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) text += "<strong>Niereninsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
+                if (currentAntibiotic.Dosisanpassung_Niereninsuffizienz) text += "<strong>Niereninsuffizienz:</strong><br>Startdosis immer gleich Standarddosis!<br>" + currentAntibiotic.Dosisanpassung_Niereninsuffizienz + "<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Haemodialyse) text += "<strong>Hämodialyse:</strong><br>Startdosis in der Regel<br>nicht reduzieren.<br><br>" + currentAntibiotic.Dosisanpassung_Haemodialyse + "<br><br>Weitere Dialyseformen siehe <a class='directlink' href='https://www.klinikum.uni-heidelberg.de/fileadmin/medizinische_klinik/Klinische_Pharmakologie/Downloads/Heidelberger_Tabelle_2021.pdf'>Heidelberger Liste (externer Link, hier tippen)</a>.<br><br>";
                 if (currentAntibiotic.Dosisanpassung_Leberinsuffizienz) text += "<strong>Leberinsuffizienz:</strong><br>" + currentAntibiotic.Dosisanpassung_Leberinsuffizienz + "<br><br>";
                 if (currentAntibiotic.Monitoring) text += "<strong>Monitoring:</strong><br>" + currentAntibiotic.Monitoring + "<br><br>";
