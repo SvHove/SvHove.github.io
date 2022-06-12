@@ -571,6 +571,9 @@ footer {
 .cefaclor_PO {
 }
 
+.cefpodoxim_PO {
+}
+
 .cefuroxim_IV {
 }
 
@@ -610,14 +613,18 @@ footer {
 .amoxicillin_PO {
 }
 
-.doxycyclin {
+.doxycyclin_IV {
 }
 
-.fosfomycin {
+.doxycyclin_PO {
 }
 
-.voriconazol {
+.fosfomycin_IV {
 }
+
+.fosfomycin_PO {
+}
+
 
 .pivmecillinam_PO {
 }

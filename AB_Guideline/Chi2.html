@@ -32,45 +32,71 @@
 
     <button class="byGroupButton navParentJS">Primäre Peritonitis</button>
     <section>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ceftriaxon_IV"></span>1 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic metronidazol_IV"></span>3 x 500mg i.v. tgl.<br><br>Therapiedauer:<br>7 Tage, Kontrolle nach 48h</p>
+        <button class="byGroupButton navParentJS navException">Ambulant erworben</button>
+        <section>
+            <p class="byGroupP1">Häufigste Erreger: E. coli, Enterokokken, Klebsiella spp., ESBL Bildner</p>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+                    <p class="fragmentParagraph"><span class="antibiotic ceftriaxon_IV"></span>1 x 2g<br><br>Therapiedauer:<br>7 Tage, Kontrolle nach 48h.</p>
+                </div>
             </div>
-        </div>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+                    <p class="fragmentParagraph">Sequenztherapie bei klinischer Besserung:<br><br><span class="antibiotic ciprofloxacin_PO"></span>2 x 500mg<br><br><em>+</em><br><br><span class="antibiotic metronidazol_PO"></span>3 x 400mg</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="byGroupButton navParentJS navException">Nosokomial, kompliziert</button>
+        <section>
+            <p class="byGroupP1">Häufigste Erreger:<br>Grampositive Bakterien, Enterokokken.</p>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+                    <p class="fragmentParagraph"><span class="antibiotic piperacillinTazobactam_IV"></span>3 x 4,5g<br><br>Therapiedauer:<br>5-7 Tage.</p>
+                </div>
+            </div>
+        </section>
     </section>
 
-    <button class="byGroupButton navParentJS">Ambulant erworben<br>Frische Perforation, lokal, kreislaufstabil</button>
+    <button class="byGroupButton navParentJS">Sekundäre Peritonitis, ambulant erworben</button>
     <section>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ceftriaxon_IV"></span>1 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic metronidazol_IV"></span>3 x 500mg i.v. tgl.<br><br>Therapiedauer:<br>3-5 Tage nach Klinik</p>
+        <button class="byGroupButton navParentJS navException">Frische Perforation (<4 Std.), lokal, kreislaufstabil, kein Risiko für MRE</button>
+        <section>
+            <p class="byGroupP1">Häufigste Erreger:<br>Enterobacteriaceae, Anaerobier, Enterokokken.</p>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+                    <p class="fragmentParagraph"><span class="antibiotic cefuroxim_IV"></span>3 x 1,5g i.v.<br><br><em>+</em><br><br><span class="antibiotic metronidazol_IV"></span>3 x 500mg<br><br>Therapiedauer:<br>1-3 Tage nach Klinik</p>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <button class="byGroupButton navParentJS navException">Ältere Perforation, diffus, kreislaufstabil, individuelles MRE Risiko</button>
+        <section>
+            <p class="byGroupP1">Häufigste Erreger:<br>Enterobacteriaceae, Anaerobier, Enterokokken, ESBL-Bildner</p>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+                    <p class="fragmentParagraph"><span class="antibiotic piperacillinTazobactam_IV"></span>3 x 4,5g i.v.<br><br>Therapiedauer:<br>5 Tage</p>
+                </div>
+            </div>
+        </section>
     </section>
 
-    <button class="byGroupButton navParentJS">Ambulant erworben<br>Ältere Perforation, diffus, kreislaufstabil, individuelles MRE Risiko</button>
+    <button class="byGroupButton navParentJS">Nosokomial (postoperativ, tertiär)</button>
     <section>
+        <p class="byGroupP1">Häufigste Erreger:<br>Enterobacteriaceae, Anaerobier, ESBL-Bildner, gramneg. Problemkeime (Acinetobacter, Enterobacter, Pseudomonas), Enterokokken (E. faecium, VRE)</p>
         <div class="fragmentWrapper">
             <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><span class="antibiotic piperacillinTazobactam_IV"></span>3 x 4,5g i.v. tgl.<br><br>Therapiedauer:<br>5 Tage</p>
-            </div>
-        </div>
-    </section>
-
-    <button class="byGroupButton navParentJS">Nosokomial (postoperativ, tertiär)<br>Diffus, kreislaufinstabil, hohes MRE Risiko</button>
-    <section>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic tigecyclin_IV"></span>Erste Dosis: 100mg, danach 2 x 50mg<br><br>Therapiedauer:<br>7-10 Tage, ggf. auch länger je nach Klinik</p>
-                <p class="fragmentParagraph">Alternative 2:<br><br><span class="antibiotic meropenem_IV"></span>3 x 2g i.v. tgl.<br><br><em>ggf. zusätzlich</em><br><br><span class="antibiotic linezolid_IV"></span>2 x 0,6g i.v. tgl.<br><br>Therapiedauer:<br>7-10 Tage, ggf. auch länger je nach Klinik</p>
+                <p class="fragmentParagraph">Therapie der Wahl<br><br><span class="antibiotic meropenem_IV"></span>3 x 2g i.v. tgl.<br><br><em>ggf. zusätzlich</em><br><br><span class="antibiotic linezolid_IV"></span>2 x 600mg i.v. tgl.<br><br>Therapiedauer:<br>7-10 Tage</p>
+                <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic tigecyclin_IV"></span>Erste Dosis: 100mg, danach 2 x 50mg<br><br>Therapiedauer:<br>7-10 Tage</p>
             </div>
         </div>
         <p class="byGroupP1"><strong>Achtung: Candida-Infektion bedenken!</strong></p>
         <div class="fragmentWrapper">
             <div class="fragmentDiv">
-                <p class="fragmentParagraph"><span class="antibiotic caspofungin_IV"></span>über 80kg KG:<br>täglich 1 x 70mg<br><br>Unter 80kg:<br>1 x 70mg am 1. Tag,<br> dann 1 x 50mg täglich<br><br>Therapiedauer:<br>Mindestens 14 Tage, dann nach Klinik und Antibiogramm</p>
+                <p class="fragmentParagraph"><span class="antibiotic caspofungin_IV"></span>über 80kg KG:<br>täglich 1 x 70mg<br><br>Unter 80kg:<br>1 x 70mg am 1. Tag,<br> dann 1 x 50mg täglich<br><br>Therapiedauer:<br>Mindestens 14 Tage nach 1. negativer BK</p>
             </div>
         </div>
+        <p class="byGroupP1">Bitte unbedingt beachten: Therapiedauer, Eskalation, Deeskalation richtet sich immer nach dem klinischen Zustand des Patienten und dem Antibiogramm, laut Studienlage kann bei adäquater Fokussanierung und bei Patienten ohne Immunsuppression die Therapiedauer verkürzt werden.</p>
     </section>
 
 </main>
