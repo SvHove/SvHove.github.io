@@ -1,6 +1,6 @@
-let versionNumber = '0.723';
+let versionNumber = '0.73';
 
-let cacheName = 'pwa3';
+let cacheName = 'pwa4';
 
 try {
     self.addEventListener('install', event => {
@@ -9,7 +9,7 @@ try {
             caches.open(cacheName)
                 .then(cache => {
                     return cache.addAll(['./', './index.html', './indexSnippet.html', './settings.html', './changelog.html', './manifest.webmanifest', './scripts/swInclude.js',
-                        './scripts/main.js', './styles/main.css', './images/logo_kliniken_192.png', './images/logo_kliniken_512.png',
+                        './scripts/main.js', './styles/main.css', './images/logo_emden_192.png', './images/logo_emden_512.png',
                         './apple-touch-icon-120x120.png', './apple-touch-icon-152x152.png', './apple-touch-icon-180x180.png', './AB_Guideline/ab_index.html',
                         './AB_Guideline/Allgemeines.html', 'AB_Guideline/seq.html', './AB_Guideline/Chi1.html', './AB_Guideline/Chi2.html', './AB_Guideline/Chi3.html',
                         './AB_Guideline/Chi4.html', './AB_Guideline/Chi5.html', 'AB_Guideline/sab.html', './AB_Guideline/Gastro.html', './AB_Guideline/Gyn.html', './AB_Guideline/HNO.html',
