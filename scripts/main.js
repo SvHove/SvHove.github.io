@@ -1,10 +1,10 @@
 "use strict"
 
 
-let versionNumber = '0.731';
+let versionNumber = '0.73';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Inhaltlich wieder aktueller Stand zum Leitfaden.' +
-    '- Logo aktualisiert - Da kein Einsatz an anderen Standorten geplant ist Anevita Logo durch Emder Wappen ersetzt.' +
+    '- Inhaltlich wieder aktueller Stand zum Leitfaden.\n' +
+    '- Logo aktualisiert - Da kein Einsatz an anderen Standorten geplant ist Anevita Logo durch Emder Wappen ersetzt.\n' +
     '- Standard Farbschema "Anevita" auf "Emden" geändert.';
 
 
