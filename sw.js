@@ -1,4 +1,4 @@
-let versionNumber = '0.734';
+let versionNumber = '0.735';
 
 let cacheName = 'pwa4';
 
