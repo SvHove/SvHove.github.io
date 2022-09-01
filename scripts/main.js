@@ -1,11 +1,9 @@
 "use strict"
 
 
-let versionNumber = '0.73';
+let versionNumber = '0.731';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Inhaltlich wieder aktueller Stand zum Leitfaden.\n' +
-    '- Logo aktualisiert - Da kein Einsatz an anderen Standorten geplant ist Anevita Logo durch Emder Wappen ersetzt.\n' +
-    '- Standard Farbschema "Anevita" auf "Emden" geändert.';
+    '- Anpassung der Therapieempfehlung bei H.p. positiver Gastritis.\n';
 
 
 // Setting up Placeholders
