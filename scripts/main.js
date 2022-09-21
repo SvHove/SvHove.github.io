@@ -158,6 +158,7 @@ colorSwitch.addEventListener('click', () => {
 })
 */
 
+
 function switchColor(colors) {
     document.documentElement.style.setProperty('--theme1', colors[0]);
     document.documentElement.style.setProperty('--theme2', colors[1]);
