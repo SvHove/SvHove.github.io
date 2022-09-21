@@ -50,6 +50,10 @@ a {
     display: block;
 }
 
+.reaLink {
+    display: none;
+}
+
 button {
     color: var(--textColor1);
     text-decoration: none;

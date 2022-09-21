@@ -1,9 +1,9 @@
 "use strict"
 
 
-let versionNumber = '0.731';
+let versionNumber = '0.739';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Anpassung der Therapieempfehlung bei H.p. positiver Gastritis.\n';
+    '- Teständerung in Entwicklerversion\n';
 
 
 // Setting up Placeholders
