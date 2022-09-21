@@ -1,4 +1,4 @@
-let versionNumber = '0.736';
+let versionNumber = '0.737';
 
 let cacheName = 'pwa4';
 
@@ -17,7 +17,8 @@ try {
                         './AB_Guideline/Neuro4.html', './AB_Guideline/PeriOP.html', './AB_Guideline/Pn1.html', './AB_Guideline/Pn2.html', './AB_Guideline/Pn3.html',
                         './AB_Guideline/Pn4.html', './AB_Guideline/Pn5.html', './AB_Guideline/Pn6.html', './AB_Guideline/prae.html', 'AB_Guideline/endo1.html', 'AB_Guideline/endo2.html',
                         './AB_Guideline/Sepsis.html', './AB_Guideline/Uro.html', './SOP/sop_index.html', './SOP/AE_Pneumonie.html', './SOP/COPD.html', './SOP/LAE.html',
-                        './res/antibiotics.json', './res/searchIndex.json', './res/Vancomycin_Dosierung.pdf', './res/Antiinfektiva_Nierenersatzverfahren-1.pdf']);
+                        './res/antibiotics.json', './res/searchIndex.json', './res/Vancomycin_Dosierung.pdf', './res/Antiinfektiva_Nierenersatzverfahren-1.pdf',
+                        './reaApp.html', './styles/reaApp.css', './scripts/reaApp.js']);
                 }).then()
         );
     });

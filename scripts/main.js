@@ -176,6 +176,12 @@ function init(element) {
     setUpLinks(element);
     setUpFragments(element);
     setUpInfoButtons(element);
+
+    if (window.localStorage.getItem('developer') === '1') {
+        let reaAppButton = document.querySelector(`.reaLink`);
+        reaAppButton.style.display = `block`;
+    }
+
     /*+
     let discoButton =  document.getElementById('disco');
     if (typeof(discoButton) != 'undefined' && element != null)
@@ -511,7 +517,7 @@ document.getElementById('homeButton').addEventListener('click', (e) => {
     resetDisplay();
     loadContent('startPage');
 })
-/*
+
 let developerVersionCheck = 0;
 document.getElementById('developerVersion').addEventListener('click', () => {
     developerVersionCheck += 1;
@@ -528,7 +534,7 @@ document.getElementById('developerVersion').addEventListener('click', () => {
         developerVersionCheck = 0;
     }
 })
-*/
+
 
 let navigationFunctions = {
     list: [

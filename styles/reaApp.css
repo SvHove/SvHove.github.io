@@ -1,0 +1,89 @@
+
+
+body {
+    height: 99vh;
+    width: 99vw;
+    background-color: lightgrey;
+    display: grid;
+    grid-template-rows: repeat(5, 6%) repeat(3, 15%) 5% 15% 5%;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-areas:
+    ".      header  header  .       "
+    "dur    dur     .       endB    "
+    "sho    sho     com     com     "
+    "adr    adr     ami     ami     "
+    "line   line    line    line    "
+    "shock  shock   rhythm  rhythm  "
+    "adren  adren   .       .       "
+    "amio   amio    .       .       "
+    ".      .       .       .       "
+    ".      hlw     hlw     .       "
+    ".      .       .       .       "
+}
+
+.header {
+    grid-area: header;
+    background-color: green;
+}
+
+.docDuration {
+    grid-area: dur;
+    background-color: lightgoldenrodyellow;
+}
+.docShock {
+    grid-area: sho;
+    background-color: lightgoldenrodyellow;
+}
+
+.docAdrenaline {
+    grid-area: adr;
+    background-color: lightgoldenrodyellow;
+}
+
+.docAmiodarone {
+    grid-area: ami;
+    background-color: lightgoldenrodyellow;
+}
+
+.docCompression {
+    grid-area: com;
+    background-color: lightgoldenrodyellow;
+}
+
+.end {
+    grid-area: endB;
+    background-color: lightpink;
+}
+
+.shock {
+    grid-area: shock;
+    background-color: green;
+}
+
+.rhythm {
+    grid-area: rhythm;
+    background-color: orangered;
+}
+
+.adrenaline {
+    grid-area: adren;
+    background-color: green;
+}
+
+.amiodarone {
+    grid-area: amio;
+    background-color: red;
+}
+
+.hlw {
+    grid-area: hlw;
+}
+
+.hlwButton {
+    height: 90%;
+    width: 90%;
+    margin: 5% 5% 5% 5%;
+}
+
+
+
