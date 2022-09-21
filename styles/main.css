@@ -50,9 +50,6 @@ a {
     display: block;
 }
 
-.reaLink {
-    display: none;
-}
 
 button {
     color: var(--textColor1);
@@ -484,6 +481,11 @@ footer {
 .cave {
     text-align: center;
     font-size: 1.5rem;
+}
+
+
+#reaLink {
+    display: none;
 }
 
 

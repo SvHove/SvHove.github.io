@@ -1,7 +1,7 @@
 "use strict"
 
 
-let versionNumber = '0.739';
+let versionNumber = '0.740';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
     '- Teständerung in Entwicklerversion\n';
 
@@ -178,9 +178,9 @@ function init(element) {
     setUpFragments(element);
     setUpInfoButtons(element);
 
-    if (window.localStorage.getItem('developer') === '1') {
-        let reaAppButton = document.querySelector(`.reaLink`);
-        reaAppButton.style.display = `block`;
+    if (developerVersion) {
+        let reaAppButton = document.querySelector(`#reaLink`);
+        if(reaAppButton) reaAppButton.style.display = `block`;
     }
 
     /*+
@@ -814,7 +814,6 @@ if (window.localStorage.getItem('cave') == null) {
     init(currentMain);
     window.localStorage.setItem('cave', 'done');
 } else loadContent("startPage", false);
-
 
 checkVersion();
 init(document.body);
