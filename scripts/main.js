@@ -1,9 +1,9 @@
 "use strict"
 
 
-let versionNumber = '0.740';
+let versionNumber = '0.742';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Teständerung in Entwicklerversion\n';
+    '- Änderungen Bereich Phlegmone , diabetischer Fuß und nekrotisierende Fasciitis\n';
 
 
 // Setting up Placeholders
