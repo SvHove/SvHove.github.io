@@ -1,0 +1,194 @@
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+:root {
+    /* TODO: Rename to more sense-making, then adjust in colors.js*/
+    --theme1: #000000;
+    --theme2: #f5f7f8;
+    --theme3: #f9bb91;
+    --theme4: #fdddc4;
+    --textColor1: #000000;
+    --textColor2: #FFFFFF;
+    --borderColor1: #FFFFFF;
+    --borderColor2: #009fE3;
+    --buttonColor: #E30613;
+    --fragmentColor: #E30613;
+}
+
+body {
+    background-color: var(--theme4);
+}
+
+app {
+    height: 98vh;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    background-color: var(--theme4);
+    margin: 5px auto;
+    border: 2px solid black;
+}
+
+main {
+    grid-row: 2 / 3;
+    background-color: var(--theme4);
+    overflow: auto;
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--theme3);
+    padding: 0.5em;
+}
+
+header {
+    grid-row: 1 / 2;
+    border-bottom: 1px solid black;
+}
+
+footer {
+    grid-row: 3 / 4;
+    border-top: 1px solid black;
+}
+
+.main-menu-button {
+    background-color: var(--theme3);
+    width: 15%;
+    min-width: 15%;
+    padding: 0;
+    border: 0;
+}
+
+.main-menu-button-fill {
+    fill: var(--buttonColor);
+    stroke: #000000;
+}
+
+.button {
+    display: block;
+    cursor: default;
+    font-size: 2rem;
+    margin: 1.3em auto;
+    padding: 0.5em 1em;
+    text-align: center;
+    width: 80%;
+    border: 1px solid currentColor;
+    box-shadow: -.15em -.08em .3em currentColor;
+    border-radius: 400px;
+    background-color: var(--theme2);
+}
+
+.button:hover {
+    opacity: .7;
+}
+
+
+.button--load {
+}
+
+.button--section {
+}
+
+.button__subtext {
+    font-style: italic;
+    font-size: .8rem;
+    line-height: .8rem;
+}
+
+.emphasised {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+section {
+    font-size: 2rem;
+    background-color: var(--theme2);
+    width: 75%;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 20%;
+}
+
+section::before {
+    float: left;
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    margin: -1.7em 10% 0 10%;
+    content: "";
+    height: .7em;
+    border-right: 3px dotted var(--theme2);
+    border-left: 3px dotted var(--theme2);
+}
+
+#title {
+    margin: auto 0;
+    font-size: clamp(.2rem, .4rem + 5vw, 5rem);
+}
+
+p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: .5em 0;
+}
+
+.inactive {
+    background-color: grey;
+}
+
+.lightblue {
+    color: darkblue;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* Phone */
+@media (max-width: 599px) {
+
+}
+
+/* Tablet portrait */
+@media (min-width: 600px) {
+
+}
+
+/* Tablet landscape */
+@media (min-width: 900px) {
+
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    app {
+        max-width: 600px;
+    }
+
+    #title {
+        margin: auto 0;
+        font-size: clamp(.2rem, .4rem + 5vw, 3rem);
+    }
+
+
+    .button {
+        font-size: 1.2rem;
+    }
+}
+
+/* Big Desktop */
+@media (min-width: 1800px) {
+
+}
