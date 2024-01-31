@@ -1,102 +1,83 @@
+<!-- Kontrolliert: 25.01.2024 -->
+
 <main>
     <p id="title" class="noDisplay">AB-Guideline</p>
     <h3 class="title">Ambulant erworbene Pneumonie</h3>
     <p class="byGroupP1">Definition:<br>Ambulant erworben, bzw. bis spätestens 48 h nach Krankenhausaufnahme und kein
         stationärer Voraufenthalt in den letzten 3 Monaten.</p>
 
-    <button class="byGroupButton navParentJS">CRB65 = 0 Punkte</button>
+    <button class="byGroupButton navParentJS">Leichte Pneumonie<br>ohne Komorbiditäten</button>
     <section>
-        <p class="byGroupP1">Kann meist ambulant behandelt werden, Reevaluation innerhalb von 72 Stunden erforderlich.
-            Falls Antibiose überhaupt erforderlich ist (Rö. Befund?), gilt folgende Empfehlung:</p>
+        <p class="byGroupP1">Orale Therapie</p>
         <div class="fragmentWrapper">
             <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic amoxicillinClavulansaeure_PO"></span>3 x 875mg/125mg p.o. tgl.<br><br>Therapiedauer:<br>5(-7) Tage</p>
-                <p class="fragmentParagraph">Alternative 1 (z.B. bei Penicillinallergie):<br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>3-5 Tage</p>
-                <p class="fragmentParagraph">Alternative 2:<br><br><span class="antibiotic levofloxacin_PO"></span>1-2 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>5(-7) Tage</p>
+                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic amoxicillin_PO"></span>3 x 1000mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
+                <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_PO"></span>2 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="byGroupButton navParentJS">Leichte Pneumonie<br>mit definierter, stabiler Komorbidität</button>
+    <section>
+        <p class="byGroupP1">Orale Therapie.<br>z.B. bei chronischer Herzinsuffizienz, ZNS-Erkrankungen mit Schluckstörungen, schwerer COPD, Bronchiektasen, Bettlägerigkeit, PEG</p>
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic amoxicillinClavulansaeure_PO"></span>2-3 x 875mg/125mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
+                <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_PO"></span>2 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
             </div>
         </div>
     </section>
 
 
-    <button class="byGroupButton navParentJS">CRB65 = 1-2 Punkte</button>
+    <button class="byGroupButton navParentJS">Mittelschwere Pneumonie</button>
     <section>
+        <p class="byGroupP1">In der Regel Sequenztherapie möglich</p>
         <div class="fragmentWrapper">
         <div class="fragmentDiv">
-            <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ampicillinSulbactam_IV"></span>3 x 2g/1g i.v. tgl.<br><br>Sequenztherapie:<br><span class="antibiotic amoxicillinClavulansaeure_PO"></span>3 x 875/125 mg p.o. tgl.<br><br>Therapiedauer:<br>Insgesamt 5(-7) Tage.</p>
-            <p class="fragmentParagraph">Alternative:<br>(z.B. bei Penicillinallergie) ->
-                Monotherapie<br><br><span class="antibiotic levofloxacin_IV"></span>1 x 500mg i.v. tgl.<br><br>Wenn möglich sequentielle Therapie
-                (gleiche Dosis) oral durchführen.<br><br>Therapiedauer:<br>Insgesamt 5(-7) Tage<br>(Bei atypischem Erregernachweis mindestens 14
-                Tage)</p>
+            <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ampicillinSulbactam_IV"></span>3-4 x 2g/1g i.v. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung<br><br><em>+/-</em><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>Für 3 Tage zusätzlich.</p>
+            <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_IV"></span>2 x 500mg i.v./p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
         </div>
         </div>
-        <div class="fragmentWrapper">
-        <div class="fragmentDiv">
-            <p class="fragmentParagraph">Immer bei Verdacht auf typische Lobär-/Pneumokokken&shy;pneumonie
-                <strong>zusätzlich:</strong><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500mg p.o. tgl.<br><br>Therapiedauer<br>Zunächst für 3 Tage
-                (nur bei atypischem Erregernachweis danach weiterführen, s. Legionellen-Pneumonie)</p>
-        </div>
-        </div>
-        <div class="fragmentWrapper">
-        <div class="fragmentDiv">
-            <p class="fragmentParagraph">Bei schwerer COPD/Bronchiektasen als Komorbidität
-                <strong>zusätzlich:</strong><br><br><span class="antibiotic levofloxacin_PO"></span>1-2 x 500 mg p.o. tgl.<br><br>Therapiedauer<br>5(-7) Tage</p>
-        </div>
-        </div>
-        <p class="byGroupP1"><strong>Bei einem Pneumokokken Nachweis im Bronchialsekret oder Blutkultur:<br><br>Deeskalation
-            auf 4 x 5 Mega Penicillin G unbedingt erforderlich für mindestens 10 Tage.</strong></p>
-
     </section>
 
 
-    <button class="byGroupButton navParentJS">CRB65 ≥ 3 Pkt. und ≥ 2/9 Minorkriterien ATS (ohne Sepsis)</button>
+    <button class="byGroupButton navParentJS">Schwere Pneumonie</button>
     <section>
         <div class="fragmentWrapper">
         <div class="fragmentDiv">
-            <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic piperacillinTazobactam_IV"></span>3 x 4,5 g i.v. tgl.<br><br>Therapiedauer<br>5(-7) Tage<br><br><em>+</em><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer<br>Zunächst für 3 Tage<br>Alternativ intravenös in gleicher Dosis (definitiv nur 2. Wahl!)</p>
-            <p class="fragmentParagraph">Bei Risikofaktoren für eine Infektion mit ESBL-Bildnern oder bei vorausgegangener Therapie mit einem Breitbandpenicillin oder Cefalosporin oder bei Penicillinallergie:<br><br><span class="antibiotic levofloxacin_IV"></span>2 x 500 mg i.v. tgl.<br><br>Therapiedauer:<br>5(-7) Tage</p>
+            <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic piperacillinTazobactam_IV"></span>4 x 4,5 g i.v. tgl.<br><br>Therapiedauer<br>7 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung<br><br><em>+</em><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>Für 3 Tage zusätzlich.</p>
+            <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_IV"></span><br>Monotherapie nicht bei septischem Schock<br>2 x 500mg i.v./p.o. tgl.<br><br>Therapiedauer:<br>7 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
         </div>
         </div>
-        <p class="byGroupP1"><strong>Zusätzliche Kombinationstherapie nur in besonderen Fällen:</strong></p>
-        <div class="fragmentWrapper">
-        <div class="fragmentDiv">
-            <p class="fragmentParagraph">Bei vorausgegangener Therapie mit einem Breitbandpenicillin /
-                Cefalosporin oder bei Verdacht auf Pseudomonas aeroginosa (schwere COPD/Bronchiektasen):<br><br><span class="antibiotic piperacillinTazobactam_IV"></span>3 x 4,5 g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic levofloxacin_IV"></span>2 x 500mg i.v. tgl.<br><br>Wenn möglich Therapie (gleiche Dosis) oral durchführen<br><br>Therapiedauer:<br>8 Tage</p>
-            <p class="fragmentParagraph">Alternative 1:<br>(Falls Gyrasehemmer bereits in Vormedikation bestanden
-                hat):<br><br><span class="antibiotic piperacillinTazobactam_IV"></span>3 x 4,5 g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>Jeweils 8
-                Tage<br><br><em>+</em><br><br><span class="antibiotic tobramycin_IV"></span>1 x 5-7 mg/kgKG i.v. tgl.<br><br>Therapiedauer:<br>Maximal 5 Tage</p>
-            <p class="fragmentParagraph">Alternative 2:<br>(bei Penicillinallergie)<br><br><span class="antibiotic meropenem_IV"></span>3 x 1,0 g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic levofloxacin_IV"></span>2 x 500 mg i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>8 Tage</p>
-        </div>
-        </div>
-        <div class="fragmentWrapper">
-        <div class="fragmentDiv">
-            <p class="fragmentParagraph"><strong>Zusätzlich</strong> bei schwerer Lobärpneumonie (ggf. mit Primärerguss der Pleura):<br><br><span class="antibiotic penicillinG_IV"></span>4 x 5-10 Mio. E i.v. tgl.</p>
-        </div>
-        </div>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph important">Auch bei erhöhtem Risiko für MRE zunächst keine blinde Antibiose! Aber gezielte Abklärung!<br>Auch MRE-Kolonisation ist kein Grund für eine prophylaktisch wirksame Therapie.</p>
-            </div>
-        </div>
-
     </section>
 
 
-    <button class="byGroupButton navParentJS">Septische Pneumonie mit primärer Intubation/Beatmung und/oder
-        Vasopressorentherapie (ICU)
-    </button>
     <section>
+        <p>Bei einem Pneumokokken Nachweis im Bronchialsekret oder Blutkultur:<br> &rarr; Deeskalation auf 4x5 Mega Penicillin G unbedingt erforderlich für mind. 10 Tage!</p>
+        <p class="byGroupP1"><strong>Therapiehinweise:</strong></p>
         <ul class="byGroupList">
             <li>
-                <p>Behandlung nach intensivmedizinischen Kriterien der Sepsis</p>
+                <p>Die Anibiotikatherapie wird bei schwerem Verlauf (IMC/ICU) noch in der ZPA nach Erregerdiagnostik
+                    begonnen (Zeitfenster 60 min.).</p>
             </li>
             <li>
-                <p>Antibioseauswahl wie bei schwerer Pneumonie</p>
+                <p>Bei stationärer Aufnahme auf Normalstation soll die Antibiose bis zur 8. Stunde eingeleitet worden
+                    sein (gleiche Arbeitsschicht!).</p>
             </li>
             <li>
-                <p>Auch bei erhöhtem Risiko für MRE zunächst keine blinde Antibiose sondern gezielte Abklärung</p>
+                <p>Vor Therapieende soll eine klinische Stabilisierung des Patienten für mindestens 2 Tage erfolgt
+                    sein.</p>
             </li>
+            <li>
+                <p>Sequenztherapie bei mittelschwerer Pneumonie: Nach klinischer Besserung (kein Fieber, CRP
+                    fallend).</p>
+            </li>
+            <li>
+                <p>Sequenztherapie bei schwerer Pneumonie: Nach mindestens 3 Tagen parenteraler Antibiose und bei
+                    Besserung auch hier orale Antibiose möglich, aber Substanzklassenwechsel vermeiden.</p>
+            </li>
+
         </ul>
-        <p>Bei Patienten mit interaktionsrelevanter Co-Medikation sollte statt Clarithromycin Azithromycin eingesetzt werden. Azithromycin hat eine niedrigere kardiovaskuläre Toxizität.<br>Azithromycin 500mg i.v. ist in der Apotheke auf Sonderrezept erhältlich.<br>Dosierung: 1 x 500mg tgl.</p>
     </section>
 
 
