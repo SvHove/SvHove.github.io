@@ -27,6 +27,7 @@ html {
 body {
     height: 100%;
     width: 100%;
+    margin: 0;
     display: grid;
     grid-template-rows: 9.5% auto 9.5%;
     grid-template-columns: repeat(10, 10%);
