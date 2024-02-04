@@ -4,6 +4,7 @@ html {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    background-color: white;
 }
 
 *, *::before, *::after {
@@ -29,10 +30,18 @@ body {
     display: grid;
     grid-template-rows: 9.5% auto 9.5%;
     grid-template-columns: repeat(10, 10%);
-    margin: 0;
     padding: 0;
     background-color: var(--theme1);
     color: var(--textColor1);
+}
+
+@media only screen and (min-width: 900px) {
+    body {
+        height: 98%;
+        max-width: 500px;
+        margin: 3px auto auto auto;
+        border: 1px solid black;
+    }
 }
 
 main {
