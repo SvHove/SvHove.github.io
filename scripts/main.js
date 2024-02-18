@@ -1,7 +1,7 @@
 "use strict"
 
 
-let versionNumber = '0.76';
+let versionNumber = '0.761';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
     '- Komplette Überarbeitung und Anpassung an den aktuellen Leitfaden\n';
 
@@ -56,15 +56,14 @@ let localHistory = ["startPage"];  // Initializing history with snippet, since a
 let currentMain;
 let overlayActive = false;
 let colors = [
-    /*{
+    {
         name: "Anevita",
         list: ['#009A9D', '#17B1B4', '#87CCCD', '#D6EBEC', '#000000', '#FFFFFF', '#FFFFFF', 'lightgrey', '#80cdce', '#4cb3b5']
-    }
-        list: ['#000000', '#fdddc4', '#f9bb91', '#ffcc00', '#000000', '#FFFFFF', '#FFFFFF', '#009fe3', '#f5f7f8', '#e30613']
-*/{
+    },
+    /*{
         name: "Emden",
         list: ['#000000', '#f5f7f8', '#f9bb91', '#fdddc4', '#000000', '#FFFFFF', '#FFFFFF', '#009fe3', '#e30613', '#e30613']
-    },
+    },*/
     {
         name: "Hell",
         list: ['#659DBD', '#DAAD86', '#FBEEC1', '#fbe0c1', '#000000', '#FFFFFF', '#fbeec1', '#fbe0c1', '#BC986A', '#a2753b']
