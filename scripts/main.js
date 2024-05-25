@@ -1,9 +1,9 @@
 "use strict"
 
 
-let versionNumber = '0.762';
+let versionNumber = '0.77';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Update des Kapitels zur Clostridium difficile Infektion\n';
+    '- Update des Kapitels zu bakterieller Meningitis.\n';
 
 
 // Setting up Placeholders

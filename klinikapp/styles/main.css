@@ -39,11 +39,12 @@ main {
     grid-row: 2 / 3;
     background-color: var(--theme4);
     overflow: auto;
+    width: 100%;
+    object-fit: contain;
 }
 
 img {
-    width: 100%;
-    overflow: auto;
+    max-width: 80%;
 }
 
 .subtitle {
