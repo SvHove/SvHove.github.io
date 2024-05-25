@@ -41,6 +41,15 @@ main {
     overflow: auto;
 }
 
+img {
+    width: 100%;
+    overflow: auto;
+}
+
+.subtitle {
+    text-align: center;
+}
+
 header, footer {
     display: flex;
     justify-content: space-between;
