@@ -435,6 +435,7 @@ searchField.addEventListener('input', () => {
                 resetDisplay();
                 loadContent("AB_Guideline/besterkater.html")
             })
+
             currentMain.appendChild(searchResult)
         }
 
