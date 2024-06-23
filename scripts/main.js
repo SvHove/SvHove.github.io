@@ -1,9 +1,9 @@
 "use strict"
 
 
-let versionNumber = '0.762';
+let versionNumber = '0.763';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Update des Kapitels zur Clostridium difficile Infektion\n';
+    '- Update der Kapitel zur Endokarditis\n';
 
 
 // Setting up Placeholders
@@ -420,9 +420,24 @@ searchButton.addEventListener('click', () => {
 
 searchField.addEventListener('input', () => {
     currentMain.innerText = "";
+
+
     if (searchField.value.length > 2) {
         let searchText = searchField.value;
         let alreadyFound = [];
+
+        if (searchText == "Bester Kater") {
+            let searchResult = document.createElement('button');
+            searchResult.className = "byGroupButton";
+            searchResult.innerHTML = "<p>Katerbilder zur Entspannung!</p>";
+            searchResult.addEventListener('click', () => {
+                searchField.value = "";
+                resetDisplay();
+                loadContent("AB_Guideline/besterkater.html")
+            })
+            currentMain.appendChild(searchResult)
+        }
+
 
         function appendElement(i) {
             if (!alreadyFound.includes(i)) {
