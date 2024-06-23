@@ -4,84 +4,92 @@
     <p id="title" class="noDisplay">AB-Guideline</p>
     <h3 class="title">Bakterielle Meningitis</h3>
 
-    <button class="byGroupButton navParentJS">Erwachsene, nicht immungeschwächt</button>
+    <h4 class="subtitle">Diagnosealgorithmus:</h4>
+    <img src="../images/Bakterielle%20Meningitis%20Diagnosealgorithmus.png" alt="Ladefehler für Bild Diagnosealgorithmus Bakterielle Meningitis, vgl. pdf Leitfaden">
+
+    <h3>Therapie bei unbekanntem Erreger:</h3>
+
+    <button class="byGroupButton navParentJS">Ambulant erworben</button>
     <section>
-        <p class="byGroupP1">Häufigste Erreger:<br>Meningokokken, Pneumokokken, Listerien, Haemophilus influenzae</p>
+        
+        <button class="byGroupButton navParentJS navException">Negative Reiseanamnese</button>
+        <section>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic ceftriaxon_IV"></span>2 x 2g i.v. tgl.<br><br>
+                        <em>+</em><br><br>
+                        <span class="antibiotic ampicillin_IV"></span>3 x 5g i.v. tgl.<br><br>
+                        <em>+</em><br><br>
+                        Dexamethason<br>4 x 8mg (s.u.) <br><br>
+                        <em>ggf. + </em><br>
+                        <span class="antibiotic aziclovir_IV"></span> 3 x 10mg/kgKG</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="byGroupButton navParentJS navException">Positive Reiseanamnese</button>
+        <section>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic ceftriaxon_IV"></span>2 x 2g i.v. tgl.<br><br>
+                        <em>+</em><br><br>
+                        <span class="antibiotic ampicillin_IV"></span>3 x 5g i.v. tgl.<br><br>
+                        <em>+</em><br><br>
+                        <span class="antibiotic vancomycin_IV"></span>s. <a class='pdfLoader' href='res/Vancomycin_Dosierung.pdf'>&rarr;Dosierungstabelle</a><br><br>
+                        <em>+</em>
+                        Dexamethason<br>4 x 8mg (s.u.) <br><br>
+                        <em>ggf. + </em><br>
+                        <span class="antibiotic aziclovir_IV"></span> 3 x 10mg/kgKG</p>
+
+                    <p class="fragmentParagraph">
+                    <span class="antibiotic ceftriaxon_IV"></span>2 x 2g i.v. tgl.<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic ampicillin_IV"></span>3 x 5g i.v. tgl.<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic rifampicin_IV"></span>600mg/d<br><br>
+                    <em>+</em>
+                    Dexamethason<br>4 x 8mg (s.u.) <br><br>
+                    <em>ggf. + </em><br>
+                    <span class="antibiotic aziclovir_IV"></span> 3 x 10mg/kgKG</p>
+
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <button class="byGroupButton navParentJS">Nosokomial / Shunt-Infektion</button>
+    <section>
         <div class="fragmentWrapper">
             <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ceftriaxon_IV"></span>2 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic ampicillin_IV"></span>3 x 5g i.v. tgl.<br><br>Therapiedauer:<br>s.u.</p>
+                <p class="fragmentParagraph">
+
+                    <span class="antibiotic meropenem_IV"></span>
+                    3 x 2g/d<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic vancomycin_IV"></span>
+                    s. <a class='pdfLoader' href='res/Vancomycin_Dosierung.pdf'>&rarr;Dosierungstabelle</a>
+                </p>
+
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic ceftazidim_IV"></span>
+                    3 x 2g/d<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic vancomycin_IV"></span>
+                    s. <a class='pdfLoader' href='res/Vancomycin_Dosierung.pdf'>&rarr;Dosierungstabelle</a>
+                </p>
+
             </div>
         </div>
     </section>
 
-    <button class="byGroupButton navParentJS">Abwehrgeschwächte, ältere Patienten</button>
-    <section>
-        <p class="byGroupP1">Häufigste Erreger:<br>Meningokokken, Pneumokokken, Listerien, Haemophilus influenzae</p>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ceftriaxon_IV"></span>2 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic ampicillin_IV"></span>3 x 5g i.v. tgl.<br><br>Therapiedauer:<br>s.u.</p>
-            </div>
-        </div>
-    </section>
-
-    <button class="byGroupButton navParentJS">Urlauber, Ausländer aus Regionen mit hohem Anteil penicillinresistenter Pneumokokken (Frankreich, Spanien, Ungarn, Südafrika, Australien)</button>
-    <section>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ceftriaxon_IV"></span>2 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic ampicillin_IV"></span>3 x 5g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic rifampicin_PO"></span>1 x 600mg i.v. tgl.<br><br>Therapiedauer:<br>s.u.</p>
-            </div>
-        </div>
-    </section>
-
-    <button class="byGroupButton navParentJS">Bei Verdacht auf Otitis media</button>
-    <section>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ceftriaxon_IV"></span>2 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic fosfomycin_IV"></span>3 x 5g oder 2 x 8g<br><br>Therapiedauer: s.u.</p>
-            </div>
-        </div>
-    </section>
-
-    <button class="byGroupButton navParentJS">Nosokomial (neurochirurgische Operation/Schädel-Hirn-Trauma)</button>
-    <section>
-        <p class="byGroupP1">Häufigste Erreger:<br>Pneumokokken, Staphylococcus aureus, Enterobakterien, Pseudomonas aeruginosa</p>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ceftazidim_IV"></span>3 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic vancomycin_IV"></span>s. <a class='pdfLoader' href='res/Vancomycin_Dosierung.pdf'>&rarr;Dosierungstabelle</a><br><br>Therapiedauer:<br>s.u.</p>
-                <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic meropenem_IV"></span>3 x 2g i.v. tgl.<br><br><em>+</em><br><br><span class="antibiotic vancomycin_IV"></span>s. <a class='pdfLoader' href='res/Vancomycin_Dosierung.pdf'>&rarr;Dosierungstabelle</a><br><br>Therapiedauer:<br>s.u.</p>
-            </div>
-        </div>
-    </section>
-
-    <button class="byGroupButton navParentJS">Therapiedauer abhängig vom Erreger!</button>
-    <section>
-        <table>
-            <tr>
-                <td colspan="2">Meningokokken</td>
-                <td>10 Tage</td>
-            </tr>
-            <tr>
-                <td colspan="2">Pneumokokken, Haemophilus influenzae, Enterobakterien</td>
-                <td>14 Tage</td>
-            </tr>
-            <tr>
-                <td colspan="2">Pseudomonas aeruginosa</td>
-                <td>21 Tage</td>
-            </tr>
-            <tr>
-                <td colspan="2">Staph aureus</td>
-                <td>21-28 Tage</td>
-            </tr>
-            <tr>
-                <td colspan="2">Listerien</td>
-                <td>min. 28 Tage</td>
-            </tr>
-        </table>
-        <ul>
-            <li>Abnahme von Blutkulturen vor der Antibiotikagabe!</li>
-            <li>Zusätzlich zur empirischen Antiinfektivatherapie sollte <strong>Dexamethason</strong> gegeben werden bei <strong>ambulant</strong> erworbenen Meningitiden: Dexamethason 10mg i.v. 4 x tgl. über 4 Tage.</li>
-            <li>Dexamethason Gabe <strong>unmittelbar vor</strong> der 1. Antibiotikagabe!</li>
-        </ul>
-    </section>
+    <p class="byGroupP1">Nach erfolgreicher Erregeridentifikation Antibiose nach Erreger und Antibiogramm.</p>
+    <p class="byGroupP1">Bei S. pneumoniae: Dexamethason für insgesamt 4 Tage weiter, sonst absetzen. <br>Laut Leitlinie sollen 10mg gegeben werden, im Handel sind nur Dexamethason Amp. mit 8mg - von daher Empfehlung: 4 x 1 Amp (8mg).</p>
+    <p class="byGroupP1"><u>Therapiedauer abhängig vom Erreger:</u><br>Meningokokken: Abhängig vom Befund der Liquorkontrolle
+        <br>Pneumokokken, Haemophilus influenzae, Enterobakterien: 14 Tage <br>Pseudomonas aeruginosa: 21 Tage <br>Staph. aureus: 21-28 Tage
+        <br>Listerien: mind. 28 Tage.</p>
 
 </main>

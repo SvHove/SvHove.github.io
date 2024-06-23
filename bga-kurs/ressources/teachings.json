@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Teachings",
+    "description": [
+      ["Ersteindruck", "21 jähriger Patient mit starken abdominellen Schmerzen seit einigen Stunden. Ausgeprägte Hyperventilation, blass."],
+      ["Vorerkrankungen", "Zustand nach Appendektomie"],
+      ["Körperliche Untersuchung", "Abdomen ubiquitär stark druckschmerzhaft mit Abwehrspannung. Herz und Lunge auskultatorisch unauffällig."],
+      ["Vitalwerte", "AF 32/min<br>RR 145/90<br>sO2 99%<br>HF 110 (SR)"]
+    ],
+    "values" : {
+      "pH": "6,89",
+      "pO2": "113",
+      "pCO2": "11",
+      "fiO2": "21%",
+      "BZ": "532"
+    },
+    "questions": [
+      ["Welche Art von Stoffwechselentgleisung liegt vor?", "Es handelt sich um eine metabolische Azidose."],
+      ["Was ist die wahrscheinlichste Diagnose?", "Es handelt sich um das klassische Bild einer diabetischen Ketoazidose. Die Kombination aus metabolischer Azidose, abdomniellen Schmerzen (\"Pseudoperitonismus\" und jungem Lebensalter ist häufige Erstmanifestation eines Typ 1 Diabetes mellitus."]
+    ]
+  }
+]

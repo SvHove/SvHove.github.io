@@ -39,6 +39,16 @@ main {
     grid-row: 2 / 3;
     background-color: var(--theme4);
     overflow: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+img {
+    max-width: 80%;
+}
+
+.subtitle {
+    text-align: center;
 }
 
 header, footer {

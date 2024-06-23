@@ -51,8 +51,18 @@ main {
     overflow: auto;
     background-color: var(--theme4);
     font-size: 1.0rem;
+    object-fit: contain;
 }
 
+.subtitle {
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 0 auto;
+}
 
 a {
     color: var(--textColor1);
@@ -498,6 +508,9 @@ footer {
     display: none;
 }
 
+
+.aziclovir_IV {
+}
 
 .levofloxacin_PO {
 }
