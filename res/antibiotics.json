@@ -287,6 +287,18 @@
       "Monitoring": "Elektrolyte (K, Na), ggf. INR,<br>Therapie >2 Wochen:<br>Blutbild (inkl. Thrombozytenzählung)"
     },
     {
+    "ID": "daptomycin_IV",
+    "Exclude": false,
+    "Name": "Daptomycin",
+    "Standarddosis": "1 x 4-6mg/kg KG",
+    "Sequenztherapie": "<strong>Keine Oralisation möglich!</strong>",
+    "Sequenztherapie_Voraussetzungen": null,
+    "Dosisanpassung_Niereninsuffizienz": "GFR 10-30ml/min: <br>1 x 4-6mg/kg KG alle 48h.",
+    "Dosisanpassung_Haemodialyse": "1 x 4-6mg/kg KG alle 48h.",
+    "Dosisanpassung_Leberinsuffizienz": "Keine Dosisanpassung erforderlich, aber wenige Daten.",
+    "Besonderheiten": "Fehlende Wirksamkeit bei Pneumonie. <br>Off label: 8-10mg/kgKG Endocarditis + TEP",
+    "Monitoring": "Keine Besonderheiten."},
+    {
       "ID": "doxycyclin_IV",
       "Exclude": false,
       "Name": "Doxycyclin i.v.",
@@ -441,6 +453,19 @@
       "Dosisanpassung_Leberinsuffizienz": "Keine Dosisanpassung erforderlich.",
       "Besonderheiten": "Unselektiver MAO-Hemmer -> Cave Psychopharmaka, Opioide, Sympathomimetika Serotoninsyndrom<br>UAW (insbesondere bei Therapiedauer >28 Tage):<br>Myelosuppression, periphere und optische Neuropathie, Laktatazidose.",
       "Monitoring": "Großes Blutbild (wöchentlich)<br>Maximal zugelassene Therapiedauer: 28 Tage."
+    },
+    {
+      "ID": "moxifloxacin_PO",
+      "Exclude": false,
+      "Name": "Moxifloxacin",
+      "Standarddosis": "1 x 400mg p.o.",
+      "Sequenztherapie": null,
+      "Sequenztherapie_Voraussetzungen": null,
+      "Dosisanpassung_Niereninsuffizienz": "Keine Dosisanpassung erforderlich.",
+      "Dosisanpassung_Haemodialyse": "Keine Dosisanpassung erforderlich.",
+      "Dosisanpassung_Leberinsuffizienz": "Keine Dosisanpassung erforderlich, aber wenige Daten.",
+      "Besonderheiten": "6 Std. Abstand zu Eisen, Magnesium und Calcium-Tabletten bei oraler Gabe. <br>UAW: Bewegungsapparat <br>Vorsicht bei Epilepsie",
+      "Monitoring": "QT-Zeit Verlängerung"
     },
     {
       "ID": "meropenem_IV",

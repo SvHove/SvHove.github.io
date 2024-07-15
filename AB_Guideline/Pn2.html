@@ -2,83 +2,555 @@
 
 <main>
     <p id="title" class="noDisplay">AB-Guideline</p>
-    <h3 class="title">Ambulant erworbene Pneumonie</h3>
-    <p class="byGroupP1">Definition:<br>Ambulant erworben, bzw. bis spätestens 48 h nach Krankenhausaufnahme und kein
-        stationärer Voraufenthalt in den letzten 3 Monaten.</p>
-
-    <button class="byGroupButton navParentJS">Leichte Pneumonie<br>ohne Komorbiditäten</button>
+    <h3 class="title">Pneumonie</h3>
+    
+    <button class="byGroupButton navParentJS">Risikostratifizierung in der Notaufnahme</button>
     <section>
-        <p class="byGroupP1">Orale Therapie</p>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic amoxicillin_PO"></span>3 x 1000mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
-                <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_PO"></span>2 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
+        <img src="../images/Pneumonie%20Risikostratifizierung.PNG" alt="Fehler beim Laden des Bildes. S. Leitfaden S. 8">
+    </section>
+
+    <button class="byGroupButton navParentJS">Ambulant erworbene Pneumonie (CAP)</button>
+    <section>
+        <p class="byGroupP1"><strong>Definition:</strong><br>Ambulant erworben, bzw. bis spätestens 48h nach Krankenhausaufnahme und kein stationärer Voraufenthalt in den letzten 3 Monaten.</p>
+
+        <button class="byGroupButton navParentJS navException">Leichte Pneumonie ohne Komorbiditäten</button>
+        <section>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic amoxicillin_PO"></span>
+                        3 x 1000mg tgl. p.o.<br><br>
+                        Therapiedauer: <br>
+                        5 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
+
+
+                    <p class="fragmentParagraph">
+                        Alternative:
+                        <span class="antibiotic levofloxacin_PO"></span>
+                        2 x 500mg tgl. p.o.<br><br>
+                        Therapiedauer: <br>
+                        5 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <button class="byGroupButton navParentJS">Leichte Pneumonie<br>mit definierter, stabiler Komorbidität</button>
-    <section>
-        <p class="byGroupP1">Orale Therapie.<br>z.B. bei chronischer Herzinsuffizienz, ZNS-Erkrankungen mit Schluckstörungen, schwerer COPD, Bronchiektasen, Bettlägerigkeit, PEG</p>
-        <div class="fragmentWrapper">
-            <div class="fragmentDiv">
-                <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic amoxicillinClavulansaeure_PO"></span>2-3 x 875mg/125mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
-                <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_PO"></span>2 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
+        <button class="byGroupButton navParentJS navException">Leichte Pneumonie mit definierter, stabiler Komorbidität</button>
+        <section>
+            <p class="byGroupP1">Chronische Herzinsuffizienz <br>ZNS-Erkrankungen mit Schluckstörungen <br>Schwere COPD
+                <br>Bronchiektasen <br>Bettlägerigkeit <br>PEG</p>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic amoxicillinClavulansaeure_PO"></span>
+                        2-3 x 875/125mg tgl. p.o.<br><br>
+                        Therapiedauer: <br>
+                        5 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
+
+
+                    <p class="fragmentParagraph">
+                        Alternative:
+                        <span class="antibiotic levofloxacin_PO"></span>
+                        2 x 500mg tgl. p.o.<br><br>
+                        Therapiedauer: <br>
+                        5 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <button class="byGroupButton navParentJS navException">Mittelschwere Pneumonie</button>
+        <section>
+            <p class="byGroupP1">In der Regel Sequenztherapie</p>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic ampicillinSulbactam_IV"></span>
+                        3-4 x 2g/1g tgl. i.v.<br><br>
+                        <em>ggf. +</em> <br><br>
+                        <span class="antibiotic azithromycin_PO"></span>
+                        1 x 500mg p.o. <br><br>
+                        Therapiedauer: <br>
+                        Azithromycin oral 3 Tage <br>
+                        Gesamt 5 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
 
 
-    <button class="byGroupButton navParentJS">Mittelschwere Pneumonie</button>
-    <section>
-        <p class="byGroupP1">In der Regel Sequenztherapie möglich</p>
-        <div class="fragmentWrapper">
-        <div class="fragmentDiv">
-            <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic ampicillinSulbactam_IV"></span>3-4 x 2g/1g i.v. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung<br><br><em>+/-</em><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>Für 3 Tage zusätzlich.</p>
-            <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_IV"></span>2 x 500mg i.v./p.o. tgl.<br><br>Therapiedauer:<br>5 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
-        </div>
-        </div>
-    </section>
+                    <p class="fragmentParagraph">
+                        Alternative:
+                        <span class="antibiotic levofloxacin_IV"></span>
+                        2 x 500mg tgl. p.o.<br><br>
+                        Therapiedauer: <br>
+                        5 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
+
+                </div>
+            </div>
+        </section>
 
 
-    <button class="byGroupButton navParentJS">Schwere Pneumonie</button>
-    <section>
-        <div class="fragmentWrapper">
-        <div class="fragmentDiv">
-            <p class="fragmentParagraph">Therapie der Wahl:<br><br><span class="antibiotic piperacillinTazobactam_IV"></span>4 x 4,5 g i.v. tgl.<br><br>Therapiedauer<br>7 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung<br><br><em>+</em><br><br><span class="antibiotic azithromycin_PO"></span>1 x 500 mg p.o. tgl.<br><br>Therapiedauer:<br>Für 3 Tage zusätzlich.</p>
-            <p class="fragmentParagraph">Alternative:<br><br><span class="antibiotic levofloxacin_IV"></span><br>Monotherapie nicht bei septischem Schock<br>2 x 500mg i.v./p.o. tgl.<br><br>Therapiedauer:<br>7 Tage<br>(Mind. 2 Tage vor Therapieende klinische Stabilisierung</p>
-        </div>
-        </div>
-    </section>
+
+        <button class="byGroupButton navParentJS navException">Schwere Pneumonie</button>
+        <section>
+            <p class="byGroupP1">Beginn immer i.v., Sequenztherapie prinzipiell möglich.</p>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic piperacillinTazobactam_IV"></span>
+                        4 x 4,5g tgl. i.v.<br>
+                        (3 x 4,5g bei prolongierter Gabe) <br><br>
+                        <em>ggf. +</em> <br><br>
+                        <span class="antibiotic azithromycin_PO"></span>
+                        1 x 500mg p.o. <br><br>
+                        Therapiedauer: <br>
+                        Azithromycin oral 3 Tage <br>
+                        Gesamt 7 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
 
 
-    <section>
-        <p>Bei einem Pneumokokken Nachweis im Bronchialsekret oder Blutkultur:<br> &rarr; Deeskalation auf 4x5 Mega Penicillin G unbedingt erforderlich für mind. 10 Tage!</p>
-        <p class="byGroupP1"><strong>Therapiehinweise:</strong></p>
-        <ul class="byGroupList">
-            <li>
-                <p>Die Anibiotikatherapie wird bei schwerem Verlauf (IMC/ICU) noch in der ZPA nach Erregerdiagnostik
-                    begonnen (Zeitfenster 60 min.).</p>
-            </li>
-            <li>
-                <p>Bei stationärer Aufnahme auf Normalstation soll die Antibiose bis zur 8. Stunde eingeleitet worden
-                    sein (gleiche Arbeitsschicht!).</p>
-            </li>
-            <li>
-                <p>Vor Therapieende soll eine klinische Stabilisierung des Patienten für mindestens 2 Tage erfolgt
-                    sein.</p>
-            </li>
-            <li>
-                <p>Sequenztherapie bei mittelschwerer Pneumonie: Nach klinischer Besserung (kein Fieber, CRP
-                    fallend).</p>
-            </li>
-            <li>
-                <p>Sequenztherapie bei schwerer Pneumonie: Nach mindestens 3 Tagen parenteraler Antibiose und bei
-                    Besserung auch hier orale Antibiose möglich, aber Substanzklassenwechsel vermeiden.</p>
-            </li>
+                    <p class="fragmentParagraph">
+                        Alternative:
+                        <span class="antibiotic levofloxacin_IV"></span>
+                        Monotherapie nicht bei septischem Schock! <br><br>
+                        2 x 500mg tgl. p.o.<br><br>
+                        Therapiedauer: <br>
+                        5 Tage <br>
+                        (mind. 2 Tage vor Therapieende klin. Stabilisierung)
+                    </p>
 
+                </div>
+            </div>
+        </section>
+
+        <p class="byGroupP1"><br><strong>Therapiehinweise:</strong></p>
+        <ul>
+            <li>Die Antibiotikatherapie wird bei schwerem Verlauf (IMC/ICU) noch in der ZNA nach Erregerdiagnostik begonnen (Zeitfenster: 60 Minuten)</li>
+            <li>Bei stationärer Aufnahme auf Normalstation soll die Antibiose bis zur 8. Stunde eingeleitet worden sein (gleiche Arbeitsschicht!)</li>
+            <li>Vor Therapieende soll eine klinische Stabilisierung des Patienten für mindestens 2 Tage erfolgt sein.</li>
+            <li>Sequenztherapie bei mittelschwerer Pneumonie &rarr; nach klinischer Besserung (kein Fieber, CRP(PCT fallend).</li>
+            <li>Sequenztherapie bei schwerer Pneumonie &rarr; nach mindestens 3 Tagen parenteraler Antibiose und bei Besserung &rarr; auch hier orale Antibiose möglich, aber Substanzklassenwechsel vermeiden.</li>
+            <li>Bei älteren Patienten und solchen mit Interaktions-relevanter Ko-Medikation ist <em>Azithromycin</em> das Makrolid der Wahl. Azithromycin nur in Ausnahmen i.v.</li>
+            <li>Die angegebenen Dosierungen beziehen sich auf eine normale Nierenfunktion. Unabhängig von der Nierenfunktion sollte in den ersten 24h die volle Tagesdosis gegeben werden.</li>
         </ul>
+
     </section>
 
+
+    <button class="byGroupButton navParentJS">Nosokomial erworbene Pneumonie (HAP bzw. VAP)</button>
+    <section>
+        <p class="byGroupP1">Eine Pneumonie wird HAP definiert, wenn die ersten Infektionszeichen frühestens am 3. stationären Tag oder später auftreten.</p>
+        <p class="byGroupP1"><strong>Diagnostik:</strong></p>
+        <p class="byGroupP1">Therapierelevant ist bereits die Verdachtsdiagnose einer HAP, diese soll gestellt werden bei neuem, persistierendem oder prgredientem Infiltrat in der THorax-Röntgenaufnahme in Kombination mit 2 von 3 weiteren Kriterien:</p>
+        <ul>
+            <li>Leukozyten > 10.000/&#181;l oder < 4.000/&#181;l</li>
+            <li>Fieber >38,3°C</li>
+            <li>Purulentes Sekret</li>
+        </ul>
+        <p class="byGroupP1"><strong>Vor Therapiebeginn Abnahme von 2-3 Paar Blutkulturen!</strong></p>
+
+        <button class="byGroupButton navParentJS navException"><strong>Kein</strong> Septischer Schock und <strong>kein</strong> hohes Risiko für multiresistente Erreger</button>
+        <section>
+
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic ampicillinSulbactam_IV"></span>
+                        3-4 x 2g/1g tgl. i.v.<br><br>
+                        Therapiedauer: <br>
+                        7 Tage
+                    </p>
+
+                    <p class="fragmentParagraph">
+                        Bei Pencillinallergie:
+                        <span class="antibiotic ceftriaxon_IV"></span>
+                        1 x 2g tgl. i.v.<br><br>
+                        Therapiedauer: <br>
+                        7 Tage
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <button class="byGroupButton navParentJS navException"><strong>Kein</strong> Septischer Schock und <strong>hohes</strong>Risiko für multiresistente Erreger</button>
+        <section>
+
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic piperacillinTazobactam_IV"></span>
+                        4 x 4,5g tgl. i.v.<br><br>
+                        <em>+</em><br><br>
+                        <span class="antibiotic ciprofloxacin_IV"></span>
+                        2 x 750mg p.o. <br>
+                        (auf Intensivstation 3 x 400mg i.v.) <br><br>
+                        Therapiedauer: <br>
+                        7 Tage <br>
+                        <strong>Cave:</strong><br>
+                        Bei kritisch kranken Patienten und hohem Risiko für 3 MRGN-Erreger (insb. stationäre Vorbehandlung in Risikoländern oder bekannter Besiedlung) Initialtherapie mit Meropenem.
+                        <br><strong>Bei Erregernachweis:</strong> Therapiefokussierung auf eine sensibel getestete Monotherapie mit möglichst schmalem Spektrum (außer bei höhergradig resistentem Erreger).
+                        <br><strong>Bei Besserung ohne Erregernachweis:</strong> Deeskalation nach 3 Tagen auf Monotherapie mit Piperacillin/Tazobactam (1. Wahl) bzw. Levofloxacin (bei Penicillinallergie).
+                    </p>
+
+
+                    <p class="fragmentParagraph">
+                        Penicillinallergie: <br><br>
+                        <span class="antibiotic ceftazidim_IV"></span>
+                        3 x 2g tgl. i.v.<br><br>
+                        <em>+</em><br><br>
+                        <span class="antibiotic levofloxacin_IV"></span>
+                        2 x 500mg p.o./i.v. <br><br>
+                        Therapiedauer: <br>
+                        7 Tage <br>
+                        <strong>Cave:</strong><br>
+                        Bei kritisch kranken Patienten und hohem Risiko für 3 MRGN-Erreger (insb. stationäre Vorbehandlung in Risikoländern oder bekannter Besiedlung) Initialtherapie mit Meropenem.
+                        <br><strong>Bei Erregernachweis:</strong> Therapiefokussierung auf eine sensibel getestete Monotherapie mit möglichst schmalem Spektrum (außer bei höhergradig resistentem Erreger).
+                        <br><strong>Bei Besserung ohne Erregernachweis:</strong> Deeskalation nach 3 Tagen auf Monotherapie mit Piperacillin/Tazobactam (1. Wahl) bzw. Levofloxacin (bei Penicillinallergie).
+                    </p>
+
+
+                </div>
+            </div>
+        </section>
+
+
+    <button class="byGroupButton navParentJS navException"><strong>Septischer Schock</strong> und <strong>kein</strong> hohes Risiko für multiresistente Erreger</button>
+    <section>
+
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic meropenem_IV"></span>
+                    3 x 1-2g tgl. i.v.<br><br>
+                    Therapiedauer: <br>
+                    7 Tage
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <button class="byGroupButton navParentJS navException"><strong>Septischer Schock</strong> und <strong>hohes</strong> Risiko für multiresistente Erreger</button>
+    <section>
+
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic piperacillinTazobactam_IV"></span>
+                    4 x 4,5g tgl. i.v.<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic levofloxacin_IV"></span>
+                    2 x 500mg tgl. p.o./i.v. <br><br>
+                    Therapiedauer: <br>
+                    7 Tage
+                </p>
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic piperacillinTazobactam_IV"></span>
+                    4 x 4,5g tgl. i.v.<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic ciprofloxacin_IV"></span>
+                    3 x 400mg tgl. i.v. <br><br>
+                    Therapiedauer: <br>
+                    7 Tage
+                </p>
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic tobramycin_IV"></span>
+                    1 x 6mg/kg KG tgl. i.v. <br><br>
+                    Spiegelbestimmung: <br>
+                    Aufgrund der außerordentlich hohen Nephro- und Ototoxizität ist ein engmaschiges therapeutisches Drug Monitoring empfohlen!
+                    <br>Ziel-Talspiegel: < 0.5(-1) mg/L<br><br>
+                    Therapiedauer: <br>
+                    7 Tage
+                </p>
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic fosfomycin_IV"></span>
+                    3 x 4-5g tgl. i.v. <br><br>
+                    Therapiedauer: <br>
+                    7 Tage
+                </p>
+
+            </div>
+        </div>
+
+        <p class="byGroupP1"><strong>Bei MRSA-Verdacht: PLUS Vancomycin ODER Linezolid!</strong></p>
+
+        <p class="byGroupP1">Therapierelevante Risikofaktoren für multiresistente Infektionserreger bei HAP:</p>
+        <ul>
+            <li>Antimikrobielle Therapie (>24h) in den letzten 30 Tagen</li>
+            <li>Hospitalisierung >= 5 Tage vor Krankheitsbeginn</li>
+            <li>Kolonisation durch gramnegative MRE oder MRSA <br>(Die Mehrzahl der Patienten mit einer derartigen Kolonisation werden keine HAP/VAP durch diese Erreger aufweisen)</li>
+            <li>Septischer Schock</li>
+            <li>ARDS (Acute Respiratory Distress Syndrome)</li>
+            <li>Hämodialyse</li>
+            <li>Medizinische Versorgung in einem Hochprävalenzland (Süd- und Osteuropa/Asien/Afrika) für gramnegative MRE und MRSA innerhalb der letzten 12 Monate</li>
+        </ul>
+        <p class="byGroupP1"><strong>Zusätzliche Risikofaktoren für P. aeruginosa:</strong></p>
+        <ul>
+            <li>Strukturelle Lungenerkrankung (fortgeschrittene COPD, Bronchiektasen)</li>
+            <li>Bekannte Kolonisation durch P. aeruginosa</li>
+        </ul>
+        <p class="byGroupP1"><strong>Im Einzelfall sind längere Therapiedauern erforderlich (z.B. S. aureus Bakteriämie, nicht sanierbares Empyem, Abszess).</strong></p>
+        <p class="byGroupP1">Empfehlung zur Diagnostik auf Aspergillus bei Patienten mit Risikofaktoren mittels Antigentest auf Galaktomannan aus bronchoalverolärer Lavage.</p>
+        <p class="byGroupP1">Ein Nachweis von Candida oder Enterokokken in respiratorischen Materialien ist in der Regel nicht behandlungsbedürftig.</p>
+
+    </section>
+
+    </section>
+    <button class="byGroupButton navParentJS navException">Pneumonie bei Immunsuppression (opportunistische Erreger)</button>
+    <section>
+        <p class="byGroupP1"><strong>Typische Konditionen einer schweren Immunsuppression:</strong></p>
+        <ul>
+            <li>Neutropenie <1000/&#181;l</li>
+            <li>Iatrogen-medikamentöse Immunsuppression, z.B. systemische LZ-Steroidvorbehandlung (>= 10mg Prednisolonäquivalent/Tag)</li>
+            <li>Transplantation solider Organe</li>
+            <li>Stammzelltransplantation</li>
+            <li>HIV Infektion/AIDS</li>
+            <li>Antikörpermangelsyndrome</li>
+            <li>Angeborene Immundefekte</li>
+        </ul>
+
+        <p class="byGroupP1">Candida Nachweis in respiratorischen Materialien &rarr; keine Therapieoption. <br> Es handelt sich fast immer um Kolonisationen im Rahmen der breiten Antibiose.</p>
+
+    </section>
+
+    <button class="byGroupButton navParentJS navException">Pneumocystis-jirovecii-Pneumonie (PCP)</button>
+    <section>
+
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic cotrimoxazol_IV"></span>
+                    75-100mg/15-20mg /kgKG tgl.<br>
+                    verteilt auf 3-4 Einzeldosen <br>
+                    Cave GFR <br><br>
+                    Therapiedauer: <br>
+                    21 Tage <br>
+                    Danach weiterhin Prophylaxe: <br>
+                    Cotrimoxazol 3 x 960mg/Woche <br><br>
+                    Bei schweren Formen: <br>
+                    Zusätzlich Prednisolon nach aktueller LL <br>
+                    (2 x 40mg/d) <br><br>
+                    Empfehlung: <br>
+                    Folsäure 5mg 1x/d
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <button class="byGroupButton navParentJS navException">Viruspneumonien</button>
+    <section>
+
+
+        <button class="byGroupButton navParentJS navException">Cytomegalievirus</button>
+        <section>
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <strong>Ganciclovir</strong><br><br>
+                    <strong>Initial</strong> <br>
+                    2 x 5mg/kgKG i.v. <br>
+                    <strong>Erhaltung:</strong>
+                    1 x 5mg/kgKG oder <br>
+                    1 x 6mg/kgKG <br><br>
+                    Cave: <br>
+                    Bei GFR <70ml/min: Dosisreduktion <br><br>
+                    Therapiedauer: <br>
+                    7 Tage/Woche oder 5 Tage/Woche (Dauer individuell bestimmen je nach Schweregrad und Dauer der Immunsuppression)
+                    <br> <strong>Wichtig:</strong><br>
+                    aus Zytostatika-Formular in Apotheke anfordern. Lösungsmittel: 100ml NaCl 0,9%.
+                </p>
+
+            </div>
+        </div>
+        </section>
+
+
+        <button class="byGroupButton navParentJS navException">Herpes Simplex</button>
+        <section>
+            <div class="fragmentWrapper">
+                <div class="fragmentDiv">
+
+                    <p class="fragmentParagraph">
+                        <span class="antibiotic aziclovir_IV"></span>
+                        3 x 10mg/kgKG i.v. <br>
+                        Cave: <br>
+                        GFR < 50ml/min: Dosisreduktion. <br><br>
+                        Therapiedauer: <br>
+                        7 Tage
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+
+    <button class="byGroupButton navParentJS">Aspirationspneumonie</button>
+    <section>
+        <p class="byGroupP1">In der Regel rezidivierende Mikro-Aspirationen, typischerweise unbeobachtet. Nach einer Makro-Aspiration eher selten sekundäre bakterielle Pneumonie (wenn, dann Beginn 2-7 Tage nach dem Ereignis). Das Risiko ist erhöht unter Therapie mit PPI.</p>
+        <p class="byGroupP1">Häufige Erreger: S. pneumoniae, S. aureus, Anaerobier, Enterobakterien</p>
+
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic ampicillinSulbactam_IV"></span>
+                    3-4 x 2g/1g tgl. i.v. <br><br>
+                    Therapiedauer: <br>
+                    5(-7) Tage
+                </p>
+
+                <p class="fragmentParagraph">
+                    Bei &beta;-Laktamallergie oder Vorbehandlung mit Ampi/Sulb: <br><br>
+                    <span class="antibiotic moxifloxacin_PO"></span>
+                    1 x 400mg tgl. p.o.<br><br>
+                    Therapiedauer: <br>
+                    5(-7) Tage
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <button class="byGroupButton navParentJS">Retentionspneumonie</button>
+    <section>
+        <p class="byGroupP1">Die Beseitigung der Stenose steht im Vordergrund. <br>
+        Bronchoskopie zur Klärung der Ursache und um Erregerdiagnostik im Aspirat durchzuführen.</p>
+        <p class="byGroupP1">Häufige Erreger: H. influenzae, Streptokokken, S. aureus, Anaerobier, Enterobakterien, P. aeruginosa</p>
+
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic ampicillinSulbactam_IV"></span>
+                    3-4 x 2g/1g tgl. i.v. <br><br>
+                    Therapiedauer: <br>
+                    Bei Beseitigung der Retention wie CAP (5 Tage). <br>
+                    Bei weiterbestehender Stenose und/oder Abszedierung: <br>
+                    Verlängerte Therapie bis zu mehreren Wochen.
+                </p>
+
+                <p class="fragmentParagraph">
+                    Bei &beta;-Laktamallergie oder Vorbehandlung mit Ampi/Sulb: <br><br>
+                    <span class="antibiotic moxifloxacin_PO"></span>
+                    1 x 400mg tgl. p.o.<br><br>
+                    Therapiedauer: <br>
+                    Bei Beseitigung der Retention wie CAP (5 Tage). <br>
+                    Bei weiterbestehender Stenose und/oder Abszedierung: <br>
+                    Verlängerte Therapie bis zu mehreren Wochen.
+                </p>
+
+            </div>
+        </div>
+
+        <p class="byGroupP1">Nach antimikrobieller Vorbehandlung ist eine Therapie mit einem Pseudomonas wirksamen Betalaktam, z.B. Piperacillin/Tazobactam, in Erwägung zu ziehen. Daten zur Notwendigkeit einer Kombinationstherapie liegen nicht vor. Bei der Auswahl der Substanz sollten vorausgegangene Therapien berücksichtigt werden. Nach Erhalt der Ergebnisse der mikrobiologischen Diagnostik sollte wenn möglich auf eine gezielte Therapie umgestellt werden.</p>
+
+    </section>
+
+
+
+    <button class="byGroupButton navParentJS">Lungenabszess</button>
+    <section>
+        <p class="byGroupP1">Bei Erregernachweis Therapie fokussieren. Anaerobier sollten auf jeden Fall abgedeckt sein.</p>
+        <p class="byGroupP1">Häufige Erreger: S. pneumoniae, S. aureus, (am häufigsten) Enterobacterales, Anaerobier</p>
+
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic ampicillinSulbactam_IV"></span>
+                    3-4 x 2g/1g tgl. i.v. <br><br>
+                    Therapiedauer: <br>
+                    Individuell, bis zur vollständigen Rückbildung der Abszesshöhle sowie der Infiltrate 7-10-21 Tage, meist 4-8 Wochen.
+                    <br>Orale Therapie frühestens nach 5 Tagen nach Entfieberung und Normalisierung der Entzündungsparameter.
+                </p>
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic moxifloxacin_PO"></span>
+                    1 x 400mg tgl. p.o.<br><br>
+                    Therapiedauer: <br>
+                    Individuell, bis zur vollständigen Rückbildung der Abszesshöhle sowie der Infiltrate 7-10-21 Tage, meist 4-8 Wochen.
+                </p>
+
+                <p class="fragmentParagraph">
+                    Bei Penicillinallergie: <br><br>
+                    <span class="antibiotic ceftriaxon_IV"></span>
+                    1 x 2g tgl. i.v.<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic clindamycin_PO"></span>
+                    3 x 600mg tgl. p.o. <br><br>
+                    Therapiedauer: <br>
+                    Individuell, bis zur vollständigen Rückbildung der Abszesshöhle sowie der Infiltrate 7-10-21 Tage, meist 4-8 Wochen.
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <button class="byGroupButton navParentJS">Pleuraempyem</button>
+    <section>
+        <p class="byGroupP1">Häufige Erreger: Enterobakterien, S. pneumoniae, S. aureus, Streptokokken</p>
+
+        <div class="fragmentWrapper">
+            <div class="fragmentDiv">
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic ampicillinSulbactam_IV"></span>
+                    3-4 x 2g/1g tgl. i.v. <br><br>
+                    Therapiedauer: <br>
+                    Nach Klinik, AB-Therapie bis zur vollständigen Drainage des infizierten Ergusses, manchmal mehrere Wochen.
+                </p>
+
+                <p class="fragmentParagraph">
+                    <span class="antibiotic moxifloxacin_PO"></span>
+                    1 x 400mg tgl. p.o.<br><br>
+                    Therapiedauer: <br>
+                    Nach Klinik, AB-Therapie bis zur vollständigen Drainage des infizierten Ergusses, manchmal mehrere Wochen.
+                </p>
+
+                <p class="fragmentParagraph">
+                    Bei Penicillinallergie: <br><br>
+                    <span class="antibiotic ceftriaxon_IV"></span>
+                    1 x 2g tgl. i.v.<br><br>
+                    <em>+</em><br><br>
+                    <span class="antibiotic clindamycin_PO"></span>
+                    3 x 600mg tgl. p.o. <br><br>
+                    Therapiedauer: <br>
+                    Nach Klinik, AB-Therapie bis zur vollständigen Drainage des infizierten Ergusses, manchmal mehrere Wochen.
+                </p>
+
+            </div>
+        </div>
+
+    </section>
 
 </main>
