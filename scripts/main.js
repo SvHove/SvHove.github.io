@@ -1,11 +1,11 @@
 "use strict"
 
 
-let versionNumber = '0.77';
+let versionNumber = '0.781';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Ergänzung von Ausarbeitung Moxifloxacin und Daptomycin\n' +
-    '- Erneuerung Kapitel Pneumonie' +
-    '- Kleine inhaltliche Änderung Endokarditis-Vorgehen';
+    '- Abbildung Pneumonie Risikostratifizierung hochgeladen\n' +
+    '- Verlinkung Moxifloxacin im Endokarditis Kapitel\n' +
+    '- Rechtschreibkorrekturen Pneumonie-Kapitel';
 
 
 // Setting up Placeholders
