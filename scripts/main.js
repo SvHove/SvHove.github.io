@@ -5,7 +5,8 @@ let versionNumber = '0.781';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
     '- Abbildung Pneumonie Risikostratifizierung hochgeladen\n' +
     '- Verlinkung Moxifloxacin im Endokarditis Kapitel\n' +
-    '- Rechtschreibkorrekturen Pneumonie-Kapitel';
+    '- Rechtschreibkorrekturen Pneumonie-Kapitel\n' +
+    '- Korrektur Dosierung Nitrofurantoin bei Zystitis';
 
 
 // Setting up Placeholders
@@ -848,3 +849,5 @@ const disco = async() => {
     }
 }
 */
+
+
