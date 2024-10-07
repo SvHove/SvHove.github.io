@@ -1,12 +1,10 @@
 "use strict"
 
 
-let versionNumber = '0.781';
+let versionNumber = '0.787';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Abbildung Pneumonie Risikostratifizierung hochgeladen\n' +
-    '- Verlinkung Moxifloxacin im Endokarditis Kapitel\n' +
-    '- Rechtschreibkorrekturen Pneumonie-Kapitel\n' +
-    '- Korrektur Dosierung Nitrofurantoin bei Zystitis';
+    '- Ergänzung Flucloxacillin bei Hirnabszess ambulant.\n'
+'Button für Äquivalenztabellen wieder entfernt (versehentliche Freischaltung, folgt in zukünftiger Version)';
 
 
 // Setting up Placeholders
