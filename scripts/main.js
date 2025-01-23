@@ -1,9 +1,9 @@
 "use strict"
 
 
-let versionNumber = '0.787';
+let versionNumber = '0.788';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
-    '- Ergänzung Flucloxacillin bei Hirnabszess ambulant.\n'
+    '- Anpassung an aktuelle Version des AB-Leitfadens, Korrektur einzelner Fehler.\n'
 'Button für Äquivalenztabellen wieder entfernt (versehentliche Freischaltung, folgt in zukünftiger Version)';
 
 
