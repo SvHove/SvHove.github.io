@@ -1,7 +1,7 @@
 "use strict"
 
 
-let versionNumber = '0.788';
+let versionNumber = '0.789';
 let versionNotes = 'Update installiert, Version ' + versionNumber + '!\nWichtigste Neuerungen:\n\n' +
     '- Anpassung an aktuelle Version des AB-Leitfadens, Korrektur einzelner Fehler.\n'
 'Button für Äquivalenztabellen wieder entfernt (versehentliche Freischaltung, folgt in zukünftiger Version)';
